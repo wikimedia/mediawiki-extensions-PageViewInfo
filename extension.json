@@ -1,5 +1,6 @@
 {
 	"name": "WikimediaPageViewInfo",
+	"license-name": "GPL-3.0+",
 	"Hooks": {
 		"InfoAction": [
 			"PageViewInfo\\Hooks::onInfoAction"
