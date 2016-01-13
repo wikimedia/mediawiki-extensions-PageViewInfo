@@ -1,0 +1,91 @@
+{
+  "version": 2,
+  "data": [
+    {
+      "name": "pageviews",
+      "values": false,
+      "transform": [
+        {
+          "type": "formula",
+          "field": "date",
+          "expr": "datetime(parseInt(substring(datum.timestamp,0,4)),parseInt(substring(datum.timestamp,4,6))-1,parseInt(substring(datum.timestamp,6,8)))"
+        }
+      ]
+    },
+    {
+      "name": "alldata",
+      "source": "pageviews",
+      "transform": [
+        {
+          "type": "formula",
+          "field": "Page views",
+          "expr": "datum.views"
+        },
+        {"type": "fold", "fields": ["Page views"]}
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "alldata",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["date"],
+          "summarize": [{"field": "value", "ops": ["sum"]}]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "range": "width",
+      "domain": {"data": "alldata","field": "date"}
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "nice": true,
+      "domain": {"data": "stats", "field": "sum_value"}
+    },
+    {
+      "name": "c",
+      "type": "ordinal",
+      "range": ["#5DA5DA"],
+      "domain": {"data": "alldata", "field": "key"}
+    }
+  ],
+  "axes": [
+    {"type": "x","scale": "x","ticks": 5},
+    {"type": "y","scale": "y"}
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "data": "alldata",
+        "transform": [
+          {"type": "stack", "groupby": ["date"], "sortby": ["key"], "field": "value"},
+          {"type": "facet", "groupby": ["key"]}
+        ]
+      },
+      "marks": [
+        {
+          "type": "area",
+          "properties": {
+            "enter": {
+              "interpolate": {"value": "monotone"},
+              "x": {"scale": "x", "field": "date"},
+              "y": {"scale": "y", "field": "layout_start"},
+              "y2": {"scale": "y", "field": "layout_end"},
+              "fill": {"scale": "c", "field": "key"},
+              "fillOpacity": {"value": 1}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

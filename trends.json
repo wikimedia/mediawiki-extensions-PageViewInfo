@@ -1,0 +1,95 @@
+{
+	"version": 2,
+	"width": 400,
+	"height": 200,
+	"data": [
+		{
+			"name": "pageviews",
+			"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/{{{1|en.wikipedia}}}/all-access/user/{{urlencode:{{urlencode:{{{2|Main_Page}}}|WIKI}}|PATH}}/daily/{{{3|{{#time: YmdH |-10 days }}}}}/{{{4|{{#time: YmdH }}}}}",
+			"format": {
+				"type": "json",
+				"property": "items"
+			},
+			"transform": [
+				{
+					"type": "formula",
+					"field": "year",
+					"expr": "parseInt(substring(datum.timestamp,0,4))"
+				},
+				{
+					"type": "formula",
+					"field": "month",
+					"expr": "parseInt(substring(datum.timestamp,4,6))"
+				},
+				{
+					"type": "formula",
+					"field": "day",
+					"expr": "parseInt(substring(datum.timestamp,6,8))"
+				},
+				{
+					"type": "formula",
+					"field": "date",
+					"expr": "datetime(datum.year,datum.month-1,datum.day)"
+				}
+			]
+		}
+	],
+	"scales": [
+		{
+			"name": "x",
+			"type": "time",
+			"range": "width",
+			"domain": {
+				"data": "pageviews",
+				"field": "date"
+			}
+		},
+		{
+			"name": "y",
+			"type": "linear",
+			"range": "height",
+			"nice": true,
+			"domain": {
+				"data": "pageviews",
+				"field": "views"
+			}
+		}
+	],
+	"axes": [
+		{
+			"type": "x",
+			"scale": "x",
+			"ticks": 5
+		},
+		{
+			"type": "y",
+			"scale": "y"
+		}
+	],
+	"marks": [
+		{
+			"type": "line",
+			"from": {
+				"data": "pageviews"
+			},
+			"properties": {
+				"enter": {
+					"x": {
+						"scale": "x",
+						"field": "date"
+					},
+					"y": {
+						"scale": "y",
+						"field": "views"
+					},
+					"stroke": {
+						"value": "#00f"
+					},
+					"strokeWidth": {
+						"value": 3
+					}
+				}
+			}
+		}
+	]
+}

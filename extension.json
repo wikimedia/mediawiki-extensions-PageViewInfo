@@ -1,0 +1,39 @@
+{
+	"name": "WikimediaPageViewInfo",
+	"Hooks": {
+		"InfoAction": [
+			"PageViewInfo\\Hooks::onInfoAction"
+		]
+	},
+	"AutoloadClasses": {
+		"PageViewInfo\\Hooks": "includes/PageViewInfo.hooks.php",
+		"PageViewInfo\\SpecialTrends": "includes/SpecialTrends.php"
+	},
+	"MessagesDirs": {
+		"PageViewInfo": [
+			"i18n"
+		]
+	},
+	"SpecialPages": {
+		"Trends": "PageViewInfo\\SpecialTrends"
+	},
+	"ResourceModules": {
+		"ext.pvi.init": {
+			"scripts": [
+				"ext.pvi.init.js"
+			],
+			"dependencies": [
+				"ext.graph.vega2",
+				"oojs-ui",
+				"json"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "PageViewInfo/resources"
+	},
+	"config": {
+		"PageViewInfoEndpoint": ""
+	}
+}
