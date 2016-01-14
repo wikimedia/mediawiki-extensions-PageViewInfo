@@ -11,6 +11,5 @@ class SpecialTrends extends SpecialPage {
 
 	public function execute() {
 
-
 	}
 }

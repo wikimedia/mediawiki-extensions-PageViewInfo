@@ -1,12 +1,12 @@
 <?php
 
 namespace PageViewInfo;
+
 use IContextSource;
 use FormatJson;
 use Http;
 use ObjectCache;
 use Title;
-
 
 class Hooks {
 
