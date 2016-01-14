@@ -19,9 +19,9 @@
 		"Trends": "PageViewInfo\\SpecialTrends"
 	},
 	"ResourceModules": {
-		"ext.pvi.init": {
+		"ext.wmpageviewinfo": {
 			"scripts": [
-				"ext.pvi.init.js"
+				"ext.wmpageviewinfo.js"
 			],
 			"dependencies": [
 				"ext.graph.vega2",

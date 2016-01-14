@@ -23,12 +23,18 @@ class Hooks {
 		$formatted = $ctx->getLanguage()->formatNum( $count );
 		$pageInfo['header-basic'][] = array(
 			$ctx->msg( 'pvi-month-count' ),
-			\Html::element( 'div', array( 'class' => 'mw-pvi-month' ), $formatted )
+			\Html::element( 'div', array( 'class' => 'mw-wmpvi-month' ), $formatted )
 		);
-		$ctx->getOutput()->addModules( 'ext.pvi.init' );
+
+		$info = FormatJson::decode(
+			file_get_contents( __DIR__ . '/../graphs/month.json' ),
+			true
+		);
+		$info['data'][0]['values'] = $views['items'];
+
+		$ctx->getOutput()->addModules( 'ext.wmpageviewinfo' );
 		$ctx->getOutput()->addJsConfigVars( array(
-			'wgPageViewInfo' => $views,
-			'wgPVIDefinition' => file_get_contents( __DIR__ . '/../thing.json' ),
+			'wgWMPageViewInfo' => $info,
 		) );
 	}
 
@@ -38,6 +44,7 @@ class Hooks {
 	 */
 	protected static function buildApiUrl( Title $title ) {
 		global $wgPageViewInfoEndpoint, $wgServerName;
+		// FIXME: temp hack
 		$wgServerName = 'en.wikipedia.org';
 		$encodedTitle = wfUrlencode( $title->getPrefixedDBkey() );
 		$today = date( 'Ymd' );

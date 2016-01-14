@@ -1,13 +1,12 @@
 ( function( $, mw ) {
-	$( '.mw-pvi-month' ).click( function( e ) {
+	$( '.mw-wmpvi-month' ).click( function( e ) {
 		// A simple dialog window.
 		function MyDialog( config ) {
 			MyDialog.parent.call( this, config );
 		}
 		OO.inheritClass( MyDialog, OO.ui.Dialog );
 		MyDialog.prototype.initialize = function () {
-			var def = JSON.parse( mw.config.get( 'wgPVIDefinition' ) );
-			def.data[0].values = mw.config.get( 'wgPageViewInfo' ).items;
+			var def = mw.config.get( 'wgWMPageViewInfo' );
 			MyDialog.parent.prototype.initialize.call( this );
 			this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
 			this.$body.append( this.content.$element );
