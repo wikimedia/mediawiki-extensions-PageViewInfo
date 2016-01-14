@@ -22,7 +22,7 @@ class Hooks {
 		}
 		$formatted = $ctx->getLanguage()->formatNum( $count );
 		$pageInfo['header-basic'][] = array(
-			$ctx->msg( 'pvi-month-count' ),
+			$ctx->msg( 'wmpvi-month-count' ),
 			\Html::element( 'div', array( 'class' => 'mw-wmpvi-month' ), $formatted )
 		);
 
