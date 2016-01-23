@@ -25,8 +25,7 @@
 			],
 			"dependencies": [
 				"ext.graph.vega2",
-				"oojs-ui",
-				"json"
+				"oojs-ui"
 			]
 		}
 	},
