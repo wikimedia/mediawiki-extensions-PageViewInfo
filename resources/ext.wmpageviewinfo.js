@@ -1,6 +1,12 @@
 ( function ( $, mw ) {
 	$( function () {
-		$( '.mw-wmpvi-month' ).click( function () {
+		var $count = $( '.mw-wmpvi-month' ),
+			count = $count.text();
+
+		// Turn it into an <a> tag so it's obvious you can click on it
+		$count.html( mw.html.element( 'a', {}, count ) );
+
+		$count.click( function () {
 			var myDialog, windowManager;
 			// A simple dialog window.
 			function MyDialog( config ) {
