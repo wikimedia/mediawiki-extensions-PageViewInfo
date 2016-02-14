@@ -7,16 +7,12 @@
 		]
 	},
 	"AutoloadClasses": {
-		"PageViewInfo\\Hooks": "includes/PageViewInfo.hooks.php",
-		"PageViewInfo\\SpecialTrends": "includes/SpecialTrends.php"
+		"PageViewInfo\\Hooks": "includes/PageViewInfo.hooks.php"
 	},
 	"MessagesDirs": {
 		"PageViewInfo": [
 			"i18n"
 		]
-	},
-	"SpecialPages": {
-		"Trends": "PageViewInfo\\SpecialTrends"
 	},
 	"ResourceModules": {
 		"ext.wmpageviewinfo": {
