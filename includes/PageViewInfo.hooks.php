@@ -15,6 +15,9 @@ class Hooks {
 	 */
 	public static function onInfoAction( IContextSource $ctx, array &$pageInfo ) {
 		$views = self::getMonthViews( $ctx->getTitle() );
+		if ( $views === false ) {
+			return;
+		}
 		$count = 0;
 		foreach ( $views['items'] as $item ) {
 			$count += $item['views'];
@@ -61,7 +64,16 @@ class Hooks {
 			return $data;
 		}
 
-		$req = Http::get( $url );
+		$req = Http::get(
+			$url,
+			array( 'timeout' => 10 ),
+			__METHOD__
+		);
+
+		if ( $req === false ) {
+			return false;
+		}
+
 		$data = FormatJson::decode( $req, true );
 		// Cache for an hour
 		$wgMemc->set( $key, $data, 60 * 60 );
