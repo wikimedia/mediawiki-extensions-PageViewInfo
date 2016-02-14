@@ -4,6 +4,7 @@ namespace PageViewInfo;
 
 use IContextSource;
 use FormatJson;
+use Html;
 use Http;
 use Title;
 
@@ -25,7 +26,7 @@ class Hooks {
 		$formatted = $ctx->getLanguage()->formatNum( $count );
 		$pageInfo['header-basic'][] = array(
 			$ctx->msg( 'wmpvi-month-count' ),
-			\Html::element( 'div', array( 'class' => 'mw-wmpvi-month' ), $formatted )
+			Html::element( 'div', array( 'class' => 'mw-wmpvi-month' ), $formatted )
 		);
 
 		$info = FormatJson::decode(
