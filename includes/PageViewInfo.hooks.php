@@ -46,13 +46,16 @@ class Hooks {
 	 * @return string
 	 */
 	protected static function buildApiUrl( Title $title ) {
-		global $wgPageViewInfoEndpoint, $wgServerName;
-		// FIXME: temp hack
-		$wgServerName = 'en.wikipedia.org';
+		global $wgPageViewInfoEndpoint, $wgPageViewInfoDomain, $wgServerName;
+		if ( $wgPageViewInfoDomain ) {
+			$serverName = $wgPageViewInfoDomain;
+		} else {
+			$serverName = $wgServerName;
+		}
 		$encodedTitle = wfUrlencode( $title->getPrefixedDBkey() );
 		$today = date( 'Ymd' );
 		$lastMonth = date( 'Ymd', time() - ( 60 * 60 * 24 * 30 ) );
-		return "$wgPageViewInfoEndpoint/per-article/$wgServerName"
+		return "$wgPageViewInfoEndpoint/per-article/$serverName"
 			. "/all-access/user/$encodedTitle/daily/$lastMonth/$today";
 	}
 

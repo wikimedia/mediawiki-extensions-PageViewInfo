@@ -30,6 +30,7 @@
 		"remoteExtPath": "PageViewInfo/resources"
 	},
 	"config": {
-		"PageViewInfoEndpoint": ""
+		"PageViewInfoEndpoint": "",
+		"PageViewInfoDomain": false
 	}
 }
