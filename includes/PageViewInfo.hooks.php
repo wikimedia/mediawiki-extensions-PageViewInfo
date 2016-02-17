@@ -25,10 +25,10 @@ class Hooks {
 		}
 		$lang = $ctx->getLanguage();
 		$formatted = $lang->formatNum( $count );
-		$pageInfo['header-basic'][] = array(
+		$pageInfo['header-basic'][] = [
 			$ctx->msg( 'wmpvi-month-count' ),
-			Html::element( 'div', array( 'class' => 'mw-wmpvi-month' ), $formatted )
-		);
+			Html::element( 'div', [ 'class' => 'mw-wmpvi-month' ], $formatted )
+		];
 
 		$info = FormatJson::decode(
 			file_get_contents( __DIR__ . '/../graphs/month.json' ),
@@ -40,13 +40,13 @@ class Hooks {
 		// Ymd -> YmdHis
 		$plus = '000000';
 		$user = $ctx->getUser();
-		$ctx->getOutput()->addJsConfigVars( array(
-			'wgWMPageViewInfo' => array(
+		$ctx->getOutput()->addJsConfigVars( [
+			'wgWMPageViewInfo' => [
 				'graph' => $info,
 				'start' => $lang->userDate( $views['start'] . $plus, $user ),
 				'end' => $lang->userDate( $views['end'] . $plus, $user ),
-			),
-		) );
+			],
+		] );
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Hooks {
 		$url = self::buildApiUrl( $title, $lastMonth, $today );
 		$req = Http::get(
 			$url,
-			array( 'timeout' => 10 ),
+			[ 'timeout' => 10 ],
 			__METHOD__
 		);
 
