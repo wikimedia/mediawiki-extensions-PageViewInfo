@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"wmpvi-desc": "Fügt Informationen zu Seitenaufrufen zur Aktion „Seiteninformationen“ hinzu",
+	"wmpvi-month-count": "Seitenaufrufe in den letzten 30 Tagen"
+}
