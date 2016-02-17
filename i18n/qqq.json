@@ -4,6 +4,7 @@
 			"Legoktm"
 		]
 	},
+	"wmpvi-desc": "{{desc|name=Wikimedia Page ViewInfo|url=https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo}}",
 	"wmpvi-month-count": "Label for table cell containing page views in past 30 days",
 	"wmpvi-desc": "{{desc|name=WikimediaPageViewInfo|url=https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo}}"
 }

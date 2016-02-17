@@ -4,6 +4,7 @@
 			"Legoktm"
 		]
 	},
+	"wmpvi-desc": "Provides graphs of page view data",
 	"wmpvi-month-count": "Page views in the past 30 days",
 	"wmpvi-desc": "Adds page view information to the info action"
 }
