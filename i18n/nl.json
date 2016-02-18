@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"wmpvi-desc": "Voegt informatie toe aan de handeling \"info\" over het aantal keren dat de pagina is bekeken",
+	"wmpvi-month-count": "Aantal keren bekeken in de afgelopen 30 dagen"
+}

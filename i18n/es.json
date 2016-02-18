@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"wmpvi-desc": "Añade información de visitas a páginas a la acción 'información'",
+	"wmpvi-month-count": "Visitas a páginas en los últimos 30 días"
+}
