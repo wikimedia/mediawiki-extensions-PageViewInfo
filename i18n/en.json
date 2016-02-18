@@ -5,5 +5,7 @@
 		]
 	},
 	"wmpvi-desc": "Adds page view information to the info action",
-	"wmpvi-month-count": "Page views in the past 30 days"
+	"wmpvi-month-count": "Page views in the past 30 days",
+	"wmpvi-close": "Close",
+	"wmpvi-range": "$1 - $2"
 }

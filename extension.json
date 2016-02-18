@@ -22,6 +22,10 @@
 			"scripts": [
 				"ext.wmpageviewinfo.js"
 			],
+			"messages": [
+				"wmpvi-close",
+				"wmpvi-range"
+			],
 			"dependencies": [
 				"ext.graph.vega2",
 				"oojs-ui"

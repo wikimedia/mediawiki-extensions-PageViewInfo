@@ -1,36 +1,47 @@
 ( function ( $, mw ) {
 	$( function () {
 		var $count = $( '.mw-wmpvi-month' ),
-			count = $count.text();
+			count = $count.text(),
+			info = mw.config.get( 'wgWMPageViewInfo' );
 
 		// Turn it into an <a> tag so it's obvious you can click on it
 		$count.html( mw.html.element( 'a', { href: '#' }, count ) );
 
 		$count.click( function ( e ) {
-			var myDialog, windowManager;
+			var dialog, windowManager;
 			e.preventDefault();
-
-			// A simple dialog window.
-			function MyDialog( config ) {
-				MyDialog.parent.call( this, config );
+			function MyProcessDialog( config ) {
+				MyProcessDialog.parent.call( this, config );
 			}
-			OO.inheritClass( MyDialog, OO.ui.Dialog );
-			MyDialog.prototype.initialize = function () {
-				var def = mw.config.get( 'wgWMPageViewInfo' );
-				MyDialog.parent.prototype.initialize.call( this );
+			OO.inheritClass( MyProcessDialog, OO.ui.ProcessDialog );
+
+			MyProcessDialog.static.title = mw.msg( 'wmpvi-range', info.start, info.end );
+			MyProcessDialog.static.actions = [
+				{ label: mw.msg( 'wmpvi-close' ), flags: 'safe' }
+			];
+
+			MyProcessDialog.prototype.initialize = function () {
+				MyProcessDialog.parent.prototype.initialize.apply( this, arguments );
 				this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
 				this.$body.append( this.content.$element );
-				mw.drawVegaGraph( this.content.$element[ 0 ], def );
+				mw.drawVegaGraph( this.content.$element[ 0 ], info.graph );
 			};
-			myDialog = new MyDialog( {
-				size: 'large'
-			} );
-			// Create and append a window manager, which opens and closes the window.
+			MyProcessDialog.prototype.getActionProcess = function ( action ) {
+				var dialog = this;
+				if ( action ) {
+					return new OO.ui.Process( function () {
+						dialog.close( { action: action } );
+					} );
+				}
+				return MyProcessDialog.parent.prototype.getActionProcess.call( this, action );
+			};
+
 			windowManager = new OO.ui.WindowManager();
 			$( 'body' ).append( windowManager.$element );
-			windowManager.addWindows( [ myDialog ] );
-			// Open the window!
-			windowManager.openWindow( myDialog );
+
+			dialog = new MyProcessDialog( { size: 'large' } );
+			windowManager.addWindows( [ dialog ] );
+			windowManager.openWindow( dialog );
 		} );
 
 	} );

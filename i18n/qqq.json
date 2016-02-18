@@ -5,5 +5,7 @@
 		]
 	},
 	"wmpvi-desc": "{{desc|name=WikimediaPageViewInfo|url=https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo}}",
-	"wmpvi-month-count": "Label for table cell containing page views in past 30 days"
+	"wmpvi-month-count": "Label for table cell containing page views in past 30 days",
+	"wmpvi-close": "Text on button to close a dialog",
+	"wmpvi-range": "Title of dialog, which is the date range the graph is for. $1 is the starting date, $2 is the ending date."
 }
