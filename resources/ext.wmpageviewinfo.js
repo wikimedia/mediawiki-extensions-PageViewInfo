@@ -4,10 +4,12 @@
 			count = $count.text();
 
 		// Turn it into an <a> tag so it's obvious you can click on it
-		$count.html( mw.html.element( 'a', {}, count ) );
+		$count.html( mw.html.element( 'a', { href: '#' }, count ) );
 
-		$count.click( function () {
+		$count.click( function ( e ) {
 			var myDialog, windowManager;
+			e.preventDefault();
+
 			// A simple dialog window.
 			function MyDialog( config ) {
 				MyDialog.parent.call( this, config );
