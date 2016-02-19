@@ -5,5 +5,6 @@
 		]
 	},
 	"wmpvi-desc": "Ajoute l’information de vues de la page à l’action info",
-	"wmpvi-month-count": "Vues de la page dans les 30 derniers jours"
+	"wmpvi-month-count": "Vues de la page dans les 30 derniers jours",
+	"wmpvi-close": "Fermer"
 }
