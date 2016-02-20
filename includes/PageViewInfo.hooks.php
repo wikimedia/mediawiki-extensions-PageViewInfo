@@ -62,7 +62,10 @@ class Hooks {
 		} else {
 			$serverName = $wgServerName;
 		}
-		$encodedTitle = wfUrlencode( $title->getPrefixedDBkey() );
+
+		// Use plain urlencode instead of wfUrlencode because we need
+		// "/" to be encoded, which wfUrlencode doesn't.
+		$encodedTitle = urlencode( $title->getPrefixedDBkey() );
 		return "$wgPageViewInfoEndpoint/per-article/$serverName"
 			. "/all-access/user/$encodedTitle/daily/$startDate/$endDate";
 	}
