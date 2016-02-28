@@ -1,7 +1,9 @@
 {
 	"name": "WikimediaPageViewInfo",
 	"license-name": "GPL-3.0+",
-	"author": ["Kunal Mehta"],
+	"author": [
+		"Kunal Mehta"
+	],
 	"url": "https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo",
 	"descriptionmsg": "wmpvi-desc",
 	"Hooks": {
@@ -39,5 +41,6 @@
 	"config": {
 		"PageViewInfoEndpoint": "",
 		"PageViewInfoDomain": false
-	}
+	},
+	"manifest_version": 1
 }
