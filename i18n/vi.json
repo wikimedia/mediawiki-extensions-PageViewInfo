@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"wmpvi-desc": "Thêm thống kê về lượt xem trang vào tác vụ info",
+	"wmpvi-month-count": "Lượt xem trang trong 30 ngày qua",
+	"wmpvi-close": "Đóng",
+	"wmpvi-range": "$1 – $2"
+}
