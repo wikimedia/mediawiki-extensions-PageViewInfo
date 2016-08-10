@@ -5,7 +5,8 @@ namespace PageViewInfo;
 use IContextSource;
 use FormatJson;
 use Html;
-use Http;
+use MWHttpRequest;
+use MediaWiki\Logger\LoggerFactory;
 use Title;
 
 class Hooks {
@@ -82,17 +83,18 @@ class Hooks {
 		$today = date( 'Ymd' );
 		$lastMonth = date( 'Ymd', time() - ( 60 * 60 * 24 * 30 ) );
 		$url = self::buildApiUrl( $title, $lastMonth, $today );
-		$req = Http::get(
-			$url,
-			[ 'timeout' => 10 ],
-			__METHOD__
-		);
-
-		if ( $req === false ) {
+		$req = MWHttpRequest::factory( $url, [ 'timeout' => 10 ], __METHOD__ );
+		$status = $req->execute();
+		if ( !$status->isOK() ) {
+			LoggerFactory::getInstance( 'PageViewInfo' )
+				->error( "Failed fetching $url: {$status->getWikiText()}", [
+					'url' => $url,
+					'title' => $title->getPrefixedText()
+				] );
 			return false;
 		}
 
-		$data = FormatJson::decode( $req, true );
+		$data = FormatJson::decode( $req->getContent(), true );
 		// Add our start/end periods
 		$data['start'] = $lastMonth;
 		$data['end'] = $today;
