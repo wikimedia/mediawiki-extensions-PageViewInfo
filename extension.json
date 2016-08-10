@@ -39,7 +39,7 @@
 		"remoteExtPath": "PageViewInfo/resources"
 	},
 	"config": {
-		"PageViewInfoEndpoint": "",
+		"PageViewInfoEndpoint": "https://wikimedia.org/api/rest_v1/metrics/pageviews",
 		"PageViewInfoDomain": false
 	},
 	"manifest_version": 1
