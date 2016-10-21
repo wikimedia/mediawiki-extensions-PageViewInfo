@@ -12,7 +12,9 @@
 		]
 	},
 	"AutoloadClasses": {
-		"MediaWiki\\Extensions\\PageViewInfo\\Hooks": "includes/Hooks.php"
+		"MediaWiki\\Extensions\\PageViewInfo\\Hooks": "includes/Hooks.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\PageViewService": "includes/PageViewService.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\WikimediaPageViewService": "includes/WikimediaPageViewService.php"
 	},
 	"MessagesDirs": {
 		"PageViewInfo": [
@@ -38,9 +40,16 @@
 		"localBasePath": "resources",
 		"remoteExtPath": "PageViewInfo/resources"
 	},
+	"ConfigRegistry": {
+		"PageViewInfo": "GlobalVarConfig::newInstance"
+	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"config": {
-		"PageViewInfoEndpoint": "https://wikimedia.org/api/rest_v1/metrics/pageviews",
-		"PageViewInfoDomain": false
+		"PageViewInfoWikimediaEndpoint": "https://wikimedia.org/api/rest_v1",
+		"PageViewInfoWikimediaDomain": false,
+		"PageViewInfoWikimediaRequestLimit": 5
 	},
 	"manifest_version": 1
 }
