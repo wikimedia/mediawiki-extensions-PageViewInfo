@@ -14,6 +14,7 @@
 	"AutoloadClasses": {
 		"MediaWiki\\Extensions\\PageViewInfo\\Hooks": "includes/Hooks.php",
 		"MediaWiki\\Extensions\\PageViewInfo\\PageViewService": "includes/PageViewService.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\CachedPageViewService": "includes/CachedPageViewService.php",
 		"MediaWiki\\Extensions\\PageViewInfo\\WikimediaPageViewService": "includes/WikimediaPageViewService.php"
 	},
 	"MessagesDirs": {
