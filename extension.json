@@ -9,13 +9,22 @@
 	"Hooks": {
 		"InfoAction": [
 			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onInfoAction"
+		],
+		"ApiQuery::moduleManager": [
+			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onApiQueryModuleManager"
+		],
+		"APIQuerySiteInfoGeneralInfo": [
+			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onAPIQuerySiteInfoGeneralInfo"
 		]
 	},
 	"AutoloadClasses": {
 		"MediaWiki\\Extensions\\PageViewInfo\\Hooks": "includes/Hooks.php",
 		"MediaWiki\\Extensions\\PageViewInfo\\PageViewService": "includes/PageViewService.php",
 		"MediaWiki\\Extensions\\PageViewInfo\\CachedPageViewService": "includes/CachedPageViewService.php",
-		"MediaWiki\\Extensions\\PageViewInfo\\WikimediaPageViewService": "includes/WikimediaPageViewService.php"
+		"MediaWiki\\Extensions\\PageViewInfo\\WikimediaPageViewService": "includes/WikimediaPageViewService.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\ApiQueryMostViewed": "includes/ApiQueryMostViewed.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\ApiQuerySiteViews": "includes/ApiQuerySiteViews.php",
+		"MediaWiki\\Extensions\\PageViewInfo\\ApiQueryPageViews": "includes/ApiQueryPageViews.php"
 	},
 	"MessagesDirs": {
 		"PageViewInfo": [
@@ -48,9 +57,14 @@
 		"includes/ServiceWiring.php"
 	],
 	"config": {
+		"@PageViewInfoWikimediaEndpoint": "URL of the Wikimedia Pageview API - see https://wikitech.wikimedia.org/wiki/Analytics/PageviewAPI",
 		"PageViewInfoWikimediaEndpoint": "https://wikimedia.org/api/rest_v1",
+		"@PageViewInfoWikimediaDomain": "Domain name to request data for from the Wikimedia Pageview API, or false to fall back to $wgServerName. This is mainly meant for testing.",
 		"PageViewInfoWikimediaDomain": false,
-		"PageViewInfoWikimediaRequestLimit": 5
+		"@PageViewInfoWikimediaRequestLimit": "Max number of calls to make to the Wikimedia Pageview API in a single request (false for unlimited).",
+		"PageViewInfoWikimediaRequestLimit": 5,
+		"@PageViewApiMaxDays": "Max number of days to return in the API.",
+		"PageViewApiMaxDays": 60
 	},
 	"manifest_version": 1
 }

@@ -11,5 +11,18 @@
 	"pvi-range": "Title of dialog, which is the date range the graph is for. $1 is the starting date, $2 is the ending date.",
 	"pvi-invalidresponse": "Error message when the REST API response data does not have the expected structure.",
 	"pvi-cached-error": "Shown when the cached result is an error. $1 is the retry delay in human-readable form (e.g. \"30 minutes\").",
-	"pvi-cached-error-title": "Shown when the cached result (which is part of a larger resultset) is an error. $1 is the page name, $2 the retry delay in human-readable form (e.g. \"30 minutes\")."
+	"pvi-cached-error-title": "Shown when the cached result (which is part of a larger resultset) is an error. $1 is the page name, $2 the retry delay in human-readable form (e.g. \"30 minutes\").",
+	"apihelp-pageviewinfo-param-metric": "{{doc-apihelp-param|query+pageviews|metric|paramvalues=1|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "{{doc-apihelp-paramvalue|query+pageviews|metric|pageviews|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "{{doc-apihelp-paramvalue|query+pageviews|metric|uniques|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-param-days": "{{doc-apihelp-param|query+pageviews|days|description=Also used for the <code>query+siteviews</code> module.|noseealso=1}}",
+	"apihelp-query+pageviews-description": "{{doc-apihelp-description|query+pageviews}}",
+	"apihelp-query+pageviews-example": "{{doc-apihelp-example|query+pageviews}}",
+	"apihelp-query+siteviews-description": "{{doc-apihelp-description|query+siteviews}}",
+	"apihelp-query+siteviews-example": "{{doc-apihelp-example|query+siteviews}}",
+	"apihelp-query+siteviews-example2": "{{doc-apihelp-example|query+siteviews}}",
+	"apihelp-query+mostviewed-description": "{{doc-apihelp-description|query+mostviewed}}",
+	"apihelp-query+mostviewed-param-limit" : "{{doc-apihelp-param|query+mostviewed|limit}}",
+	"apihelp-query+mostviewed-example": "{{doc-apihelp-example|query+mostviewed}}",
+	"apihelp-query+mostviewed-example2": "{{doc-apihelp-example|query+mostviewed}}"
 }

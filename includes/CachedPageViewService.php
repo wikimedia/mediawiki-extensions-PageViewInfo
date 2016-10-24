@@ -141,7 +141,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * @param Title[] $titles
 	 * @return StatusValue
 	 */
-	protected function getTitlesWithCache( $metric, array $titles = null ) {
+	protected function getTitlesWithCache( $metric, array $titles ) {
 		// Set up the response array, without any values. This will help preserve the order of titles.
 		$data = array_fill_keys( array_map( function ( Title $t ) {
 			return $t->getPrefixedDBkey();
@@ -161,7 +161,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 			// assume some implementations might return that key with a value of false
 			if ( $value !== false ) {
 				$statuses[$cacheKeyToTitle[$key]] = empty( $value['#error'] ) ? StatusValue::newGood()
-					: StatusValue::newFatal( 'pvi-cached-error-title', $cacheKeyToTitle[$key],
+					: StatusValue::newFatal( 'pvi-cached-error-title', wfEscapeWikiText( $cacheKeyToTitle[$key] ),
 						\Message::durationParam( self::ERROR_EXPIRY ) );
 				unset( $value['#error'] );
 				$data[$cacheKeyToTitle[$key]] = $value;
@@ -194,7 +194,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 				$expiry = $this->getCacheExpiry( $metric, self::SCOPE_ARTICLE );
 			} else {
 				$data[$title]['#error'] = true;
-				$statuses[$title] = StatusValue::newFatal( 'pvi-cached-error-title', $title,
+				$statuses[$title] = StatusValue::newFatal( 'pvi-cached-error-title', wfEscapeWikiText( $title ),
 					\Message::durationParam( self::ERROR_EXPIRY ) );
 				$expiry = self::ERROR_EXPIRY;
 			}
@@ -216,7 +216,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		}, $statuses );
 		$status->successCount = count( array_filter( $status->success ) );
 		$status->failCount = count( $status->success ) - $status->successCount;
-		$status->setResult( array_filter( $status->success ), $data );
+		$status->setResult( $status->successCount || !$titles, $data );
 		return $status;
 	}
 

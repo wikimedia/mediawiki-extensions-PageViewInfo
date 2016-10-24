@@ -1,0 +1,99 @@
+<?php
+
+namespace MediaWiki\Extensions\PageViewInfo;
+
+use ApiBase;
+use ApiQueryBase;
+use ApiResult;
+use MediaWiki\MediaWikiServices;
+use StatusValue;
+use Title;
+
+/**
+ * Expose PageViewService::getPageData().
+ */
+class ApiQueryPageViews extends ApiQueryBase {
+	public function __construct( $query, $moduleName ) {
+		parent::__construct( $query, $moduleName, 'pvip' );
+	}
+
+	public function execute() {
+		$continue = $this->getParameter( 'continue' );
+		$titles = $this->getPageSet()->getMissingTitles()
+			+ $this->getPageSet()->getSpecialTitles()
+			+ $this->getPageSet()->getGoodTitles();
+
+		// sort titles alphabetically and discard those already processed in a previous request
+		$indexToTitle = array_map( function( Title $t ) {
+			return $t->getPrefixedDBkey();
+		}, $titles );
+		asort( $indexToTitle );
+		$indexToTitle = array_filter( $indexToTitle, function ( $title ) use ( $continue ) {
+			return $title >= $continue;
+		} );
+		$titleToIndex = array_flip( $indexToTitle );
+		$titles = array_filter( array_values( array_map( function ( $index ) use ( $titles ) {
+			return isset( $titles[$index] ) ? $titles[$index] : null;
+		}, $titleToIndex ) ) );
+
+		/** @var PageViewService $service */
+		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
+		$metric = Hooks::getApiMetricsMap()[$this->getParameter( 'metric' )];
+		$status = $service->getPageData( $titles, $this->getParameter( 'days' ), $metric );
+		if ( $status->isOK() ) {
+			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
+			$data = $status->getValue();
+			foreach ( $titles as $title ) {
+				$index = $titleToIndex[$title->getPrefixedDBkey()];
+				$fit = $this->addData( $index, $title, $data );
+				if ( !$fit ) {
+					$this->setContinueEnumParameter( 'continue', $title->getPrefixedDBkey() );
+					break;
+				}
+			}
+		} else {
+			$this->dieStatus( $status );
+		}
+	}
+
+	/**
+	 * @param int $index Pageset ID (real or fake)
+	 * @param Title $title
+	 * @param array $data Data for all titles.
+	 * @return bool Success.
+	 */
+	protected function addData( $index, Title $title, array $data ) {
+		if ( !isset( $data[$title->getPrefixedDBkey()] ) ) {
+			// PageViewService retains the ordering of titles so the first missing title means we
+			// have run out of data.
+			return false;
+		}
+		$value = $data[$title->getPrefixedDBkey()];
+		ApiResult::setArrayType( $value, 'kvp', 'date' );
+		ApiResult::setIndexedTagName( $value, 'count' );
+		$retval = $this->addPageSubItems( $index, $value );
+		return $retval;
+	}
+
+	public function getCacheMode( $params ) {
+		return 'public';
+	}
+
+	public function getAllowedParams() {
+		return Hooks::getApiMetricsHelp( PageViewService::SCOPE_ARTICLE ) + Hooks::getApiDaysHelp() + [
+			'continue' => [
+				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
+			],
+		];
+	}
+
+	protected function getExamplesMessages() {
+		return [
+			'action=query&title=Main_Page&prop=pageviews' => 'apihelp-query+pageviews-example',
+		];
+	}
+
+	public function getHelpUrls() {
+		return 'https://www.mediawiki.org/wiki/Extension:PageViewInfo';
+	}
+}
