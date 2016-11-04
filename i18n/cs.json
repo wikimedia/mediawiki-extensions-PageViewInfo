@@ -4,7 +4,7 @@
 			"Mormegil"
 		]
 	},
-	"wmpvi-desc": "Přidává informace o zobrazení stránky do infa",
-	"wmpvi-month-count": "Počet zhlédnutí stránky za posledních 30 dní",
-	"wmpvi-close": "Zavřít"
+	"pvi-desc": "Přidává informace o zobrazení stránky do infa",
+	"pvi-month-count": "Počet zhlédnutí stránky za posledních 30 dní",
+	"pvi-close": "Zavřít"
 }

@@ -4,7 +4,7 @@
 			"Metalhead64"
 		]
 	},
-	"wmpvi-desc": "Fügt Informationen zu Seitenaufrufen zur Aktion „Seiteninformationen“ hinzu",
-	"wmpvi-month-count": "Seitenaufrufe in den letzten 30 Tagen",
-	"wmpvi-close": "Schließen"
+	"pvi-desc": "Fügt Informationen zu Seitenaufrufen zur Aktion „Seiteninformationen“ hinzu",
+	"pvi-month-count": "Seitenaufrufe in den letzten 30 Tagen",
+	"pvi-close": "Schließen"
 }

@@ -1,6 +1,6 @@
 ( function ( $, mw ) {
 	$( function () {
-		var $count = $( '.mw-wmpvi-month' ),
+		var $count = $( '.mw-pvi-month' ),
 			count = $count.text(),
 			info = mw.config.get( 'wgWMPageViewInfo' );
 
@@ -15,9 +15,9 @@
 			}
 			OO.inheritClass( MyProcessDialog, OO.ui.ProcessDialog );
 
-			MyProcessDialog.static.title = mw.msg( 'wmpvi-range', info.start, info.end );
+			MyProcessDialog.static.title = mw.msg( 'pvi-range', info.start, info.end );
 			MyProcessDialog.static.actions = [
-				{ label: mw.msg( 'wmpvi-close' ), flags: 'safe' }
+				{ label: mw.msg( 'pvi-close' ), flags: 'safe' }
 			];
 
 			MyProcessDialog.prototype.initialize = function () {

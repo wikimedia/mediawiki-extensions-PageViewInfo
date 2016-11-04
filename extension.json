@@ -5,7 +5,7 @@
 		"Kunal Mehta"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo",
-	"descriptionmsg": "wmpvi-desc",
+	"descriptionmsg": "pvi-desc",
 	"Hooks": {
 		"InfoAction": [
 			"PageViewInfo\\Hooks::onInfoAction"
@@ -25,8 +25,8 @@
 				"ext.wmpageviewinfo.js"
 			],
 			"messages": [
-				"wmpvi-close",
-				"wmpvi-range"
+				"pvi-close",
+				"pvi-range"
 			],
 			"dependencies": [
 				"ext.graph.vega2",

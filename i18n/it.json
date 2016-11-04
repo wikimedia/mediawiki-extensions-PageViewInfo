@@ -4,7 +4,7 @@
 			"Beta16"
 		]
 	},
-	"wmpvi-desc": "Aggiunge le visite alla pagina all'azione informazione",
-	"wmpvi-month-count": "Viste alla pagina negli ultimi 30 giorni",
-	"wmpvi-close": "Chiudi"
+	"pvi-desc": "Aggiunge le visite alla pagina all'azione informazione",
+	"pvi-month-count": "Viste alla pagina negli ultimi 30 giorni",
+	"pvi-close": "Chiudi"
 }

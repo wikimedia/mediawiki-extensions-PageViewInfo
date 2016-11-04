@@ -4,8 +4,8 @@
 			"Legoktm"
 		]
 	},
-	"wmpvi-desc": "Adds page view information to the info action",
-	"wmpvi-month-count": "Page views in the past 30 days",
-	"wmpvi-close": "Close",
-	"wmpvi-range": "$1 - $2"
+	"pvi-desc": "Adds page view information to the info action",
+	"pvi-month-count": "Page views in the past 30 days",
+	"pvi-close": "Close",
+	"pvi-range": "$1 - $2"
 }

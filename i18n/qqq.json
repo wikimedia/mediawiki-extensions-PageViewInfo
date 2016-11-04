@@ -5,8 +5,8 @@
 			"Liuxinyu970226"
 		]
 	},
-	"wmpvi-desc": "{{desc|name=WikimediaPageViewInfo|url=https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo}}",
-	"wmpvi-month-count": "Label for table cell containing page views in past 30 days",
-	"wmpvi-close": "Text on button to close a dialog\n{{Identical|Close}}",
-	"wmpvi-range": "Title of dialog, which is the date range the graph is for. $1 is the starting date, $2 is the ending date."
+	"pvi-desc": "{{desc|name=WikimediaPageViewInfo|url=https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo}}",
+	"pvi-month-count": "Label for table cell containing page views in past 30 days",
+	"pvi-close": "Text on button to close a dialog\n{{Identical|Close}}",
+	"pvi-range": "Title of dialog, which is the date range the graph is for. $1 is the starting date, $2 is the ending date."
 }

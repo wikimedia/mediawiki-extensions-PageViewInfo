@@ -27,8 +27,8 @@ class Hooks {
 		$lang = $ctx->getLanguage();
 		$formatted = $lang->formatNum( $count );
 		$pageInfo['header-basic'][] = [
-			$ctx->msg( 'wmpvi-month-count' ),
-			Html::element( 'div', [ 'class' => 'mw-wmpvi-month' ], $formatted )
+			$ctx->msg( 'pvi-month-count' ),
+			Html::element( 'div', [ 'class' => 'mw-pvi-month' ], $formatted )
 		];
 
 		$info = FormatJson::decode(

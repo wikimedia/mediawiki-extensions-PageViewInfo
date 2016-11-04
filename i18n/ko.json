@@ -5,7 +5,7 @@
 			"Kwj2772"
 		]
 	},
-	"wmpvi-desc": "action=info에서 문서를 읽은 횟수 정보를 추가합니다.",
-	"wmpvi-month-count": "지난 30일 동안 본 문서",
-	"wmpvi-close": "닫기"
+	"pvi-desc": "action=info에서 문서를 읽은 횟수 정보를 추가합니다.",
+	"pvi-month-count": "지난 30일 동안 본 문서",
+	"pvi-close": "닫기"
 }
