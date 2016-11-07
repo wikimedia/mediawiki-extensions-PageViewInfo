@@ -1,6 +1,6 @@
 [gerrit]
 host=gerrit.wikimedia.org
 port=29418
-project=mediawiki/extensions/WikimediaPageViewInfo.git
+project=mediawiki/extensions/PageViewInfo.git
 track=1
 defaultrebase=0
