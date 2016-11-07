@@ -37,12 +37,12 @@ class Hooks {
 		);
 		$info['data'][0]['values'] = $views['items'];
 
-		$ctx->getOutput()->addModules( 'ext.wmpageviewinfo' );
+		$ctx->getOutput()->addModules( 'ext.pageviewinfo' );
 		// Ymd -> YmdHis
 		$plus = '000000';
 		$user = $ctx->getUser();
 		$ctx->getOutput()->addJsConfigVars( [
-			'wgWMPageViewInfo' => [
+			'wgPageViewInfo' => [
 				'graph' => $info,
 				'start' => $lang->userDate( $views['start'] . $plus, $user ),
 				'end' => $lang->userDate( $views['end'] . $plus, $user ),

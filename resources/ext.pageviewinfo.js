@@ -2,7 +2,7 @@
 	$( function () {
 		var $count = $( '.mw-pvi-month' ),
 			count = $count.text(),
-			info = mw.config.get( 'wgWMPageViewInfo' );
+			info = mw.config.get( 'wgPageViewInfo' );
 
 		// Turn it into an <a> tag so it's obvious you can click on it
 		$count.html( mw.html.element( 'a', { href: '#' }, count ) );

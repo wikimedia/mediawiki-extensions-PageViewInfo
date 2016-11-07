@@ -1,10 +1,10 @@
 {
-	"name": "WikimediaPageViewInfo",
+	"name": "PageViewInfo",
 	"license-name": "GPL-3.0+",
 	"author": [
 		"Kunal Mehta"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:WikimediaPageViewInfo",
+	"url": "https://www.mediawiki.org/wiki/Extension:PageViewInfo",
 	"descriptionmsg": "pvi-desc",
 	"Hooks": {
 		"InfoAction": [
@@ -20,9 +20,9 @@
 		]
 	},
 	"ResourceModules": {
-		"ext.wmpageviewinfo": {
+		"ext.pageviewinfo": {
 			"scripts": [
-				"ext.wmpageviewinfo.js"
+				"ext.pageviewinfo.js"
 			],
 			"messages": [
 				"pvi-close",
