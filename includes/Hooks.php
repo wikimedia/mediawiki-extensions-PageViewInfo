@@ -1,6 +1,6 @@
 <?php
 
-namespace PageViewInfo;
+namespace MediaWiki\Extensions\PageViewInfo;
 
 use IContextSource;
 use FormatJson;

@@ -8,11 +8,11 @@
 	"descriptionmsg": "pvi-desc",
 	"Hooks": {
 		"InfoAction": [
-			"PageViewInfo\\Hooks::onInfoAction"
+			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onInfoAction"
 		]
 	},
 	"AutoloadClasses": {
-		"PageViewInfo\\Hooks": "includes/PageViewInfo.hooks.php"
+		"MediaWiki\\Extensions\\PageViewInfo\\Hooks": "includes/Hooks.php"
 	},
 	"MessagesDirs": {
 		"PageViewInfo": [
