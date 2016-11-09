@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
-	"pvi-month-count": "Visualizações de página nos últimos 30 dias",
+	"pvi-desc": "Adiciona informações de visionamento da página à interface \"Informações de páginas\"",
+	"pvi-month-count": "Visionamentos da página nos últimos 30 dias",
 	"pvi-close": "Fechar"
 }
