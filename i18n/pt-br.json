@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"!Silent"
+		]
+	},
+	"pvi-desc": "Adiciona informações de visualização da página à ação de \"Informações de páginas\" (action=info)",
+	"pvi-month-count": "Visualizações da página nos últimos 30 dias",
+	"pvi-close": "Fechar"
+}
