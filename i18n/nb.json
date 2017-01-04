@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"pvi-desc": "Legger til sidevisningsinformasjon til info-handlingen",
+	"pvi-month-count": "Sidevisninger de siste 30 dagene",
+	"pvi-close": "Lukk"
+}
