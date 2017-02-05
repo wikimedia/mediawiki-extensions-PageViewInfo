@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand"
+			"Siebrand",
+			"Mainframe98"
 		]
 	},
 	"pvi-desc": "Voegt informatie toe aan de handeling \"info\" over het aantal keren dat de pagina is bekeken",
-	"pvi-month-count": "Aantal keren bekeken in de afgelopen 30 dagen"
+	"pvi-month-count": "Aantal keren bekeken in de afgelopen 30 dagen",
+	"pvi-close": "Sluiten"
 }
