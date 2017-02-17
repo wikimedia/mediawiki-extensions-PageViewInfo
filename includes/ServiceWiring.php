@@ -15,11 +15,13 @@ return [
 			?: $mainConfig->get( 'ServerName' );
 		$cache = ObjectCache::getLocalClusterInstance();
 		$logger = LoggerFactory::getInstance( 'PageViewInfo' );
+		$cachedDays = max( 30, $extensionConfig->get( 'PageViewApiMaxDays' ) );
 
 		$service = new WikimediaPageViewService( $endpoint, [ 'project' => $project ],
 			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' ) );
 		$service->setLogger( $logger );
 		$cachedService = new CachedPageViewService( $service, $cache );
+		$cachedService->setCachedDays( $cachedDays );
 		$cachedService->setLogger( $logger );
 		return $cachedService;
 	},
