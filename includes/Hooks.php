@@ -6,20 +6,27 @@ use IContextSource;
 use FormatJson;
 use Html;
 use MediaWiki\MediaWikiServices;
-use ObjectCache;
-use Title;
 
 class Hooks {
-
 	/**
 	 * @param IContextSource $ctx
 	 * @param array $pageInfo
 	 */
 	public static function onInfoAction( IContextSource $ctx, array &$pageInfo ) {
-		$views = self::getMonthViews( $ctx->getTitle() );
-		if ( !$views ) {
+		/** @var PageViewService $pageViewService */
+		$pageViewService = MediaWikiServices::getInstance()->getService( 'PageViewService' );
+		if ( !$pageViewService->supports( PageViewService::METRIC_VIEW,
+			PageViewService::SCOPE_ARTICLE )
+		) {
 			return;
 		}
+		$title = $ctx->getTitle();
+		$status = $pageViewService->getPageData( [ $title ], 30, PageViewService::METRIC_VIEW );
+		$data = $status->getValue();
+		if ( !$status->isOK() ) {
+			return;
+		}
+		$views = $data[$title->getPrefixedDBkey()];
 
 		$total = array_sum( $views );
 		reset( $views );
@@ -52,33 +59,6 @@ class Hooks {
 				'end' => $lang->userDate( $end, $user ),
 			],
 		] );
-	}
-
-	protected static function getMonthViews( Title $title ) {
-		$cache = ObjectCache::getLocalClusterInstance();
-		$key = $cache->makeKey( 'pvi', 'month', md5( $title->getPrefixedText() ) );
-		$data = $cache->get( $key );
-		if ( $data ) {
-			return $data;
-		}
-
-		/** @var PageViewService $pageViewService */
-		$pageViewService = MediaWikiServices::getInstance()->getService( 'PageViewService' );
-		if ( !$pageViewService->supports( PageViewService::METRIC_VIEW,
-			PageViewService::SCOPE_ARTICLE )
-		) {
-			return false;
-		}
-
-		$status = $pageViewService->getPageData( [ $title ], 30, PageViewService::METRIC_VIEW );
-		if ( !$status->isOK() ) {
-			$cache->set( $key, false, 300 );
-		}
-
-		$data = $status->getValue()[$title->getPrefixedDBkey()];
-		$cache->set( $key, $data, $pageViewService->getCacheExpiry( PageViewService::METRIC_VIEW,
-			PageViewService::SCOPE_ARTICLE ) );
-		return $data;
 	}
 
 	/**

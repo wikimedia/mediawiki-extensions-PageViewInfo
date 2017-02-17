@@ -4,6 +4,7 @@ namespace MediaWiki\Extensions\PageViewInfo;
 
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use ObjectCache;
 
 return [
 	'PageViewService' => function ( MediaWikiServices $services ) {
@@ -12,9 +13,14 @@ return [
 		$endpoint = $extensionConfig->get( 'PageViewInfoWikimediaEndpoint' );
 		$project = $extensionConfig->get( 'PageViewInfoWikimediaDomain' )
 			?: $mainConfig->get( 'ServerName' );
-		$pageViewService = new WikimediaPageViewService( $endpoint, [ 'project' => $project ],
+		$cache = ObjectCache::getLocalClusterInstance();
+		$logger = LoggerFactory::getInstance( 'PageViewInfo' );
+
+		$service = new WikimediaPageViewService( $endpoint, [ 'project' => $project ],
 			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' ) );
-		$pageViewService->setLogger( LoggerFactory::getInstance( 'PageViewInfo' ) );
-		return $pageViewService;
+		$service->setLogger( $logger );
+		$cachedService = new CachedPageViewService( $service, $cache );
+		$cachedService->setLogger( $logger );
+		return $cachedService;
 	},
 ];
