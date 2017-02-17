@@ -6,5 +6,6 @@
 	},
 	"pvi-desc": "Fügt Informationen zu Seitenaufrufen zur Aktion „Seiteninformationen“ hinzu",
 	"pvi-month-count": "Seitenaufrufe in den letzten 30 Tagen",
-	"pvi-close": "Schließen"
+	"pvi-close": "Schließen",
+	"pvi-invalidresponse": "Ungültige Antwort"
 }

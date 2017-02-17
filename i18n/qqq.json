@@ -23,7 +23,7 @@
 	"apihelp-query+siteviews-example": "{{doc-apihelp-example|query+siteviews}}",
 	"apihelp-query+siteviews-example2": "{{doc-apihelp-example|query+siteviews}}",
 	"apihelp-query+mostviewed-description": "{{doc-apihelp-description|query+mostviewed}}",
-	"apihelp-query+mostviewed-param-limit" : "{{doc-apihelp-param|query+mostviewed|limit}}",
+	"apihelp-query+mostviewed-param-limit": "{{doc-apihelp-param|query+mostviewed|limit}}",
 	"apihelp-query+mostviewed-example": "{{doc-apihelp-example|query+mostviewed}}",
 	"apihelp-query+mostviewed-example2": "{{doc-apihelp-example|query+mostviewed}}"
 }
