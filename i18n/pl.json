@@ -5,5 +5,6 @@
 		]
 	},
 	"pvi-month-count": "Liczba odsłon strony w ciągu ostatnich 30 dni",
-	"pvi-close": "Zamknij"
+	"pvi-close": "Zamknij",
+	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron."
 }

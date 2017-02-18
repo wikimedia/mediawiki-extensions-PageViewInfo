@@ -1,10 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Trial"
 		]
 	},
 	"pvi-desc": "Ajoute l’information de vues de la page à l’action info",
 	"pvi-month-count": "Vues de la page dans les 30 derniers jours",
-	"pvi-close": "Fermer"
+	"pvi-close": "Fermer",
+	"pvi-invalidresponse": "Réponse incorrecte",
+	"pvi-cached-error": "Une précédente tentative d'extraction de ces données a échoué. Afin de limiter la charge du serveur, les tentatives ont été bloquées pour $1.",
+	"pvi-cached-error-title": "Une précédente tentative d'extraction de la page \"$1\" a échoué. Afin de limiter la charge du serveur, les tentatives ont été bloqués pour $2.",
+	"apihelp-pageviewinfo-param-metric": "La mesure à utiliser pour compter les affichages. Selon le serveur utilisé, certaines métriques peuvent ne pas être possibles. Vous pouvez utiliser l'API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pour vérifier, sous <samp>pageviewservice-soutenu-metrics</samp> / <module name=\"\">",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Nombre brut de'affichages.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visiteurs uniques.",
+	"apihelp-pageviewinfo-param-days": "Le nombre de jours à afficher.",
+	"apihelp-query+pageviews-description": "Montre les affichages des pages du site (le nombre de pages vues pour chacun des <var>$1jours</var> derniers jours). Le résultat est de la forme : titre de la page (avec des traits de soulignement) => date (Amj) => total.",
+	"apihelp-query+pageviews-example": "Affiche les statistiques d'affichage pour la page principale.",
+	"apihelp-query+siteviews-description": "Montre au niveau du site les données d'affichage (totaux pour chaque page des <var>$1days</var> derniers jours). Le résultat est de la forme date (Amj) => total.",
+	"apihelp-query+siteviews-example": "Affiche les totaux de visualisation des pages du site.",
+	"apihelp-query+siteviews-example2": "Affiche les totaux des visiteurs uniques au niveau du site.",
+	"apihelp-query+mostviewed-description": "Liste les pages les plus vues au cours des 24 dernières heures.",
+	"apihelp-query+mostviewed-param-limit": "Nombre maximal de pages à retourner.",
+	"apihelp-query+mostviewed-example": "Liste des 10 pages les plus vues.",
+	"apihelp-query+mostviewed-example2": "Affiche les données des 10 pages les plus vues."
 }

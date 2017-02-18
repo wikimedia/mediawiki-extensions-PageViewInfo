@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Mooozi",
-			"Kwj2772"
+			"Kwj2772",
+			"Ykhwong"
 		]
 	},
 	"pvi-desc": "action=info에서 문서를 읽은 횟수 정보를 추가합니다.",
 	"pvi-month-count": "지난 30일 동안 본 문서",
-	"pvi-close": "닫기"
+	"pvi-close": "닫기",
+	"pvi-invalidresponse": "유효하지 않은 응답",
+	"apihelp-query+mostviewed-param-limit": "반환할 문서 수입니다."
 }
