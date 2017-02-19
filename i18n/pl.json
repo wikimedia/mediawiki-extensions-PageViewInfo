@@ -6,5 +6,9 @@
 	},
 	"pvi-month-count": "Liczba odsłon strony w ciągu ostatnich 30 dni",
 	"pvi-close": "Zamknij",
+	"pvi-invalidresponse": "Nieprawidłowa odpowiedź",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalni odwiedzający.",
+	"apihelp-pageviewinfo-param-days": "Liczba dni do pokazania.",
+	"apihelp-query+pageviews-example": "Pokaż statystyki odsłon strony głównej.",
 	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron."
 }
