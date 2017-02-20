@@ -6,5 +6,6 @@
 	},
 	"pvi-desc": "তথ্য ক্রিয়ায় পাতা দর্শনের তথ্য যোগ করে",
 	"pvi-month-count": "গত ৩০ দিনে পাতা অবলোকন",
-	"pvi-close": "বন্ধ"
+	"pvi-close": "বন্ধ",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "স্বতন্ত্র পরিদর্শক।"
 }

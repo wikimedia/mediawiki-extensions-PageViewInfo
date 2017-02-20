@@ -6,5 +6,8 @@
 	},
 	"pvi-desc": "Aggiunge le visite alla pagina all'azione informazione",
 	"pvi-month-count": "Viste alla pagina negli ultimi 30 giorni",
-	"pvi-close": "Chiudi"
+	"pvi-close": "Chiudi",
+	"pvi-invalidresponse": "Risposta non valida",
+	"apihelp-pageviewinfo-param-days": "Il numero di giorni da mostrare.",
+	"apihelp-query+mostviewed-param-limit": "Il numero di pagine da restituire."
 }

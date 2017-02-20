@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"StanProg"
 		]
 	},
-	"pvi-close": "Затваряне"
+	"pvi-close": "Затваряне",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Уникални посетители."
 }
