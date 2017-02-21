@@ -4,5 +4,6 @@
 			"Veeven"
 		]
 	},
-	"pvi-invalidresponse": "చెల్లని స్పందన"
+	"pvi-invalidresponse": "చెల్లని స్పందన",
+	"apihelp-pageviewinfo-param-days": "చూపించాల్సిన రోజుల సంఖ్య."
 }

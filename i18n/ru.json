@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras"
+			"Okras",
+			"Redredsonia"
 		]
 	},
 	"pvi-desc": "Добавляет информацию о количестве просмотров страницы в «Сведениях о странице»",
 	"pvi-month-count": "Количество просмотров страницы за последние 30 дней",
-	"pvi-close": "Закрыть"
+	"pvi-close": "Закрыть",
+	"pvi-invalidresponse": "Недопустимый отклик",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Уникальные посетители."
 }

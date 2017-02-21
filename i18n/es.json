@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Fitoschido"
+			"Fitoschido",
+			"Dgstranz"
 		]
 	},
 	"pvi-desc": "Añade información de visitas a páginas a la acción 'información'",
@@ -10,6 +11,7 @@
 	"pvi-close": "Cerrar",
 	"pvi-invalidresponse": "Respuesta no válida",
 	"pvi-cached-error-title": "Ha fallado un intento anterior por obtener la página «$1». Para limitar la carga de trabajo en el servidor, se han bloqueado los reintentos por $2.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "La cantidad de días que mostrar.",
 	"apihelp-query+mostviewed-param-limit": "La cantidad de páginas que devolver."
 }
