@@ -16,6 +16,7 @@
 			OO.inheritClass( MyProcessDialog, OO.ui.ProcessDialog );
 
 			MyProcessDialog.static.title = mw.msg( 'pvi-range', info.start, info.end );
+			MyProcessDialog.static.name = 'PageViewInfo';
 			MyProcessDialog.static.actions = [
 				{ label: mw.msg( 'pvi-close' ), flags: 'safe' }
 			];
