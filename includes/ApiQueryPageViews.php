@@ -89,7 +89,7 @@ class ApiQueryPageViews extends ApiQueryBase {
 
 	protected function getExamplesMessages() {
 		return [
-			'action=query&title=Main_Page&prop=pageviews' => 'apihelp-query+pageviews-example',
+			'action=query&titles=Main_Page&prop=pageviews' => 'apihelp-query+pageviews-example',
 		];
 	}
 

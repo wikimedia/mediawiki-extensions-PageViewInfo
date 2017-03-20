@@ -43,7 +43,7 @@ class ApiQuerySiteViews extends ApiQueryBase  {
 	protected function getExamplesMessages() {
 		return [
 			'action=query&meta=siteviews' => 'apihelp-query+siteviews-example',
-			'action=query&meta=siteviews&metric=uniques' => 'apihelp-query+siteviews-example2',
+			'action=query&meta=siteviews&pvismetric=uniques' => 'apihelp-query+siteviews-example2',
 		];
 	}
 
