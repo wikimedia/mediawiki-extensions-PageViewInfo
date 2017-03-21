@@ -4,11 +4,12 @@
 			"Mooozi",
 			"Kwj2772",
 			"Ykhwong",
-			"Jerrykim306"
+			"Jerrykim306",
+			"Tursetic"
 		]
 	},
 	"pvi-desc": "action=info에서 문서를 읽은 횟수 정보를 추가합니다.",
-	"pvi-month-count": "지난 30일 동안 본 문서",
+	"pvi-month-count": "지난 30일 동안의 조회수",
 	"pvi-close": "닫기",
 	"pvi-invalidresponse": "유효하지 않은 응답",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "순수 방문자.",

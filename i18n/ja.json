@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume"
+			"Otokoume",
+			"Shirayuki"
 		]
 	},
+	"pvi-month-count": "過去 30 日間のページビュー数",
 	"pvi-close": "閉じる"
 }
