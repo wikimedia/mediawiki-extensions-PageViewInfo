@@ -2,7 +2,8 @@
 	"name": "PageViewInfo",
 	"license-name": "GPL-3.0+",
 	"author": [
-		"Kunal Mehta"
+		"Kunal Mehta",
+		"Gergő Tisza"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:PageViewInfo",
 	"descriptionmsg": "pvi-desc",
