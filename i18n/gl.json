@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"pvi-desc": "Engade información de visualacións de páxinas á acción de info",
 	"pvi-month-count": "Visualizacións de páxinas nos últimos 30 días",
-	"pvi-close": "Pechar"
+	"pvi-close": "Pechar",
+	"pvi-invalidresponse": "Resposta non válida",
+	"pvi-cached-error-title": "Fallou un intento anterior de obter a páxina «$1». Para limitar a carga de traballo no servidor, bloqueáronse os reintentos durante $2.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "Número de días a amosar."
 }
