@@ -9,7 +9,15 @@
 	"pvi-month-count": "Visualizacións de páxinas nos últimos 30 días",
 	"pvi-close": "Pechar",
 	"pvi-invalidresponse": "Resposta non válida",
+	"pvi-cached-error": "Fallou un intento precedente de extraer estes datos. Para limitar a carga do servidor, os reintentos foron bloqueados para $1.",
 	"pvi-cached-error-title": "Fallou un intento anterior de obter a páxina «$1». Para limitar a carga de traballo no servidor, bloqueáronse os reintentos durante $2.",
+	"apihelp-pageviewinfo-param-metric": "Métrica usada para contar as visitas. Dependendo do servidor utilizado, certas métricas pode que non estean soportadas. Pode usar a API de información de sitio ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para comprobalo, baixo <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Número bruto de páxinas vistas.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
-	"apihelp-pageviewinfo-param-days": "Número de días a amosar."
+	"apihelp-pageviewinfo-param-days": "Número de días a amosar.",
+	"apihelp-query+pageviews-example": "Mostra as estatísticas de visitas da páxina principal.",
+	"apihelp-query+mostviewed-description": "Lista as páxinas máis vistas (baseado no contador de páxinas vistas do último día).",
+	"apihelp-query+mostviewed-param-limit": "Número de páxinas a devolver.",
+	"apihelp-query+mostviewed-example": "Lista das 10 páxinas máis vistas.",
+	"apihelp-query+mostviewed-example2": "Ver os datos das 10 páxinas máis vistas."
 }
