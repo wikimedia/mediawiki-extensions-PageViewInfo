@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"pvi-desc": "Lisab toimingu \"info\" juurde lehekülje vaatamise teabe.",
+	"pvi-month-count": "Lehekülje vaatamisi viimase 30 päeva jooksul",
+	"pvi-close": "Sule",
+	"pvi-range": "$1 – $2"
+}
