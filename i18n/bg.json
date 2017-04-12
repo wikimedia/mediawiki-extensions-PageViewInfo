@@ -5,6 +5,7 @@
 			"StanProg"
 		]
 	},
+	"pvi-month-count": "Преглеждания за последните 30 дни",
 	"pvi-close": "Затваряне",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Уникални посетители."
 }
