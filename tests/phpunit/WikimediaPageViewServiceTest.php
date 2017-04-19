@@ -2,6 +2,8 @@
 
 namespace MediaWiki\Extensions\PageViewInfo;
 
+use Wikimedia\TestingAccessWrapper;
+
 class WikimediaPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 	/** @var [ \PHPUnit_Framework_MockObject_MockObject, callable ] */
 	protected $calls = [];
@@ -32,7 +34,7 @@ class WikimediaPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 	) {
 		$mock = $this->getMockBuilder( \MWHttpRequest::class )->disableOriginalConstructor()->getMock();
 		$this->calls[] = [ $mock, $assertUrl ];
-		$wrapper = \TestingAccessWrapper::newFromObject( $service );
+		$wrapper = TestingAccessWrapper::newFromObject( $service );
 		$wrapper->requestFactory = function ( $url ) {
 			if ( !$this->calls ) {
 				$this->fail( 'Unexpected call!' );
@@ -52,7 +54,7 @@ class WikimediaPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 	 * @param string $end YYYY-MM-DD
 	 */
 	protected function mockDate( WikimediaPageViewService $service, $end ) {
-		$wrapper = \TestingAccessWrapper::newFromObject( $service );
+		$wrapper = TestingAccessWrapper::newFromObject( $service );
 		$wrapper->lastCompleteDay = strtotime( $end . 'T00:00Z' );
 		$wrapper->range = null;
 	}

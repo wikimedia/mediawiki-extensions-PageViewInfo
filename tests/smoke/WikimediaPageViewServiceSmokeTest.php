@@ -4,6 +4,7 @@ namespace MediaWiki\Extensions\PageViewInfo;
 
 use Status;
 use StatusValue;
+use Wikimedia\TestingAccessWrapper;
 
 class WikimediaPageViewServiceSmokeTest extends \PHPUnit_Framework_TestCase {
 	protected $data;
@@ -86,7 +87,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit_Framework_TestCase {
 
 	public function testRequestError() {
 		$service = $this->getService();
-		$wrapper = \TestingAccessWrapper::newFromObject( $service );
+		$wrapper = TestingAccessWrapper::newFromObject( $service );
 		$wrapper->access = 'fail';
 		$logger = new \TestLogger( true, null, true );
 		$service->setLogger( $logger );
