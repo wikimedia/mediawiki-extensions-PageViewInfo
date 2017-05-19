@@ -12,6 +12,7 @@ use Psr\Log\NullLogger;
 use Status;
 use StatusValue;
 use Title;
+use WebRequest;
 
 /**
  * PageViewService implementation for Wikimedia wikis, using the pageview API
@@ -41,6 +42,11 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/** @var array Cache for getEmptyDateRange() */
 	protected $range;
+
+	/** @var WebRequest|string[] The request that asked for this data; see the originalRequest
+	 *    parameter of Http::request()
+	 */
+	protected $originalRequest;
 
 	/**
 	 * @param string $endpoint Wikimedia pageview API endpoint
@@ -73,6 +79,14 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	public function setLogger( LoggerInterface $logger ) {
 		$this->logger = $logger;
+	}
+
+	/**
+	 * @param $originalRequest WebRequest|string[] See the 'originalRequest' parameter of
+	 *   Http::request().
+	 */
+	public function setOriginalRequest( $originalRequest ) {
+		$this->originalRequest = $originalRequest;
 	}
 
 	public function supports( $metric, $scope ) {
@@ -306,7 +320,11 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 * @return MWHttpRequest
 	 */
 	protected function requestFactory( $url, $caller ) {
-		return MWHttpRequest::factory( $url, [ 'timeout' => 10 ], $caller );
+		$request = MWHttpRequest::factory( $url, [ 'timeout' => 10 ], $caller );
+		if ( $this->originalRequest ) {
+			$request->setOriginalRequest( $this->originalRequest );
+		}
+		return $request;
 	}
 
 	/**
