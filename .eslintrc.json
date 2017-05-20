@@ -1,0 +1,15 @@
+{
+	"extends": "wikimedia",
+	"env": {
+		"jquery": true,
+		"browser": true
+	},
+	"globals": {
+		"mediaWiki": false,
+		"OO": false
+	},
+	"rules": {
+		"dot-notation": 0
+	}
+}
+
