@@ -17,6 +17,7 @@
 	"apihelp-pageviewinfo-param-days": "Número de días a amosar.",
 	"apihelp-query+pageviews-example": "Mostra as estatísticas de visitas da páxina principal.",
 	"apihelp-query+mostviewed-description": "Lista as páxinas máis vistas (baseado no contador de páxinas vistas do último día).",
+	"apihelp-query+mostviewed-summary": "Lista as páxinas máis vistas (baseado no contador de páxinas vistas do último día).",
 	"apihelp-query+mostviewed-param-limit": "Número de páxinas a devolver.",
 	"apihelp-query+mostviewed-example": "Lista das 10 páxinas máis vistas.",
 	"apihelp-query+mostviewed-example2": "Ver os datos das 10 páxinas máis vistas."

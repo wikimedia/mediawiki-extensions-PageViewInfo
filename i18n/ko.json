@@ -13,6 +13,8 @@
 	"pvi-close": "닫기",
 	"pvi-invalidresponse": "유효하지 않은 응답",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "순수 방문자.",
+	"apihelp-query+pageviews-extended-description": "결과 형식은 문서 제목 (밑줄 포함) => 날짜 (년월일) => 카운트입니다.",
+	"apihelp-query+siteviews-extended-description": "결과 형식은 날짜 (년월일) => 카운트입니다.",
 	"apihelp-query+mostviewed-param-limit": "반환할 문서 수입니다.",
 	"apihelp-query+mostviewed-example": "최상위 10개의 문서 보이기."
 }
