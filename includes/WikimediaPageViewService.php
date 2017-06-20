@@ -18,7 +18,7 @@ use WebRequest;
  * PageViewService implementation for Wikimedia wikis, using the pageview API
  * @see https://wikitech.wikimedia.org/wiki/Analytics/PageviewAPI
  */
-class WikimediaPageViewService implements PageViewService, LoggerAwareInterface  {
+class WikimediaPageViewService implements PageViewService, LoggerAwareInterface {
 	/** @var callable ( URL, caller ) => MWHttpRequest */
 	protected $requestFactory;
 	/** @var LoggerInterface */

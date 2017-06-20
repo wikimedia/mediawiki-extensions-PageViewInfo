@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
 /**
  * Expose PageViewService::getSiteData().
  */
-class ApiQuerySiteViews extends ApiQueryBase  {
+class ApiQuerySiteViews extends ApiQueryBase {
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'pvis' );
 	}

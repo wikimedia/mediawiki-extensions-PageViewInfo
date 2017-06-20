@@ -211,7 +211,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 
 		$status = StatusValue::newGood( $data );
 		array_walk( $statuses, [ $status, 'merge' ] );
-		$status->success = array_map( function( StatusValue $s ) {
+		$status->success = array_map( function ( StatusValue $s ) {
 			 return $s->isOK();
 		}, $statuses );
 		$status->successCount = count( array_filter( $status->success ) );

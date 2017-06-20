@@ -104,7 +104,7 @@ class CachedPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 				}, $data ) );
 				return $status;
 			} );
-		$makeTitles = function( $titles ) {
+		$makeTitles = function ( $titles ) {
 			return array_map( function ( $t ) {
 				return \Title::newFromText( $t );
 			}, $titles );
