@@ -19,6 +19,7 @@
 	"apihelp-query+pageviews-description": "Montre les affichages des pages du site (le nombre de pages vues pour chacun des <var>$1jours</var> derniers jours). Le résultat est de la forme : titre de la page (avec des traits de soulignement) => date (Amj) => total.",
 	"apihelp-query+pageviews-example": "Affiche les statistiques d'affichage pour la page principale.",
 	"apihelp-query+siteviews-description": "Montre au niveau du site les données d'affichage (totaux pour chaque page des <var>$1days</var> derniers jours). Le résultat est de la forme date (Amj) => total.",
+	"apihelp-query+siteviews-extended-description": "Le format de résultat est date (AMJ) => nombre.",
 	"apihelp-query+siteviews-example": "Affiche les totaux de visualisation des pages du site.",
 	"apihelp-query+siteviews-example2": "Affiche les totaux des visiteurs uniques au niveau du site.",
 	"apihelp-query+mostviewed-description": "Liste les pages les plus vues au cours des 24 dernières heures.",
