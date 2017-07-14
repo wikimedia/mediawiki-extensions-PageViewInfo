@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"!Silent"
+			"!Silent",
+			"Felipe L. Ewald"
 		]
 	},
 	"pvi-desc": "Adiciona informações de visualização da página à ação de \"Informações de páginas\" (action=info)",
 	"pvi-month-count": "Visualizações da página nos últimos 30 dias",
-	"pvi-close": "Fechar"
+	"pvi-close": "Fechar",
+	"pvi-range": "$1 - $2",
+	"apihelp-query+mostviewed-description": "Lista as páginas mais vistas (com base no pageview do último dia).",
+	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base no pageview do último dia)."
 }
