@@ -9,6 +9,10 @@
 	"pvi-month-count": "Visualizações da página nos últimos 30 dias",
 	"pvi-close": "Fechar",
 	"pvi-range": "$1 - $2",
+	"pvi-invalidresponse": "Resposta inválida",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Pageviews simples.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-query+mostviewed-description": "Lista as páginas mais vistas (com base no pageview do último dia).",
-	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base no pageview do último dia)."
+	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base no pageview do último dia).",
+	"apihelp-query+mostviewed-example": "Liste as 10 principais páginas."
 }
