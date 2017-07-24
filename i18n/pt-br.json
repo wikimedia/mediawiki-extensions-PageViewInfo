@@ -10,9 +10,18 @@
 	"pvi-close": "Fechar",
 	"pvi-range": "$1 - $2",
 	"pvi-invalidresponse": "Resposta inválida",
+	"pvi-cached-error": "Uma tentativa anterior de obter esses dados falhou. Para limitar a carga do servidor, as tentativas foram bloqueadas por $1.",
+	"pvi-cached-error-title": "Uma tentativa anterior de buscar a página \"$1\" falhou. Para limitar a carga do servidor, as tentativas foram bloqueadas por $2.",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Pageviews simples.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "O número de dias para mostrar.",
+	"apihelp-query+pageviews-description": "Mostra dados por página de exibição de página (o número de visualizações de página diárias para cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é o título da página (com sublinhados) => data (Ymd) => contagem.",
+	"apihelp-query+pageviews-summary": "Mostra dados de página por página (o número de visualizações de página diárias para cada um dos últimos <var>$1days</var> dias).",
+	"apihelp-query+siteviews-description": "Mostra os dados de visão geral do site (totais diários de exibição de página para cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é data (Ymd) => contagem.",
+	"apihelp-query+siteviews-summary": "Mostra dados de visão de página em todo o site (visualizações diárias de página para cada um dos últimos <var>$1days</var> dias).",
+	"apihelp-query+siteviews-example": "Mostrar totais de exibição de página no site.",
 	"apihelp-query+mostviewed-description": "Lista as páginas mais vistas (com base no pageview do último dia).",
 	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base no pageview do último dia).",
+	"apihelp-query+mostviewed-param-limit": "O número de páginas a serem retornadas.",
 	"apihelp-query+mostviewed-example": "Liste as 10 principais páginas."
 }
