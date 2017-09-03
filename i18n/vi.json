@@ -7,5 +7,8 @@
 	"pvi-desc": "Thêm thống kê về lượt xem trang vào tác vụ info",
 	"pvi-month-count": "Lượt xem trang trong 30 ngày qua",
 	"pvi-close": "Đóng",
-	"pvi-range": "$1 – $2"
+	"pvi-range": "$1 – $2",
+	"pvi-invalidresponse": "Phản hồi không hợp lệ",
+	"pvi-cached-error": "Đã thất bại khi thử lấy dữ liệu này trước đây. Để hạn chế số lượng tải của máy chủ, các tác vụ thử lại $1 đã bị chặn.",
+	"pvi-cached-error-title": "Đã thất bại khi thử lấy trang “$1” trước đây. Để hạn chế số lượng tải của máy chủ, các tác vụ thử lại $2 đã bị chặn."
 }
