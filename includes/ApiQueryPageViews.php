@@ -6,7 +6,6 @@ use ApiBase;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\MediaWikiServices;
-use StatusValue;
 use Title;
 
 /**

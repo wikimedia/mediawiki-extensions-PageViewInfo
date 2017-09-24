@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extensions\PageViewInfo;
 
-use ApiBase;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\MediaWikiServices;

@@ -10,7 +10,6 @@ use FormatJson;
 use Html;
 use MediaWiki\MediaWikiServices;
 use StatusValue;
-use User;
 
 class Hooks {
 	/**
