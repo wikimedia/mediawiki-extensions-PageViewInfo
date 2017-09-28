@@ -9,5 +9,7 @@
 	"pvi-close": "Lukk",
 	"pvi-invalidresponse": "Ugyldig respons",
 	"pvi-cached-error": "Et tidligere forsøk på å hente disse dataene feilet. For å begrense tjenerbelastning er nye forsøk blokkert i $1.",
-	"pvi-cached-error-title": "Et tidligere forsøk på å hente siden «$1» feilet. For å begrense tjenerbelastning har nye forsøk blitt blokkert i $2."
+	"pvi-cached-error-title": "Et tidligere forsøk på å hente siden «$1» feilet. For å begrense tjenerbelastning har nye forsøk blitt blokkert i $2.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unike besøkende.",
+	"apihelp-pageviewinfo-param-days": "Antall dager som skal vises."
 }
