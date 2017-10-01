@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib"
+		]
+	},
+	"pvi-desc": "مشاہدہ صفحہ کے متعلق معلومات پر مشتمل صفحہ کا اضافہ کرتا ہے",
+	"pvi-month-count": "گزشتہ 30 دنوں میں مشاہدات صفحہ کی تعداد",
+	"pvi-close": "بند کریں",
+	"pvi-invalidresponse": "نادرست جواب"
+}
