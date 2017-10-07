@@ -53,8 +53,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 * @param array $apiOptions Associative array of API URL parameters
 	 *   see https://wikimedia.org/api/rest_v1/#!/Pageviews_data
 	 *   project is the only required parameter. Granularity, start and end are not supported.
-	 * @param int|false Max number of pages to look up (false for unlimited). Data will be returned
-	 *   for no more than this many titles in a getPageData() call.
+	 * @param int|false $lookupLimit Max number of pages to look up (false for unlimited).
+	 *   Data will be returned for no more than this many titles in a getPageData() call.
 	 */
 	public function __construct( $endpoint, array $apiOptions, $lookupLimit ) {
 		$this->endpoint = rtrim( $endpoint, '/' );
@@ -82,7 +82,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	}
 
 	/**
-	 * @param $originalRequest WebRequest|string[] See the 'originalRequest' parameter of
+	 * @param WebRequest|string[] $originalRequest See the 'originalRequest' parameter of
 	 *   Http::request().
 	 */
 	public function setOriginalRequest( $originalRequest ) {

@@ -15,7 +15,7 @@ class Hooks {
 	/**
 	 * Display total pageviews in the last 30 days and show a graph with details when clicked.
 	 * @param IContextSource $ctx
-	 * @param array $pageInfo
+	 * @param array &$pageInfo
 	 */
 	public static function onInfoAction( IContextSource $ctx, array &$pageInfo ) {
 		/** @var PageViewService $pageViewService */
@@ -91,7 +91,7 @@ class Hooks {
 	/**
 	 * Add information to the siteinfo API output about which metrics are supported.
 	 * @param ApiQuerySiteinfo $module
-	 * @param array $result
+	 * @param array &$result
 	 */
 	public static function onAPIQuerySiteInfoGeneralInfo( ApiQuerySiteinfo $module, array &$result ) {
 		/** @var PageViewService $service */
