@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"A2093064"
 		]
 	},
 	"pvi-desc": "添加页面浏览信息至信息操作中",
-	"pvi-month-count": "过去30天的页面浏览",
+	"pvi-month-count": "过去30天的页面访问量",
 	"pvi-close": "关闭",
 	"pvi-invalidresponse": "无效响应",
 	"pvi-cached-error": "之前取得该数据的尝试失败。为了限制服务器加载，已阻止$1内重试。",

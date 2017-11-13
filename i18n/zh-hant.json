@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"A2093064"
 		]
 	},
+	"pvi-month-count": "過去30天的頁面瀏覽量",
 	"pvi-close": "關閉"
 }
