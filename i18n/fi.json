@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nike"
+			"Nike",
+			"Pxos"
 		]
 	},
+	"pvi-month-count": "Sivua katsottu viimeisen 30 päivän aikana",
 	"pvi-close": "Sulje"
 }
