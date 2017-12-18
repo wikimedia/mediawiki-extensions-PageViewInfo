@@ -15,6 +15,7 @@
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Número bruto de páxinas vistas.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "Número de días a amosar.",
+	"apihelp-query+pageviews-extended-description": "O formato do resultado é título de páxina (con espazos subliñados) => data (Amd) => número.",
 	"apihelp-query+pageviews-example": "Mostra as estatísticas de visitas da páxina principal.",
 	"apihelp-query+siteviews-extended-description": "O formato do resultado é data (Amd) => número.",
 	"apihelp-query+siteviews-example": "Amosar os totais de visualizacións das páxinas do sitio.",
