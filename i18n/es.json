@@ -13,5 +13,6 @@
 	"pvi-cached-error-title": "Ha fallado un intento anterior por obtener la página «$1». Para limitar la carga de trabajo en el servidor, se han bloqueado los reintentos por $2.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "La cantidad de días que mostrar.",
-	"apihelp-query+mostviewed-param-limit": "La cantidad de páginas que devolver."
+	"apihelp-query+mostviewed-param-limit": "La cantidad de páginas que devolver.",
+	"apihelp-query+mostviewed-example": "Enumerar las 10 páginas más vistas."
 }
