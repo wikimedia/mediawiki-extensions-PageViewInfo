@@ -4,6 +4,9 @@ namespace MediaWiki\Extensions\PageViewInfo;
 
 use Wikimedia\TestingAccessWrapper;
 
+/*
+ * @covers \MediaWiki\Extensions\PageViewInfo\WikimediaPageViewService
+ */
 class WikimediaPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 	/** @var [ \PHPUnit_Framework_MockObject_MockObject, callable ] */
 	protected $calls = [];

@@ -5,6 +5,9 @@ namespace MediaWiki\Extensions\PageViewInfo;
 use HashBagOStuff;
 use StatusValue;
 
+/*
+ * @covers \MediaWiki\Extensions\PageViewInfo\CachedPageViewService
+ */
 class CachedPageViewServiceTest extends \PHPUnit_Framework_TestCase {
 	/** @var CachedPageViewService */
 	protected $service;
