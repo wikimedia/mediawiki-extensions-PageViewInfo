@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"pvi-desc": "Adiciona informações de visionamento da página à interface \"Informações de páginas\"",
@@ -19,11 +20,11 @@
 	"apihelp-query+pageviews-summary": "Mostra dados de visionamento de páginas individuais (o número de visionamentos diários em cada um dos últimos <var>$1days</var> dias).",
 	"apihelp-query+pageviews-extended-description": "O formato do resultado é título de página (com espaços sublinhados) => data (Amd) => contagem.",
 	"apihelp-query+pageviews-example": "Mostrar estatísticas de visionamento da página principal.",
-	"apihelp-query+siteviews-description": "Mostra dados de visionamento de todas as páginas do site (o número de visionamentos diários em cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é data (Amd) => contagem.",
-	"apihelp-query+siteviews-summary": "Mostra dados de visionamento de todas as páginas do site (o número de visionamentos diários em cada um dos últimos <var>$1days</var> dias).",
+	"apihelp-query+siteviews-description": "Mostra dados de visionamento de todas as páginas do sítio (o número de visionamentos diários em cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é data (Amd) => contagem.",
+	"apihelp-query+siteviews-summary": "Mostra dados de visionamento de todas as páginas do sítio (o número de visionamentos diários em cada um dos últimos <var>$1days</var> dias).",
 	"apihelp-query+siteviews-extended-description": "O formato do resultado é data (Amd) => contagem.",
-	"apihelp-query+siteviews-example": "Mostrar totais de visionamentos do site.",
-	"apihelp-query+siteviews-example2": "Mostrar totais de visitantes únicos do site.",
+	"apihelp-query+siteviews-example": "Mostrar totais de visionamentos do sítio.",
+	"apihelp-query+siteviews-example2": "Mostrar totais de visitantes únicos do sítio.",
 	"apihelp-query+mostviewed-description": "Lista as páginas mais vistas (com base na contagem de visionamentos de ontem).",
 	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base na contagem de visionamentos de ontem).",
 	"apihelp-query+mostviewed-param-limit": "O número de páginas a serem devolvidas.",
