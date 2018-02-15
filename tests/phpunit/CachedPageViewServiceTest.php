@@ -8,7 +8,7 @@ use StatusValue;
 /**
  * @covers \MediaWiki\Extensions\PageViewInfo\CachedPageViewService
  */
-class CachedPageViewServiceTest extends \PHPUnit_Framework_TestCase {
+class CachedPageViewServiceTest extends \PHPUnit\Framework\TestCase {
 	/** @var CachedPageViewService */
 	protected $service;
 	/** @var \PHPUnit_Framework_MockObject_MockObject */

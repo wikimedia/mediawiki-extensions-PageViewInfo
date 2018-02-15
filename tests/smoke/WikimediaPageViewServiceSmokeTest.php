@@ -6,7 +6,7 @@ use Status;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
-class WikimediaPageViewServiceSmokeTest extends \PHPUnit_Framework_TestCase {
+class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 	protected $data;
 
 	protected function getService() {
