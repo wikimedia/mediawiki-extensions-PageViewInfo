@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Otokoume",
-			"Shirayuki"
+			"Shirayuki",
+			"Yusuke1109"
 		]
 	},
+	"pvi-desc": "info アクションにページの閲覧情報を追加する",
 	"pvi-month-count": "過去 30 日間のページビュー数",
 	"pvi-close": "閉じる"
 }
