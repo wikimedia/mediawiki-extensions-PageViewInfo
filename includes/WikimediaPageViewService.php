@@ -289,7 +289,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		if (
 			$request->getStatus() === 404 &&
 			isset( $apiErrorData['type'] ) &&
-			$apiErrorData['type'] === 'https://restbase.org/errors/not_found'
+			$apiErrorData['type'] === 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found'
 		) {
 			// the pageview API will return with a 404 when the page has 0 views :/
 			$status = StatusValue::newGood( [ 'items' => [] ] );

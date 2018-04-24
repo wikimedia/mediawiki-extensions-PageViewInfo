@@ -67,7 +67,7 @@ class WikimediaPageViewServiceTest extends \PHPUnit\Framework\TestCase {
 	 */
 	protected function get404ErrorJson() {
 		return json_encode( [
-			'type' => 'https://restbase.org/errors/not_found',
+			'type' => 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found',
 			'title' => 'Not found.',
 			'method' => 'get',
 			'detail' => 'The date(s) you used are valid, but we either do not have data for those date(s), '
