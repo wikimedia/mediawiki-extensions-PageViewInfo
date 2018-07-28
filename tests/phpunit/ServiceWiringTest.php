@@ -4,6 +4,9 @@ namespace MediaWiki\Extensions\PageViewInfo;
 
 use MediaWiki\MediaWikiServices;
 
+/**
+ * @coversNothing Not possible to cover non-classes/functions
+ */
 class ServiceWiringTest extends \PHPUnit\Framework\TestCase {
 	public function testService() {
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );

@@ -6,6 +6,9 @@ use Status;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
+/**
+ * @coversNothing smoke tests
+ */
 class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 	protected $data;
 
