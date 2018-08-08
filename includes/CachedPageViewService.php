@@ -140,6 +140,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * @param string $metric A METRIC_* constant
 	 * @param Title[] $titles
 	 * @return StatusValue
+	 * @suppress SecurityCheck-DoubleEscaped
 	 */
 	protected function getTitlesWithCache( $metric, array $titles ) {
 		// Set up the response array, without any values. This will help preserve the order of titles.
