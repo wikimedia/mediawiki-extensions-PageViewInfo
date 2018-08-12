@@ -170,8 +170,8 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 
 		// Now get and cache the data for the remaining titles from the real service. It might not
 		// return data for all of them.
-		foreach ( $titles as $i => $title ) {
-			if ( $data[$title->getPrefixedDBkey()] !== false ) {
+		foreach ( $titles as $i => $titleObj ) {
+			if ( $data[$titleObj->getPrefixedDBkey()] !== false ) {
 				unset( $titles[$i] );
 			}
 		}
