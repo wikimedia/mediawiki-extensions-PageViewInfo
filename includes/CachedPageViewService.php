@@ -177,7 +177,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 			}
 		}
 		$uncachedStatus = $this->service->getPageData( $titles, $this->cachedDays, $metric );
-		foreach ( $uncachedStatus->success as $title => $succes ) {
+		foreach ( $uncachedStatus->success as $title => $success ) {
 			$titleData = isset( $uncachedStatus->getValue()[$title] ) ?
 				$uncachedStatus->getValue()[$title] : null;
 			if ( !is_array( $titleData ) || count( $titleData ) < $this->cachedDays ) {
@@ -190,7 +190,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 					$this->cachedDays );
 			}
 			$data[$title] = $titleData;
-			if ( $succes ) {
+			if ( $success ) {
 				$statuses[$title] = StatusValue::newGood();
 				$expiry = $this->getCacheExpiry( $metric, self::SCOPE_ARTICLE );
 			} else {
