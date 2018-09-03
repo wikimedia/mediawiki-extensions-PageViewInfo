@@ -108,7 +108,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 			$titles = array_slice( $titles, 0, $this->lookupLimit );
 		}
 		if ( $days <= 0 ) {
-			throw new InvalidArgumentException( 'Invalid days: ' .$days );
+			throw new InvalidArgumentException( 'Invalid days: ' . $days );
 		}
 
 		$status = StatusValue::newGood();
@@ -150,7 +150,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 				'Unique device counts for mobile apps are not supported' );
 		}
 		if ( $days <= 0 ) {
-			throw new InvalidArgumentException( 'Invalid days: ' .$days );
+			throw new InvalidArgumentException( 'Invalid days: ' . $days );
 		}
 		$result = $this->getEmptyDateRange( $days );
 		$status = $this->makeRequest( $this->getRequestUrl( $metric, null, $days ) );
