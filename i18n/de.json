@@ -16,5 +16,6 @@
 	"apihelp-query+siteviews-example": "Zeigt wikiweite Seitenaufruf-Summen an.",
 	"apihelp-query+mostviewed-description": "Listet die nach dem täglichen Seitenaufrufszähler meistgesehenen Seiten auf.",
 	"apihelp-query+mostviewed-param-limit": "Die Anzahl der zurückzugebenden Seiten.",
-	"apihelp-query+mostviewed-example": "Listet die 10 meistbesuchten Seiten auf."
+	"apihelp-query+mostviewed-example": "Listet die 10 meistbesuchten Seiten auf.",
+	"apihelp-query+mostviewed-example2": "Zeigt Seitenaufrufdaten für jede der 10 meistbesuchten Seiten an."
 }
