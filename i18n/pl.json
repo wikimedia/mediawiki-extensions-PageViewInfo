@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
+	"pvi-desc": "Dodaje informacje o odsłonach strony do akcji info",
 	"pvi-month-count": "Liczba odsłon strony w ciągu ostatnich 30 dni",
 	"pvi-close": "Zamknij",
 	"pvi-invalidresponse": "Nieprawidłowa odpowiedź",
+	"pvi-cached-error": "Poprzednia próba pobrania tych danych zakończyła się niepowodzeniem. Aby ograniczyć odświeżanie serwera, ponowne próby zostały zablokowane na $1.",
+	"pvi-cached-error-title": "Poprzednia próba pobrania danych o stronie „$1” zakończyła się niepowodzeniem. Aby ograniczyć odświeżanie serwera, ponowne próby zostały zablokowane na $2.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalni odwiedzający.",
 	"apihelp-pageviewinfo-param-days": "Liczba dni do pokazania.",
 	"apihelp-query+pageviews-example": "Pokaż statystyki odsłon strony głównej.",
