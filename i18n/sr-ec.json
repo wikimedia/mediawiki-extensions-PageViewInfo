@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
-	"pvi-month-count": "Прегледи странице у последњих 30 дана",
+	"pvi-month-count": "Прикази странице у последњих 30 дана",
 	"pvi-close": "Затвори"
 }
