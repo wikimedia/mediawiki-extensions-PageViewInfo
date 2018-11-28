@@ -7,9 +7,6 @@
 	"globals": {
 		"mediaWiki": false,
 		"OO": false
-	},
-	"rules": {
-		"dot-notation": 0
 	}
 }
 
