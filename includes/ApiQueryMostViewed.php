@@ -53,9 +53,14 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 			} else {
 				$result = $this->getResult();
 				$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'page' );
-				foreach ( $data as $title => $titleData ) {
+				foreach ( $data as $titleText => $titleData ) {
 					$item = [];
-					self::addTitleInfo( $item, \Title::newFromText( $title ) );
+					$title = Title::newFromText( $titleText );
+					if ( !$title ) {
+						// Page View API may return invalid titles (T208691)
+						continue;
+					}
+					self::addTitleInfo( $item, $title );
 					$item['count'] = $titleData;
 					$fits = $result->addValue( [ 'query', $this->getModuleName() ], null, $item );
 					if ( !$fits ) {
