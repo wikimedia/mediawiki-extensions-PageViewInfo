@@ -58,6 +58,7 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 					$title = Title::newFromText( $titleText );
 					if ( !$title ) {
 						// Page View API may return invalid titles (T208691)
+						$offset++;
 						continue;
 					}
 					self::addTitleInfo( $item, $title );
