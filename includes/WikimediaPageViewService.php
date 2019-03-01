@@ -138,7 +138,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		}
 		$status->successCount = count( array_filter( $status->success ) );
 		$status->failCount = count( $status->success ) - $status->successCount;
-		$status->setResult( array_filter( $status->success ), $result );
+		$status->setResult( (bool)$status->successCount, $result );
 		return $status;
 	}
 
