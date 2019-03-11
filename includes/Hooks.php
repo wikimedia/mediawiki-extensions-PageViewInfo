@@ -142,8 +142,7 @@ class Hooks {
 				return $service->supports( $metric, $scope );
 			} ) );
 		$reverseMap = array_flip( self::getApiMetricsMap() );
-		$default = isset( $reverseMap[PageViewService::METRIC_VIEW] ) ?
-			$reverseMap[PageViewService::METRIC_VIEW] : reset( $reverseMap );
+		$default = $reverseMap[PageViewService::METRIC_VIEW] ?? reset( $reverseMap );
 
 		return $default ? [
 			'metric' => [

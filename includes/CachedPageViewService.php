@@ -178,8 +178,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		}
 		$uncachedStatus = $this->service->getPageData( $titles, $this->cachedDays, $metric );
 		foreach ( $uncachedStatus->success as $title => $success ) {
-			$titleData = isset( $uncachedStatus->getValue()[$title] ) ?
-				$uncachedStatus->getValue()[$title] : null;
+			$titleData = $uncachedStatus->getValue()[$title] ?? null;
 			if ( !is_array( $titleData ) || count( $titleData ) < $this->cachedDays ) {
 				// PageViewService is expected to return [ date => null ] for all requested dates
 				$this->logger->warning( 'Upstream service returned invalid data for {title}', [

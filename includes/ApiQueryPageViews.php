@@ -32,7 +32,7 @@ class ApiQueryPageViews extends ApiQueryBase {
 		} );
 		$titleToIndex = array_flip( $indexToTitle );
 		$titles = array_filter( array_values( array_map( function ( $index ) use ( $titles ) {
-			return isset( $titles[$index] ) ? $titles[$index] : null;
+			return $titles[$index] ?? null;
 		}, $titleToIndex ) ) );
 
 		/** @var PageViewService $service */
