@@ -7,6 +7,9 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:PageViewInfo",
 	"descriptionmsg": "pvi-desc",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
 	"Hooks": {
 		"InfoAction": [
 			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onInfoAction"
