@@ -69,9 +69,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		$this->access = $apiOptions['access'];
 		$this->agent = $apiOptions['agent'];
 
-		// Skip the current day for which only partial information is available, and also
-		// the previous day as data processing is sometimes a day behind so the numbers can be wrong.
-		$this->lastCompleteDay = strtotime( '0:0 2 days ago' );
+		// Skip the current day for which only partial information is available
+		$this->lastCompleteDay = strtotime( '0:0 1 day ago' );
 
 		$this->requestFactory = [ $this, 'requestFactory' ];
 		$this->logger = new NullLogger();
