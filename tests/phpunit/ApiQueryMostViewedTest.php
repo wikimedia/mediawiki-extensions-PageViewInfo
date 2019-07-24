@@ -9,7 +9,45 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \MediaWiki\Extensions\PageViewInfo\ApiQueryMostViewed
  */
 class ApiQueryMostViewedTest extends \ApiTestCase {
-	public function testMostviewed_invalid() {
+	public function provideRequestResponses() {
+		return [
+			[
+				[
+					'action' => 'query',
+					'list' => 'mostviewed',
+				],
+				[
+					'batchcomplete' => true,
+					'query' => [
+						'mostviewed' => [
+							[ 'ns' => 0, 'title' => 'Main Page', 'count' => 1000, ],
+							[ 'ns' => 0, 'title' => 'Sandbox', 'count' => 10 ],
+						],
+					],
+				]
+			],
+			[
+				[
+					'action' => 'query',
+					'generator' => 'mostviewed'
+				],
+				[
+					'batchcomplete' => true,
+					'query' => [
+						'pages' => [
+							-1 => [ 'ns' => 0, 'title' => 'Main Page', 'missing' => true, ],
+							-2 => [ 'ns' => 0, 'title' => 'Sandbox', 'missing' => true ],
+						],
+					],
+				]
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider provideRequestResponses
+	 */
+	public function testMostviewed_invalid( $request, $response ) {
 		$mock = $this->createMock( \MWHttpRequest::class );
 		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
 		$mock->expects( $this->any() )->method( 'getStatus' )->willReturn( 200 );
@@ -51,23 +89,10 @@ class ApiQueryMostViewedTest extends \ApiTestCase {
 		};
 		$this->setService( 'PageViewService', $service );
 
-		$ret = $this->doApiRequest(
-				[
-					'action' => 'query',
-					'list' => 'mostviewed',
-				]
-		);
+		$ret = $this->doApiRequest( $request );
 
 		$this->assertEquals(
-			[
-				'batchcomplete' => true,
-				'query' => [
-					'mostviewed' => [
-						[ 'ns' => 0, 'title' => 'Main Page', 'count' => 1000, ],
-						[ 'ns' => 0, 'title' => 'Sandbox', 'count' => 10 ],
-					],
-				],
-			],
+			$response,
 			$ret[0],
 			'API response'
 		);

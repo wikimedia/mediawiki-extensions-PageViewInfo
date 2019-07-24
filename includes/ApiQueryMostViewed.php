@@ -46,8 +46,12 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 
 			if ( $resultPageSet ) {
 				$titles = [];
-				foreach ( $data as $title => $_ ) {
-					$titles[] = Title::newFromText( $title );
+				foreach ( $data as $titleText => $_ ) {
+					$title = Title::newFromText( $titleText );
+					// Page View API may return invalid titles (T225853)
+					if ( $title ) {
+						$titles[] = $title;
+					}
 				}
 				$resultPageSet->populateFromTitles( $titles );
 			} else {
