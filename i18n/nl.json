@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Siebrand",
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"pvi-desc": "Voegt informatie toe aan de handeling \"info\" over het aantal keren dat de pagina is bekeken",
 	"pvi-month-count": "Aantal keren bekeken in de afgelopen 30 dagen",
-	"pvi-close": "Sluiten"
+	"pvi-close": "Sluiten",
+	"pvi-invalidresponse": "Ongeldige antwoord",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unieke bezoekers.",
+	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen."
 }
