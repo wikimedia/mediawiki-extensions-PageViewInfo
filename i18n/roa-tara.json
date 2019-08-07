@@ -13,5 +13,11 @@
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "'ndrucaminde 'a pàgene semblice.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitature unece.",
 	"apihelp-pageviewinfo-param-days": "'U numere de sciurne da fà 'ndrucà.",
+	"apihelp-query+siteviews-extended-description": "'U formate d'u resultate jè ' adate (Ymd) => condegge.",
+	"apihelp-query+siteviews-example": "Fà 'ndrucà 'u totale de le pàggene 'ndrucate sus a 'u site.",
+	"apihelp-query+siteviews-example2": "Fà 'ndrucà 'u totale de le vesetature unece.",
+	"apihelp-query+mostviewed-description": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
+	"apihelp-query+mostviewed-summary": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
+	"apihelp-query+mostviewed-param-limit": "'U numere de le pàggene da turnà.",
 	"apihelp-query+mostviewed-example": "Elenghe de le prime 10 pàggene."
 }
