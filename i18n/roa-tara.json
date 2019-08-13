@@ -13,6 +13,7 @@
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "'ndrucaminde 'a pàgene semblice.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitature unece.",
 	"apihelp-pageviewinfo-param-days": "'U numere de sciurne da fà 'ndrucà.",
+	"apihelp-query+pageviews-example": "Fà 'ndrucà le statisteche de le pàggene 'ndrucate pa pàgene prengepàle.",
 	"apihelp-query+siteviews-extended-description": "'U formate d'u resultate jè ' adate (Ymd) => condegge.",
 	"apihelp-query+siteviews-example": "Fà 'ndrucà 'u totale de le pàggene 'ndrucate sus a 'u site.",
 	"apihelp-query+siteviews-example2": "Fà 'ndrucà 'u totale de le vesetature unece.",
