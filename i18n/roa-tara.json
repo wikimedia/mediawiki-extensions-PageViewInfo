@@ -20,5 +20,6 @@
 	"apihelp-query+mostviewed-description": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
 	"apihelp-query+mostviewed-summary": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
 	"apihelp-query+mostviewed-param-limit": "'U numere de le pàggene da turnà.",
-	"apihelp-query+mostviewed-example": "Elenghe de le prime 10 pàggene."
+	"apihelp-query+mostviewed-example": "Elenghe de le prime 10 pàggene.",
+	"apihelp-query+mostviewed-example2": "Fà 'ndrucà le date de le pàggene 'ndrucate pe ognune de le 10 pàggene cchiù 'ndrucate."
 }
