@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Legoktm",
+			"Liuxinyu970226",
+			"Raymond",
+			"Umherirrender"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "{{doc-apihelp-param|pageviewinfo|metric|paramvalues=1|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "{{doc-apihelp-paramvalue|pageviewinfo|metric|pageviews|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "{{doc-apihelp-paramvalue|pageviewinfo|metric|uniques|description=Also used for the <code>query+siteviews</code> and <code>query+mostviewed</code> modules.|noseealso=1}}",
+	"apihelp-pageviewinfo-param-days": "{{doc-apihelp-param|pageviewinfo|days|description=Also used for the <code>query+siteviews</code> module.|noseealso=1}}",
+	"apihelp-query+pageviews-description": "{{doc-apihelp-description|query+pageviews}}",
+	"apihelp-query+pageviews-summary": "{{doc-apihelp-summary|query+pageviews}}",
+	"apihelp-query+pageviews-extended-description": "{{doc-apihelp-extended-description|query+pageviews}}",
+	"apihelp-query+pageviews-example": "{{doc-apihelp-example|query+pageviews}}",
+	"apihelp-query+siteviews-description": "{{doc-apihelp-description|query+siteviews}}",
+	"apihelp-query+siteviews-summary": "{{doc-apihelp-summary|query+siteviews}}",
+	"apihelp-query+siteviews-extended-description": "{{doc-apihelp-extended-description|query+siteviews}}",
+	"apihelp-query+siteviews-example": "{{doc-apihelp-example|query+siteviews}}",
+	"apihelp-query+siteviews-example2": "{{doc-apihelp-example|query+siteviews}}",
+	"apihelp-query+mostviewed-description": "{{doc-apihelp-description|query+mostviewed}}",
+	"apihelp-query+mostviewed-summary": "{{doc-apihelp-summary|query+mostviewed}}",
+	"apihelp-query+mostviewed-param-limit": "{{doc-apihelp-param|query+mostviewed|limit}}",
+	"apihelp-query+mostviewed-example": "{{doc-apihelp-example|query+mostviewed}}",
+	"apihelp-query+mostviewed-example2": "{{doc-apihelp-example|query+mostviewed}}"
+}

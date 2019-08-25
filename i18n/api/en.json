@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Legoktm"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) to check, under <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Plain pageviews.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unique visitors.",
+	"apihelp-pageviewinfo-param-days": "The number of days to show.",
+	"apihelp-query+pageviews-description": "Shows per-page pageview data (the number of daily pageviews for each of the last <var>$1days</var> days).\nThe result format is page title (with underscores) => date (Ymd) => count.",
+	"apihelp-query+pageviews-summary": "Shows per-page pageview data (the number of daily pageviews for each of the last <var>$1days</var> days).",
+	"apihelp-query+pageviews-extended-description": "The result format is page title (with underscores) => date (Ymd) => count.",
+	"apihelp-query+pageviews-example": "Show pageview statistics for the main page.",
+	"apihelp-query+siteviews-description": "Shows sitewide pageview data (daily pageview totals for each of the last <var>$1days</var> days).\nThe result format is date (Ymd) => count.",
+	"apihelp-query+siteviews-summary": "Shows sitewide pageview data (daily pageview totals for each of the last <var>$1days</var> days).",
+	"apihelp-query+siteviews-extended-description": "The result format is date (Ymd) => count.",
+	"apihelp-query+siteviews-example": "Show sitewide pageview totals.",
+	"apihelp-query+siteviews-example2": "Show sitewide unique visitor totals.",
+	"apihelp-query+mostviewed-description": "Lists the most viewed pages (based on last day's pageview count).",
+	"apihelp-query+mostviewed-summary": "Lists the most viewed pages (based on last day's pageview count).",
+	"apihelp-query+mostviewed-param-limit": "The number of pages to return.",
+	"apihelp-query+mostviewed-example": "List the top 10 pages.",
+	"apihelp-query+mostviewed-example2": "Show pageview data for each of the top 10 pages."
+}
