@@ -47,6 +47,6 @@ class ApiQuerySiteViews extends ApiQueryBase {
 	}
 
 	public function getHelpUrls() {
-		return 'https://www.mediawiki.org/wiki/Extension:PageViewInfo';
+		return 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo';
 	}
 }
