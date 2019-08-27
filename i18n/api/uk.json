@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Міра для використання для підрахунку кількості переглядів. Залежить від використовуваного бекенду, не всі міри можуть підтримуватись. Можете скористатись Siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]), щоб перевірити, під <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Просте число переглядів.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Унікальні відвідувачі.",
+	"apihelp-pageviewinfo-param-days": "Кількість днів, яку слід показати.",
+	"apihelp-query+pageviews-description": "Показує посторінкові дані про кількість переглядів (кількість щоденних переглядів за кожен з останніх <var>$1days</var> днів). Формат у результаті — назва сторінки (з підкресленнями) => дата (Рмд) => кількість.",
+	"apihelp-query+pageviews-summary": "Показує дані про кількість переглядів кожної окремої сторінки (кількість щоденних переглядів для кожного з останніх <var>$1days</var> днів).",
+	"apihelp-query+pageviews-extended-description": "Кінцевим форматом є назва сторінки (з підкресленнями) => дата (Ymd) => кількість.",
+	"apihelp-query+pageviews-example": "Показати статистику переглядів головної сторінки.",
+	"apihelp-query+siteviews-description": "Показує дані про перегляд сторінок по всьому сайті (щоденна загальна кількість переглядів за кожен з останніх <var>$1days</var> днів). Формат у результаті — це дата (Рмд) => кількість.",
+	"apihelp-query+siteviews-summary": "Показує дані про кількість переглядів для всього сайту (щоденна загальна кількість переглядів для кожноо з останніх <var>$1days</var> днів).",
+	"apihelp-query+siteviews-extended-description": "Кінцевим форматом є дата (Ymd) => кількість.",
+	"apihelp-query+siteviews-example": "Показати загальну кількість переглядів для всього сайту.",
+	"apihelp-query+siteviews-example2": "Показати загальну кількість унікальних відвідувачів для всього сайту.",
+	"apihelp-query+mostviewed-description": "Перелічує найбільш відвідувані сторінки (на основі підрахунку кількості переглядів за минулий день).",
+	"apihelp-query+mostviewed-summary": "Перелічує найбільш відвідувані сторінки (на основі підрахунку кількості переглядів за минулий день).",
+	"apihelp-query+mostviewed-param-limit": "Кількість сторінок, яку слід вивести.",
+	"apihelp-query+mostviewed-example": "Перелічити топ-10 сторінок.",
+	"apihelp-query+mostviewed-example2": "Показати дані про перегляд сторінок для кожної з топ-10 сторінок."
+}

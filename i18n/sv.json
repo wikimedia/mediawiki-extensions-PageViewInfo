@@ -6,7 +6,5 @@
 	},
 	"pvi-month-count": "Sidvisningar under de senaste 30 dagarna",
 	"pvi-close": "Stäng",
-	"pvi-invalidresponse": "Ogiltigt svar",
-	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unika besökare",
-	"apihelp-query+mostviewed-param-limit": "Antal sidor att returnera."
+	"pvi-invalidresponse": "Ogiltigt svar"
 }

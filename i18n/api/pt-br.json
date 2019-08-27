@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "A métrica para usar para contagem de visualizações. Dependendo do backend usado, nem todas as métricas podem ser suportadas. Você pode usar a API do siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar, em <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Pageviews simples.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "O número de dias para mostrar.",
+	"apihelp-query+pageviews-description": "Mostra dados por página de exibição de página (o número de visualizações de página diárias para cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é o título da página (com sublinhados) => data (Ymd) => contagem.",
+	"apihelp-query+pageviews-summary": "Mostra dados de página por página (o número de visualizações de página diárias para cada um dos últimos <var>$1days</var> dias).",
+	"apihelp-query+pageviews-extended-description": "O formato do resultado é o título da página (com sublinhados) => data (Ymd) => contagem.",
+	"apihelp-query+pageviews-example": "Mostrar estatísticas de visualização de página para a página principal.",
+	"apihelp-query+siteviews-description": "Mostra os dados de visão geral do site (totais diários de exibição de página para cada um dos últimos <var>$1days</var> dias).\nO formato do resultado é data (Ymd) => contagem.",
+	"apihelp-query+siteviews-summary": "Mostra dados de visão de página em todo o site (visualizações diárias de página para cada um dos últimos <var>$1days</var> dias).",
+	"apihelp-query+siteviews-extended-description": "O formato do resultado é data (Ymd) => contagem.",
+	"apihelp-query+siteviews-example": "Mostrar totais de exibição de página no site.",
+	"apihelp-query+siteviews-example2": "Mostre os totais únicos para visitantes do site.",
+	"apihelp-query+mostviewed-description": "Lista as páginas mais vistas (com base no pageview do último dia).",
+	"apihelp-query+mostviewed-summary": "Lista as páginas mais vistas (com base no pageview do último dia).",
+	"apihelp-query+mostviewed-param-limit": "O número de páginas a serem retornadas.",
+	"apihelp-query+mostviewed-example": "Liste as 10 principais páginas.",
+	"apihelp-query+mostviewed-example2": "Mostrar dados de visão de página para cada uma das 10 principais páginas."
+}

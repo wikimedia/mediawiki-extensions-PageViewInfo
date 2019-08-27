@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unika besökare",
+	"apihelp-query+mostviewed-param-limit": "Antal sidor att returnera."
+}

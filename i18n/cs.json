@@ -7,6 +7,5 @@
 	},
 	"pvi-desc": "Přidává informace o zobrazení stránky do infa",
 	"pvi-month-count": "Počet zhlédnutí stránky za posledních 30 dní",
-	"pvi-close": "Zavřít",
-	"apihelp-query+mostviewed-example": "Seznam 10 nejlepších stránek."
+	"pvi-close": "Zavřít"
 }

@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Métrica usada para contar as visitas. Dependendo do servidor utilizado, certas métricas pode que non estean soportadas. Pode usar a API de información de sitio ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para comprobalo, baixo <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Número bruto de páxinas vistas.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "Número de días a amosar.",
+	"apihelp-query+pageviews-extended-description": "O formato do resultado é título de páxina (con espazos subliñados) => data (Amd) => número.",
+	"apihelp-query+pageviews-example": "Amosa as estatísticas de visitas da páxina principal.",
+	"apihelp-query+siteviews-extended-description": "O formato do resultado é data (Amd) => número.",
+	"apihelp-query+siteviews-example": "Amosar os totais de visualizacións das páxinas do sitio.",
+	"apihelp-query+siteviews-example2": "Amosar totais de visitantes únicos do sitio.",
+	"apihelp-query+mostviewed-description": "Lista as páxinas máis vistas (baseado no contador de páxinas vistas do último día).",
+	"apihelp-query+mostviewed-summary": "Lista as páxinas máis vistas (baseado no contador de páxinas vistas do último día).",
+	"apihelp-query+mostviewed-param-limit": "Número de páxinas a devolver.",
+	"apihelp-query+mostviewed-example": "Lista das 10 páxinas máis vistas.",
+	"apihelp-query+mostviewed-example2": "Ver os datos das 10 páxinas máis vistas."
+}

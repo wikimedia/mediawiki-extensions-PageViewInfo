@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ladsgroup"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "نمایش ساده صفحه.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "بازدیدکنندگان یکتا",
+	"apihelp-pageviewinfo-param-days": "تعداد روزها برای نمایش",
+	"apihelp-query+mostviewed-param-limit": "تعداد صفحه‌هات برای بازگرداندن",
+	"apihelp-query+mostviewed-example": "نمایش ده صفحه پربازدید"
+}

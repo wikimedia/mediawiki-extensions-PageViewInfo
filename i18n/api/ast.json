@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Métrica a utilizar pa contar visites. Dependiendo del motor utilizáu, podría nun haber encontu pa delles métriques. Puedes usar la API d'información del sitiu ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para comprobalo, baxo <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Númberu de páxines vistes.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "Númberu de díes a amosar.",
+	"apihelp-query+pageviews-description": "Amuesa los datos de visites per páxina (el númberu de visites diaries pa caún de los últimos <var>$1days</var> díes). El formatu del resultáu ye títulu de páxina (con guiones baxos) => data (Amd) => númberu.",
+	"apihelp-query+pageviews-summary": "Amuesa los datos de visites per páxina (el númberu de visites caldía a la páxina pa caún de los últimos <var>$1days</var> díes).",
+	"apihelp-query+pageviews-extended-description": "El formatu del resultáu ye títulu de páxina (con guiones baxos) => data (Ymd) => cantidá.",
+	"apihelp-query+pageviews-example": "Amosar les estadístiques de visites de la páxina principal.",
+	"apihelp-query+siteviews-description": "Amuesa los datos de visites del sitiu (el númberu de visites diaries pa caún de los últimos <var>$1days</var> díes). El formatu del resultáu ye data (Amd) => númberu.",
+	"apihelp-query+siteviews-summary": "Amosar los datos de les les visites totales a páxines del sitiu (total de visites diaries a páxines pa caún de los últimos <var>$1days</var> díes).",
+	"apihelp-query+siteviews-extended-description": "El formatu del resultáu ye data (Ymd) => cantidá.",
+	"apihelp-query+siteviews-example": "Amuesa los datos totales de visites del sitiu.",
+	"apihelp-query+siteviews-example2": "Amuesa los datos totales de visitantes únicos del sitiu.",
+	"apihelp-query+mostviewed-description": "Llista de les páxines más vistes (basada nel contador de páxines vistes l'últimu día).",
+	"apihelp-query+mostviewed-summary": "Llista de les páxines más vistes (basada nel contador de páxines vistes l'últimu día).",
+	"apihelp-query+mostviewed-param-limit": "El númberu de páxines a devolver.",
+	"apihelp-query+mostviewed-example": "Llista de les 10 páxines más visitaes.",
+	"apihelp-query+mostviewed-example2": "Ver los datos de visites de cauna de les 10 páxines más visitaes."
+}

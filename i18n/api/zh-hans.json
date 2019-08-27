@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "要用于计算浏览数的度量标准。取决于使用什么后端，不是所有度量标准都可以支持。您可以使用网站信息API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）来检查，在<samp>pageviewservice-supported-metrics</samp> / <module name>下方",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "纯页面浏览。",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "唯一访问者。",
+	"apihelp-pageviewinfo-param-days": "要显示的日数。",
+	"apihelp-query+pageviews-description": "显示每个页面的页面浏览数据（在最近<var>$1days</var>天内，每个页面的每日页面浏览数量）。结果格式是页面标题（带下划线）=>日期（年月日）=>计数。",
+	"apihelp-query+pageviews-summary": "显示按页面的页面浏览数据（在过去<var>$1days</var>日内，每日页面浏览量）。",
+	"apihelp-query+pageviews-extended-description": "结果格式为页面标题（带下划线）=>日期（年月日）=>格式。",
+	"apihelp-query+pageviews-example": "显示首页的页面浏览统计。",
+	"apihelp-query+siteviews-description": "显示站点范围页面浏览数据（在最近<var>$1days</var>天内，每个页面的每日页面浏览总数）。结果格式是日期（年月日）=>计数。",
+	"apihelp-query+siteviews-summary": "显示网站端页面浏览数据（在过去<var>$1days</var>日内，每日的页面浏览总数）。",
+	"apihelp-query+siteviews-extended-description": "结果格式为日期（年月日）=>计数。",
+	"apihelp-query+siteviews-example": "显示站点范围页面浏览总数。",
+	"apihelp-query+siteviews-example2": "显示站点范围唯一访问者总数。",
+	"apihelp-query+mostviewed-description": "列举最多访问页面（基于最近一天的页面浏览计数）。",
+	"apihelp-query+mostviewed-summary": "列举最多访问页面（基于最近一天的页面浏览计数）。",
+	"apihelp-query+mostviewed-param-limit": "要返回的页面数量。",
+	"apihelp-query+mostviewed-example": "列举前10个页面。",
+	"apihelp-query+mostviewed-example2": "显示前10个页面中，每个页面的页面浏览数据。"
+}

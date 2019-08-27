@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "'A metriche ausate pe cundà le 'ndrucaminde. Depende da ce backend jè ausate, non tutte le metriche ponne essere supportate. Puè ausà l'API 'mbormaziune d'u site ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pe condrollà, sotte a <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "'ndrucaminde 'a pàgene semblice.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitature unece.",
+	"apihelp-pageviewinfo-param-days": "'U numere de sciurne da fà 'ndrucà.",
+	"apihelp-query+pageviews-description": "Fà 'ndrucà le pàggene 'ndrucate pe pàgene e date ('u numere de le pàggene 'ndrucate ogne sciurne pe ognune de le urteme <var>$1days</var> sciurne).\n'U formate d'u resultate jè titole d'a pàgene (cu le linee de sotte) => date (Ymd) >= condegge.",
+	"apihelp-query+pageviews-summary": "Fà 'ndrucà le pàggene 'ndrucate pe pàgene e date ('u numere de le pàggene 'ndrucate ogne sciurne pe ognune de le urteme <var>$1days</var> sciurne).",
+	"apihelp-query+pageviews-extended-description": "'U formate d'u resultate jè 'u titole d'a pàgene (cu le linee de sotte) >= date (Ymd) >= condegge.",
+	"apihelp-query+pageviews-example": "Fà 'ndrucà le statisteche de le pàggene 'ndrucate pa pàgene prengepàle.",
+	"apihelp-query+siteviews-description": "Fà 'ndrucà le pàggene 'ndrucate d'u site pe date (totale de le pàggene 'ndrucate ogne sciurne pe ognune de le urteme <var>$1days</var> sciurne).\n'U formate d'u resultate jè date (Ymd) >= condegge.",
+	"apihelp-query+siteviews-summary": "Fà 'ndrucà le pàggene 'ndrucate d'u site pe date (totale de le pàggene 'ndrucate ogne sciurne pe ognune de le urteme <var>$1days</var> sciurne).",
+	"apihelp-query+siteviews-extended-description": "'U formate d'u resultate jè ' adate (Ymd) => condegge.",
+	"apihelp-query+siteviews-example": "Fà 'ndrucà 'u totale de le pàggene 'ndrucate sus a 'u site.",
+	"apihelp-query+siteviews-example2": "Fà 'ndrucà 'u totale de le vesetature unece.",
+	"apihelp-query+mostviewed-description": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
+	"apihelp-query+mostviewed-summary": "Elenghe de le pàggene cchiù 'mdrucate (basate sus a 'u condegge de le pàggene 'ndrucate de l'urteme sciurne).",
+	"apihelp-query+mostviewed-param-limit": "'U numere de le pàggene da turnà.",
+	"apihelp-query+mostviewed-example": "Elenghe de le prime 10 pàggene.",
+	"apihelp-query+mostviewed-example2": "Fà 'ndrucà le date de le pàggene 'ndrucate pe ognune de le 10 pàggene cchiù 'ndrucate."
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unike besøkende.",
+	"apihelp-pageviewinfo-param-days": "Antall dager som skal vises."
+}

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dgstranz",
+			"Fitoschido"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
+	"apihelp-pageviewinfo-param-days": "La cantidad de días que mostrar.",
+	"apihelp-query+mostviewed-param-limit": "La cantidad de páginas que devolver.",
+	"apihelp-query+mostviewed-example": "Enumerar las 10 páginas más vistas."
+}

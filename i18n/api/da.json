@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kranix",
+			"Saederup92"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikke besøgende.",
+	"apihelp-pageviewinfo-param-days": "Antal dage, som skal vises."
+}

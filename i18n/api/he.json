@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80",
+			"Guycn2"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "המדד לספירת צפיות. בהתאם לשרת, לא כל המדדים יכולים לשמש. באפשרותך להשתמש בבקשת siteinfo של ה־API (ר' [[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) כדי לבדוק, תחת <samp>pageviewservice-supported-metrics</samp> / <שם המודול>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "צפיות רגילות בדפים.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "מבקרים ייחודיים.",
+	"apihelp-pageviewinfo-param-days": "כמה ימים להציג.",
+	"apihelp-query+pageviews-description": "הצגת נתוני צפיות בדפים (מספר הצפיות בדפים ליום עבור כל אחד מ־<var>$1days</var> הימים האחרונים). תסדיר התוצאה הוא כותרת דף (עם קווים תחתונים) => תאריך (Ymd) => ספירה.",
+	"apihelp-query+pageviews-summary": "הצגת נתוני צפייה לפי דף (מספר הצפיות בכל אחד מ־<var>$1days</var> הימים האחרונים).",
+	"apihelp-query+pageviews-extended-description": "תחביר התוצאה הוא: שם הדף (עם קווים_תחתיים) => תאריך (Ymd) => מספר.",
+	"apihelp-query+pageviews-example": "הצגת סטטיסטיקת צפיות בדפים עבור הדף הראשי.",
+	"apihelp-query+siteviews-description": "הצגת נתוני צפיות בדפים עבור כל האתר (סך כל הצפיות בדפים עבור כל אחד מ־<var>$1days</var> הימים האחרונים). התוצאה היא תאריך (Ymd) => ספירה.",
+	"apihelp-query+siteviews-summary": "הצגת נתוני צפייה עבור כל האתר (מספר הצפיות הכולל בכל אחד מ־<var>$1days</var> הימים האחרונים).",
+	"apihelp-query+siteviews-extended-description": "תחביר התוצאה הוא: תאריך (Ymd) => מספר.",
+	"apihelp-query+siteviews-example": "הצגת סך כל הצפיות בדפים עבור כל האתר.",
+	"apihelp-query+siteviews-example2": "הצגת סך כל המבקרים הייחודיים בכל האתר.",
+	"apihelp-query+mostviewed-description": "רשימת הדפים הנצפים ביותר (על סמך ספירת הצפיות הדפים ביום האחרון).",
+	"apihelp-query+mostviewed-summary": "רשימת הדפים הנצפים ביותר (על סמך ספירת הצפיות בדפים ביום האחרון).",
+	"apihelp-query+mostviewed-param-limit": "כמה דפים להחזיר.",
+	"apihelp-query+mostviewed-example": "10 הדפים המובילים.",
+	"apihelp-query+mostviewed-example2": "הצגת נתוני צפיות בדפים עבור 10 הדפים המובילים."
+}

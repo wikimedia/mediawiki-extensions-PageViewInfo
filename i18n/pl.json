@@ -10,9 +10,5 @@
 	"pvi-close": "Zamknij",
 	"pvi-invalidresponse": "Nieprawidłowa odpowiedź",
 	"pvi-cached-error": "Poprzednia próba pobrania tych danych zakończyła się niepowodzeniem. Aby ograniczyć odświeżanie serwera, ponowne próby zostały zablokowane na $1.",
-	"pvi-cached-error-title": "Poprzednia próba pobrania danych o stronie „$1” zakończyła się niepowodzeniem. Aby ograniczyć odświeżanie serwera, ponowne próby zostały zablokowane na $2.",
-	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalni odwiedzający.",
-	"apihelp-pageviewinfo-param-days": "Liczba dni do pokazania.",
-	"apihelp-query+pageviews-example": "Pokaż statystyki odsłon strony głównej.",
-	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron."
+	"pvi-cached-error-title": "Poprzednia próba pobrania danych o stronie „$1” zakończyła się niepowodzeniem. Aby ograniczyć odświeżanie serwera, ponowne próby zostały zablokowane na $2."
 }

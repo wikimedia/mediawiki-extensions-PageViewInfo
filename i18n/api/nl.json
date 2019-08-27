@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Romaine"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unieke bezoekers.",
+	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen."
+}

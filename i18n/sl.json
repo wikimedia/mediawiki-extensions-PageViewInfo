@@ -6,6 +6,5 @@
 	},
 	"pvi-month-count": "Število ogledov strani v zadnjih 30 dneh",
 	"pvi-close": "Zapri",
-	"pvi-invalidresponse": "Neveljaven odziv",
-	"apihelp-pageviewinfo-param-days": "Želeno število dni."
+	"pvi-invalidresponse": "Neveljaven odziv"
 }

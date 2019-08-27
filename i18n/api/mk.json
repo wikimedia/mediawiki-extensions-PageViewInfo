@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Метриката што ќе се користи за броење на посетите. Зависно од тоа која заднина ја користите, може да не се поддржани сите метрики. Проверете ги поддржаните метрики со прилогот siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) под <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Обични посети",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Поединечни посетители.",
+	"apihelp-pageviewinfo-param-days": "Број на денови во приказот.",
+	"apihelp-query+pageviews-description": "Прикажува податоци за посети по страница (дневни посети за секој од последните <var>$1days</var> дена). Исходниот формат е наслов на страницата (со долни црти) => датум (Ymd) => број.",
+	"apihelp-query+pageviews-summary": "Прикажува податоци по посети (број на дневни посети за секој од последните <var>$1days</var> дена).",
+	"apihelp-query+pageviews-extended-description": "Исходниот формат е наслов на страница (со долни црти) => датум (Ymd) => број.",
+	"apihelp-query+pageviews-example": "Прикажува статистика за посети на главната страница.",
+	"apihelp-query+siteviews-description": "Прикажува податоци за посети за цело вики (вкупни дневни посети за секој од последните <var>$1days</var> дена). Исходниот формат е во обликот (Ymd) => број.",
+	"apihelp-query+siteviews-summary": "Прикажува податоци за посетеност на целото мрежно место (вкупно дневни посети за секој од последните <var>$1days</var> дена).",
+	"apihelp-query+siteviews-extended-description": "Исходниот формат е датум (Ymd) => број.",
+	"apihelp-query+siteviews-example": "Прикажува вкупни посети за цело вики.",
+	"apihelp-query+siteviews-example2": "Прикажува вкупни посети на подинечни корисници за цело вики.",
+	"apihelp-query+mostviewed-description": "Ги наведува најпосетените страници (според посетите во изминатиот ден).",
+	"apihelp-query+mostviewed-summary": "Ги наведува најпосетените страници (според посетите во изминатиот ден).",
+	"apihelp-query+mostviewed-param-limit": "Број на страници за прикажување.",
+	"apihelp-query+mostviewed-example": "Испис на 10-те најпосетени страници.",
+	"apihelp-query+mostviewed-example2": "Приказ на податоци за 10-те најпосетени страници."
+}

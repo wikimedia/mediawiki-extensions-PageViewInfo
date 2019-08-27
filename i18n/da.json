@@ -6,7 +6,5 @@
 		]
 	},
 	"pvi-month-count": "Sidevisninger de sidste 30 dage",
-	"pvi-close": "Luk",
-	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikke besøgende.",
-	"apihelp-pageviewinfo-param-days": "Antal dage, som skal vises."
+	"pvi-close": "Luk"
 }

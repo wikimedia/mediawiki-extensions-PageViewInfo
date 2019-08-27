@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwboehm",
+			"Metalhead64"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Einfache Seitenaufrufe.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unterschiedliche Besucher.",
+	"apihelp-pageviewinfo-param-days": "Die Anzahl der anzuzeigenden Tage.",
+	"apihelp-query+pageviews-example": "Zeigt die Seitenaufrufsstatistik der Hauptseite.",
+	"apihelp-query+siteviews-extended-description": "Das Ergebnisformat ist date (Ymd) => count.",
+	"apihelp-query+siteviews-example": "Zeigt wikiweite Seitenaufruf-Summen an.",
+	"apihelp-query+siteviews-example2": "Zeigt websiteweite Summen eindeutiger Besucher an.",
+	"apihelp-query+mostviewed-description": "Listet die nach dem täglichen Seitenaufrufszähler meistgesehenen Seiten auf.",
+	"apihelp-query+mostviewed-summary": "Listet die am häufigsten aufgerufenen Seiten auf (basierend auf der Anzahl der Seitenaufrufe des letzten Tages).",
+	"apihelp-query+mostviewed-param-limit": "Die Anzahl der zurückzugebenden Seiten.",
+	"apihelp-query+mostviewed-example": "Listet die 10 meistbesuchten Seiten auf.",
+	"apihelp-query+mostviewed-example2": "Zeigt Seitenaufrufdaten für jede der 10 meistbesuchten Seiten an."
+}

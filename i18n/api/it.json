@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Redredsonia"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitatori unici.",
+	"apihelp-pageviewinfo-param-days": "Il numero di giorni da mostrare.",
+	"apihelp-query+mostviewed-param-limit": "Il numero di pagine da restituire."
+}

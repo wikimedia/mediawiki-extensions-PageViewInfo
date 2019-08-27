@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "المقياس المطلوب استخدامه لحساب المشاهدات، بناءً على ما نهاية العملية المستخدمة، قد لا تكون جميع المقاييس مدعومة، يمكنك استخدام API معلومات الموقع ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) للتحقق من، <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "مشاهدات صفحة عادية.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "زائرون فريدون.",
+	"apihelp-pageviewinfo-param-days": "عدد الايام لعرضها.",
+	"apihelp-query+pageviews-description": "عرض بيانات مشاهدة الصفحة لكل صفحة (عدد مشاهدات الصفحة اليومي لكل يوم من الأيام <var>$1days</var> الأخيرة)،\nتنسيق النتيجة هو عنوان الصفحة (مع شرطات سفلية) => التاريخ (سشي) => العدد.",
+	"apihelp-query+pageviews-summary": "عرض بيانات مشاهدة الصفحة لكل صفحة (عدد مشاهدات الصفحة اليومي لكل يوم من الأيام <var>$1days</var> الأخيرة).",
+	"apihelp-query+pageviews-extended-description": "تنسيق النتيجة هو عنوان الصفحة (مع شرطات سفلية) => التاريخ (سشي) => العدد.",
+	"apihelp-query+pageviews-example": "عرض إحصاءات مشاهدة الصفحة للصفحة الرئيسية.",
+	"apihelp-query+siteviews-description": "يعرض بيانات مشاهدة الصفحة على مستوى الموقع (إجمالي مشاهدات الصفحات اليومية لكل يوم من الأيام <var>$1days</var> الأخيرة)،\nتنسيق النتيجة هو عنوان الصفحة (مع شرطات سفلية) => التاريخ (سشي) => العدد.",
+	"apihelp-query+siteviews-summary": "يعرض بيانات مشاهدة الصفحة على مستوى الموقع (إجمالي مشاهدات الصفحات اليومية لكل يوم من الأيام <var>$1days</var> الأخيرة).",
+	"apihelp-query+siteviews-extended-description": "تنسيق النتيجة هو عنوان الصفحة (مع شرطات سفلية) => التاريخ (سشي) => العدد.",
+	"apihelp-query+siteviews-example": "عرض إجماليات عرض الصفحة على مستوى الموقع.",
+	"apihelp-query+siteviews-example2": "عرض إجماليات الزائرين الفريدين على مستوى الموقع.",
+	"apihelp-query+mostviewed-description": "يسرد الصفحات الأكثر مشاهدة (بناءً على عدد مشاهدات الصفحة في اليوم الأخير).",
+	"apihelp-query+mostviewed-summary": "يسرد الصفحات الأكثر مشاهدة (بناءً على عدد مشاهدات الصفحة في اليوم الأخير).",
+	"apihelp-query+mostviewed-param-limit": "عدد الصفحات للعودة.",
+	"apihelp-query+mostviewed-example": "سرد أعلى 10 صفحات.",
+	"apihelp-query+mostviewed-example2": "عرض بيانات مشاهدة الصفحة لكل صفحة من أهم 10 صفحات."
+}

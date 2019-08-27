@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "使用來計算瀏覽次數的計量。因取決於所使用的後端，而非所有計量都可支援。您可以使用在 <samp>pageviewservice-supported-metrics</samp> / <module name> 下方的站台訊息 API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）來檢查",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "純頁面檢視。",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "獨一訪問者。",
+	"apihelp-pageviewinfo-param-days": "要顯示的日子數。",
+	"apihelp-query+pageviews-description": "顯示各頁面的頁面檢視資料（前 <var>$1days</var> 天的各每日頁面瀏覽）。\n結果格式為頁面標題（帶底線）=> 日期（Ymd） => 計數。",
+	"apihelp-query+pageviews-summary": "顯示各頁面的頁面檢視資料（前 <var>$1days</var> 天的各每日頁面瀏覽）。",
+	"apihelp-query+pageviews-extended-description": "結果格式為頁面標題（帶底線）=> 日期（Ymd） => 計數。",
+	"apihelp-query+pageviews-example": "顯示首頁的頁面檢視統計。",
+	"apihelp-query+siteviews-description": "顯示站台範圍頁面檢視資料（前 <var>$1days</var> 天的各每日頁面瀏覽總計）。\n結果格式為日期（Ymd） => 計數。",
+	"apihelp-query+siteviews-summary": "顯示站台範圍頁面檢視資料（前 <var>$1days</var> 天的各每日頁面瀏覽總計）。",
+	"apihelp-query+siteviews-extended-description": "結果格式為日期（Ymd） => 計數。",
+	"apihelp-query+siteviews-example": "顯示站台範圍的頁面檢視總數。",
+	"apihelp-query+siteviews-example2": "顯示站台範圍的獨一訪問者總數。",
+	"apihelp-query+mostviewed-description": "列出被瀏覽最多次的頁面（基於最後一天的頁面瀏覽計數）。",
+	"apihelp-query+mostviewed-summary": "列出被瀏覽最多次的頁面（基於最後一天的頁面瀏覽計數）。",
+	"apihelp-query+mostviewed-param-limit": "要回傳的頁面數量。",
+	"apihelp-query+mostviewed-example": "列出前 10 個頁面。",
+	"apihelp-query+mostviewed-example2": "顯示前 10 頁面的各頁面瀏覽資料。"
+}

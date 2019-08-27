@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jerrykim306",
+			"Ykhwong"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "순수 방문자.",
+	"apihelp-query+pageviews-extended-description": "결과 형식은 문서 제목 (밑줄 포함) => 날짜 (년월일) => 카운트입니다.",
+	"apihelp-query+siteviews-extended-description": "결과 형식은 날짜 (년월일) => 카운트입니다.",
+	"apihelp-query+mostviewed-description": "조회수가 가장 많은 문서를 나열합니다. (마지막 날의 조회수에 기반)",
+	"apihelp-query+mostviewed-summary": "조회수가 가장 많은 문서를 나열합니다. (마지막 날의 조회수에 기반)",
+	"apihelp-query+mostviewed-param-limit": "반환할 문서 수입니다.",
+	"apihelp-query+mostviewed-example": "최상위 10개의 문서 보이기."
+}

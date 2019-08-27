@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalni odwiedzający.",
+	"apihelp-pageviewinfo-param-days": "Liczba dni do pokazania.",
+	"apihelp-query+pageviews-example": "Pokaż statystyki odsłon strony głównej.",
+	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron."
+}
