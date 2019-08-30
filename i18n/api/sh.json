@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Metrika koja će se koristiti za brojanje posjeta. Zavisno od toga koju zadninu koristite, može da nisu podržane sve metrike. Provjerite podržane metrike s privitkom siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pod <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Obične posjete",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Jedinstveni posjetitelji.",
+	"apihelp-pageviewinfo-param-days": "Broj dana u prikazu."
+}
