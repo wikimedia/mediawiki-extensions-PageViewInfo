@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Trial",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "La mesure à utiliser pour compter les affichages. Selon le serveur utilisé, certaines métriques peuvent ne pas être possibles. Vous pouvez utiliser l'API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pour vérifier, sous <samp>pageviewservice-soutenu-metrics</samp> / <module name=\"\">",
+	"apihelp-pageviewinfo-param-metric": "La mesure à utiliser pour compter les affichages. Selon le serveur utilisé, certaines mesures peuvent ne pas être possibles. Vous pouvez utiliser l’API ''siteinfo'' ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pour vérifier, sous <samp>pageviewservice-soutenu-metrics</samp> / &lt;''nom du module''&gt;",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Nombre brut de pages vues.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visiteurs uniques.",
 	"apihelp-pageviewinfo-param-days": "Le nombre de jours à afficher.",
