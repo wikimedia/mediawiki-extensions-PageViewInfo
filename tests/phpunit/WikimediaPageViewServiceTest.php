@@ -2,13 +2,15 @@
 
 namespace MediaWiki\Extensions\PageViewInfo;
 
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \MediaWiki\Extensions\PageViewInfo\WikimediaPageViewService
  */
-class WikimediaPageViewServiceTest extends \PHPUnit\Framework\TestCase {
-	/** @var [ \PHPUnit_Framework_MockObject_MockObject, callable ] */
+class WikimediaPageViewServiceTest extends TestCase {
+	/** @var [ MockObject, callable ] */
 	protected $calls = [];
 
 	public function setUp() {
@@ -30,7 +32,7 @@ class WikimediaPageViewServiceTest extends \PHPUnit\Framework\TestCase {
 	 * Creates and returns a mock MWHttpRequest which will be used for the next call
 	 * @param WikimediaPageViewService $service
 	 * @param callable $assertUrl A callable that gets the URL
-	 * @return \PHPUnit_Framework_MockObject_MockObject
+	 * @return MockObject
 	 */
 	protected function mockNextRequest(
 		WikimediaPageViewService $service, callable $assertUrl = null
@@ -99,7 +101,7 @@ class WikimediaPageViewServiceTest extends \PHPUnit\Framework\TestCase {
 				. 'project.example.com/all-access/user/Bar/daily/20000101/20000105', $url );
 		} );
 		foreach ( [ 'Foo' => $mockFoo, 'Bar' => $mockBar ] as $page => $mock ) {
-			/** @var \PHPUnit_Framework_MockObject_MockObject $mock */
+			/** @var MockObject $mock */
 			$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
 			$mock->expects( $this->any() )->method( 'getContent' )->willReturn( json_encode( [
 				'items' => [
