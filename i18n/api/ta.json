@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Balajijagadesh"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "எளிய பக்கபார்ப்புகள்.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "தனித்த வருகையாளர்கள்",
+	"apihelp-pageviewinfo-param-days": "கண்பிக்க வேண்டிய நாட்கள்.",
+	"apihelp-query+pageviews-example": "முதன்மை பக்கத்தின் பக்க பார்ப்பு புள்ளி விவரங்களைக் காட்டுக.",
+	"apihelp-query+mostviewed-param-limit": "காண்பிக்க வேண்டிய பக்கங்களின் எண்ணிக்கை.",
+	"apihelp-query+mostviewed-example": "10 முன்னணி பக்கங்களின் பட்டியல்",
+	"apihelp-query+mostviewed-example2": "ஒவ்வொரு 10 முன்னணி பக்கங்களின் பக்க பார்ப்புகளைக் காட்டவும்."
+}
