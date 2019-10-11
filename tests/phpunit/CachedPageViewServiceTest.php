@@ -16,7 +16,7 @@ class CachedPageViewServiceTest extends TestCase {
 	/** @var MockObject */
 	protected $mock;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$cache = new HashBagOStuff();
 		$this->mock = $this->getMockBuilder( PageViewService::class )->getMockForAbstractClass();

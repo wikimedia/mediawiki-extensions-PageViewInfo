@@ -13,7 +13,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	/** @var [ MockObject, callable ] */
 	protected $calls = [];
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->calls = [];
 	}
