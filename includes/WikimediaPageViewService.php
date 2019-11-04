@@ -97,6 +97,10 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		return false;
 	}
 
+	/**
+	 * @inheritDoc
+	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
+	 */
 	public function getPageData( array $titles, $days, $metric = self::METRIC_VIEW ) {
 		if ( $metric !== self::METRIC_VIEW ) {
 			throw new InvalidArgumentException( 'Invalid metric: ' . $metric );
@@ -141,6 +145,10 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		return $status;
 	}
 
+	/**
+	 * @inheritDoc
+	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
+	 */
 	public function getSiteData( $days, $metric = self::METRIC_VIEW ) {
 		if ( $metric !== self::METRIC_VIEW && $metric !== self::METRIC_UNIQUE ) {
 			throw new InvalidArgumentException( 'Invalid metric: ' . $metric );
@@ -170,6 +178,10 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		return $status;
 	}
 
+	/**
+	 * @inheritDoc
+	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
+	 */
 	public function getTopPages( $metric = self::METRIC_VIEW ) {
 		$result = [];
 		if ( $metric !== self::METRIC_VIEW ) {
