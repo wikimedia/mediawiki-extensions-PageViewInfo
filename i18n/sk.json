@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teslaton"
+			"Teslaton",
+			"Luky001"
 		]
 	},
-	"pvi-month-count": "Počet videní stránky za posledných 30 dní"
+	"pvi-desc": "Pridáva informácie o zobrazeniach stránky do Informácií o stránke",
+	"pvi-month-count": "Počet videní stránky za posledných 30 dní",
+	"pvi-close": "Zatvoriť",
+	"pvi-invalidresponse": "Neplatná odpoveď"
 }
