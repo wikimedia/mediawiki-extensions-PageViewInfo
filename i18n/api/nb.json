@@ -4,6 +4,22 @@
 			"Jon Harald Søby"
 		]
 	},
+	"apihelp-pageviewinfo-param-metric": "Målingen som skal brukes for å telle visninger. Avhengig av hvilket bakstykke som brukes støttes ikke alle målinger. Du kan bruke siteinfo-API-et ([[Special:ApiHelp/query+siteinfo|action=query&metadata=siteinfo]]) for å sjekke, under <samp>pageviewservice-supported-metrics</samp>/<modulnavn>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Vanlige sidevisninger.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unike besøkende.",
-	"apihelp-pageviewinfo-param-days": "Antall dager som skal vises."
+	"apihelp-pageviewinfo-param-days": "Antall dager som skal vises.",
+	"apihelp-query+pageviews-description": "Viser sidevisningsdata per side (antall daglige sidevisninger for de siste <var>$1days</var> dagene).\nResultatformatet er sidetittel (med understrek) => dato (Ymd) => antall.",
+	"apihelp-query+pageviews-summary": "Viser sidevisningsdata per side (antall daglige sidevisninger for de siste <var>$1days</var> dagene).",
+	"apihelp-query+pageviews-extended-description": "Resultatformatet er sidetittel (med understreker) => dato (Ymd) => antall.",
+	"apihelp-query+pageviews-example": "Vis sidevisningstatistikk for hovedsiden.",
+	"apihelp-query+siteviews-description": "Viser sidevisningsdata for hele nettstedet (totalt antall daglige sidevisninger for de siste <var>$1days</var> dagene).\nResultatformatet er dato (Ymd) => antall.",
+	"apihelp-query+siteviews-summary": "Viser sidevisningsdata for hele nettstedet (totalt antall sidevisninger for de siste <var>$1days</var> dagene).",
+	"apihelp-query+siteviews-extended-description": "Resultatformatet er dato (Ymd) => antall.",
+	"apihelp-query+siteviews-example": "Vis totalt antall sidevisnings for hele nettstedet.",
+	"apihelp-query+siteviews-example2": "Vis totalt antall unike besøkere for hele nettstedet.",
+	"apihelp-query+mostviewed-description": "Lister opp de mest viste sidene (basert på gårsdagens sidevisningsantall).",
+	"apihelp-query+mostviewed-summary": "Lister opp de mest viste sidene (basert på gårsdagens sidevisningsantall).",
+	"apihelp-query+mostviewed-param-limit": "Antall sider som skal returneres.",
+	"apihelp-query+mostviewed-example": "Lister opp de 10 øverste sidene.",
+	"apihelp-query+mostviewed-example2": "Viser sidevisningsdata for hver av de 10 øverste sidene."
 }
