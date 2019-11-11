@@ -7,6 +7,7 @@
 	"pvi-desc": "Legger til sidevisningsinformasjon til info-handlingen",
 	"pvi-month-count": "Sidevisninger de siste 30 dagene",
 	"pvi-close": "Lukk",
+	"pvi-range": "$1–$2",
 	"pvi-invalidresponse": "Ugyldig respons",
 	"pvi-cached-error": "Et tidligere forsøk på å hente disse dataene feilet. For å begrense tjenerbelastning er nye forsøk blokkert i $1.",
 	"pvi-cached-error-title": "Et tidligere forsøk på å hente siden «$1» feilet. For å begrense tjenerbelastning har nye forsøk blitt blokkert i $2."
