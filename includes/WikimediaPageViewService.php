@@ -306,7 +306,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 			$status = StatusValue::newGood( [ 'items' => [] ] );
 		}
 		if ( !$status->isGood() ) {
-			$error = Status::wrap( $status )->getWikiText( null, null, 'en' );
+			$error = Status::wrap( $status )->getWikiText( false, false, 'en' );
 			$severity = $status->isOK() ? LogLevel::INFO : LogLevel::ERROR;
 			$msg = $status->isOK() ? 'Problems fetching {url}: {error}' : 'Failed fetching {url}: {error}';
 			$prefixedApiErrorData = array_combine( array_map( function ( $k ) {

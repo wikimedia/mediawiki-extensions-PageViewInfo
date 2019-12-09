@@ -183,7 +183,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 				// PageViewService is expected to return [ date => null ] for all requested dates
 				$this->logger->warning( 'Upstream service returned invalid data for {title}', [
 					'title' => $title,
-					'statusMessage' => Status::wrap( $uncachedStatus )->getWikiText( null, null, 'en' ),
+					'statusMessage' => Status::wrap( $uncachedStatus )->getWikiText( false, false, 'en' ),
 				] );
 				$titleData = $this->extendDateRange( is_array( $titleData ) ? $titleData : [],
 					$this->cachedDays );
