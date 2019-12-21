@@ -99,7 +99,6 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
 	 */
 	public function getPageData( array $titles, $days, $metric = self::METRIC_VIEW ) {
 		if ( $metric !== self::METRIC_VIEW ) {
@@ -147,7 +146,6 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
 	 */
 	public function getSiteData( $days, $metric = self::METRIC_VIEW ) {
 		if ( $metric !== self::METRIC_VIEW && $metric !== self::METRIC_UNIQUE ) {
@@ -180,7 +178,6 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @inheritDoc
-	 * @suppress PhanTypeArraySuspiciousNullable StatusValue::getValue is unknown
 	 */
 	public function getTopPages( $metric = self::METRIC_VIEW ) {
 		$result = [];
