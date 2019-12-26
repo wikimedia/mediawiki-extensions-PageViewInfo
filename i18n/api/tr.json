@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Görünümleri saymak için kullanılacak metrik. Hangi arka ucun kullanıldığına bağlı olarak, tüm metrikler desteklenmeyebilir. <samp>pageviewservice-supported-metrics</samp> / <modül adı> altında, kontrol etmek için site bilgisi API'sını ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) kullanabilirsiniz.",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Düz sayfa görünümleri.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Benzersiz ziyaretçiler.",
+	"apihelp-pageviewinfo-param-days": "Gösterilecek gün sayısı.",
+	"apihelp-query+pageviews-description": "Sayfa başına sayfa görüntüleme verilerini (son <var>$1days</var> günün her biri için günlük sayfa görüntüleme sayısı) gösterir.\nSonuç formatı sayfa başlığıdır (alt çizgi ile) => tarih (Ymd) => sayım.",
+	"apihelp-query+pageviews-summary": "Sayfa başına sayfa görüntüleme verilerini (son <var>$1days</var> günün her biri için günlük sayfa görüntüleme sayısı) gösterir.",
+	"apihelp-query+pageviews-extended-description": "Sonuç formatı sayfa başlığıdır (alt çizgi ile) => tarih (Ymd) => sayım.",
+	"apihelp-query+pageviews-example": "Ana sayfa için sayfa görüntüleme istatistiklerini göster.",
+	"apihelp-query+siteviews-description": "Site genelinde sayfa görüntüleme verilerini gösterir (son <var>$1days</var> günün her biri için günlük sayfa görüntüleme toplamları).\nSonuç formatı tarihtir (Ymd) => sayım.",
+	"apihelp-query+siteviews-summary": "Site genelinde sayfa görüntüleme verilerini gösterir (son <var>$1days</var> günün her biri için günlük sayfa görüntüleme toplamları).",
+	"apihelp-query+siteviews-extended-description": "Sonuç formatı tarihtir (Ymd) => sayım.",
+	"apihelp-query+siteviews-example": "Site genelinde sayfa görüntüleme toplamlarını göster.",
+	"apihelp-query+siteviews-example2": "Site genelinde sayfa görüntüleme toplamlarını göster.",
+	"apihelp-query+mostviewed-description": "En çok görüntülenen sayfaları listeler (geçen günün sayfa görüntüleme sayısına göre).",
+	"apihelp-query+mostviewed-summary": "En çok görüntülenen sayfaları listeler (geçen günün sayfa görüntüleme sayısına göre).",
+	"apihelp-query+mostviewed-param-limit": "Döndürülecek sayfa sayısı.",
+	"apihelp-query+mostviewed-example": "İlk 10 sayfayı listele.",
+	"apihelp-query+mostviewed-example2": "En iyi 10 sayfanın her biri için sayfa görüntüleme verilerini göster."
+}
