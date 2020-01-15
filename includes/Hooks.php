@@ -5,9 +5,9 @@ namespace MediaWiki\Extensions\PageViewInfo;
 use ApiBase;
 use ApiModuleManager;
 use ApiQuerySiteinfo;
-use IContextSource;
 use FormatJson;
 use Html;
+use IContextSource;
 use MediaWiki\MediaWikiServices;
 use StatusValue;
 

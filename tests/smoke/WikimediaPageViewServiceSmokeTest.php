@@ -29,18 +29,18 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
-		$this->assertInternalType( 'array', $data, $this->debug( $data, $status ) );
+		$this->assertIsArray( $data, $this->debug( $data, $status ) );
 		$this->assertCount( 3, $data, $this->debug( $data, $status ) );
 		$day = gmdate( 'Y-m-d', time() - 3 * 24 * 3600 );
 		foreach ( $titles as $title ) {
 			$this->assertArrayHasKey( $title, $data, $this->debug( $data, $status ) );
-			$this->assertInternalType( 'array', $data[$title], $this->debug( $data, $status ) );
+			$this->assertIsArray( $data[$title], $this->debug( $data, $status ) );
 			$this->assertCount( 5, $data[$title], $this->debug( $data, $status ) );
 			$this->assertArrayHasKey( $day, $data[$title], $this->debug( $data, $status ) );
 		}
-		$this->assertInternalType( 'int', $data['Main_Page'][$day], $this->debug( $data, $status ) );
+		$this->assertIsInt( $data['Main_Page'][$day], $this->debug( $data, $status ) );
 		$this->assertGreaterThan( 1000, $data['Main_Page'][$day], $this->debug( $data, $status ) );
-		$this->assertInternalType( 'int', $data['Mycotoxin'][$day], $this->debug( $data, $status ) );
+		$this->assertIsInt( $data['Mycotoxin'][$day], $this->debug( $data, $status ) );
 		$this->assertLessThan( 1000, $data['Mycotoxin'][$day], $this->debug( $data, $status ) );
 		$this->assertNull( $data[$randomTitle][$day], $this->debug( $data, $status ) );
 	}
@@ -52,11 +52,11 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
-		$this->assertInternalType( 'array', $data, $this->debug( $data, $status ) );
+		$this->assertIsArray( $data, $this->debug( $data, $status ) );
 		$this->assertCount( 5, $data, $this->debug( $data, $status ) );
 		$day = gmdate( 'Y-m-d', time() - 3 * 24 * 3600 );
 		$this->assertArrayHasKey( $day, $data, $this->debug( $data, $status ) );
-		$this->assertInternalType( 'int', $data[$day], $this->debug( $data, $status ) );
+		$this->assertIsInt( $data[$day], $this->debug( $data, $status ) );
 		$this->assertGreaterThan( 100000, $data[$day], $this->debug( $data, $status ) );
 	}
 
@@ -67,11 +67,11 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
-		$this->assertInternalType( 'array', $data, $this->debug( $data, $status ) );
+		$this->assertIsArray( $data, $this->debug( $data, $status ) );
 		$this->assertCount( 5, $data, $this->debug( $data, $status ) );
 		$day = gmdate( 'Y-m-d', time() - 3 * 24 * 3600 );
 		$this->assertArrayHasKey( $day, $data, $this->debug( $data, $status ) );
-		$this->assertInternalType( 'int', $data[$day], $this->debug( $data, $status ) );
+		$this->assertIsInt( $data[$day], $this->debug( $data, $status ) );
 		$this->assertGreaterThan( 100000, $data[$day], $this->debug( $data, $status ) );
 	}
 
@@ -82,7 +82,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
-		$this->assertInternalType( 'array', $data, $this->debug( $data, $status ) );
+		$this->assertIsArray( $data, $this->debug( $data, $status ) );
 		$this->assertArrayHasKey( 'Main_Page', $data, $this->debug( $data, $status ) );
 		$this->assertSame( 'Main_Page', key( $data ), $this->debug( $data, $status ) );
 		$this->assertGreaterThan( 100000, $data['Main_Page'], $this->debug( $data, $status ) );
