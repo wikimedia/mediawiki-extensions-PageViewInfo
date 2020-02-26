@@ -4,5 +4,7 @@
 			"Srdjan m"
 		]
 	},
-	"pvi-month-count": "Pregleda u posljednjih 30 dana"
+	"pvi-month-count": "Pregleda u posljednjih 30 dana",
+	"pvi-close": "Zatvori",
+	"pvi-range": "$1 – $2"
 }
