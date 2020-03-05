@@ -305,12 +305,14 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		if ( !$status->isGood() ) {
 			$error = Status::wrap( $status )->getWikiText( false, false, 'en' );
 			$severity = $status->isOK() ? LogLevel::INFO : LogLevel::ERROR;
-			$msg = $status->isOK() ? 'Problems fetching {url}: {error}' : 'Failed fetching {url}: {error}';
+			$msg = $status->isOK()
+				? 'Problems fetching {requesturl}: {error}'
+				: 'Failed fetching {requesturl}: {error}';
 			$prefixedApiErrorData = array_combine( array_map( function ( $k ) {
 				return 'apierror_' . $k;
 			}, array_keys( $apiErrorData ) ), $apiErrorData );
 			$this->logger->log( $severity, $msg, [
-				'url' => $url,
+				'requesturl' => $url,
 				'error' => $error,
 			] + $prefixedApiErrorData );
 		}
