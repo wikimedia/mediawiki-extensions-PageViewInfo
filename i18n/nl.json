@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand",
 			"Mainframe98",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"pvi-desc": "Voegt informatie toe aan de handeling \"info\" over het aantal keren dat de pagina is bekeken",

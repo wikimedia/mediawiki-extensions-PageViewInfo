@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Trial",
-			"Wladek92",
-			"Verdy p"
+			"Verdy p",
+			"Wladek92"
 		]
 	},
 	"apihelp-pageviewinfo-param-metric": "La mesure à utiliser pour compter les affichages. Selon le serveur utilisé, certaines mesures peuvent ne pas être possibles. Vous pouvez utiliser l’API ''siteinfo'' ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pour vérifier, sous <samp>pageviewservice-soutenu-metrics</samp> / &lt;''nom du module''&gt;",
