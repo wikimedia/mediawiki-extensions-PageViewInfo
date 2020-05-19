@@ -11,16 +11,16 @@ use Title;
  */
 interface PageViewService {
 	/** Page view count */
-	const METRIC_VIEW = 'view';
+	public const METRIC_VIEW = 'view';
 	/** Unique visitors (devices) for some period, typically last 30 days */
-	const METRIC_UNIQUE = 'unique';
+	public const METRIC_UNIQUE = 'unique';
 
 	/** Return data for a given article */
-	const SCOPE_ARTICLE = 'article';
+	public const SCOPE_ARTICLE = 'article';
 	/** Return a list of the top articles */
-	const SCOPE_TOP = 'top';
+	public const SCOPE_TOP = 'top';
 	/** Return data for the whole site */
-	const SCOPE_SITE = 'site';
+	public const SCOPE_SITE = 'site';
 
 	/**
 	 * Whether the service can provide data for the given metric/scope combination.

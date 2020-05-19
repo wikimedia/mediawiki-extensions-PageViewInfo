@@ -15,7 +15,7 @@ use Title;
  * Wraps a PageViewService and caches the results.
  */
 class CachedPageViewService implements PageViewService, LoggerAwareInterface {
-	const ERROR_EXPIRY = 1800;
+	private const ERROR_EXPIRY = 1800;
 
 	/** @var PageViewService */
 	protected $service;
