@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Strainu"
+		]
+	},
+	"pvi-desc": "Adaugă informații despre vizualizările paginii în acțiunea info",
+	"pvi-month-count": "Vizualizări în ultimele 30 de zile",
+	"pvi-close": "Închide",
+	"pvi-range": "$1 - $2",
+	"pvi-invalidresponse": "Răspuns invalid",
+	"pvi-cached-error": "O încercare anterioară de obținere a acestor date a eșuat. Pentru a limita încărcarea serverului, au fost blocate reîncercările pentru $1.",
+	"pvi-cached-error-title": "O încercare anterioară de obținere a paginii \"$1\" a eșuat. Pentru a limita încărcarea serverului, au fost blocate reîncercările pentru $2."
+}
