@@ -8,5 +8,8 @@
 	"globals": {
 		"mediaWiki": false,
 		"OO": false
+	},
+	"rules": {
+		"no-shadow": "warn"
 	}
 }
