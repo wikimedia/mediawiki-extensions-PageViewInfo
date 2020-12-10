@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"पर्वत सुबेदी"
+		]
+	},
+	"pvi-month-count": "विगत ३० दिनमा पृष्ठको अवलोकन",
+	"pvi-close": "बन्द गर्ने",
+	"pvi-range": "$1 - $2",
+	"pvi-invalidresponse": "अवैध प्रतिक्रिया"
+}
