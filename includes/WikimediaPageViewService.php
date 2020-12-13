@@ -317,7 +317,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 			] + $prefixedApiErrorData );
 		}
 		if ( !$status->isOK() && isset( $apiErrorData['detail'] ) ) {
-			$status->error( new \RawMessage( wfEscapeWikiText( $apiErrorData['detail'] ) ) );
+			$status->error( ( new \RawMessage( '$1' ) )->rawParams( wfEscapeWikiText( $apiErrorData['detail'] ) ) );
 		}
 
 		return $status;
