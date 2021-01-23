@@ -10,7 +10,7 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \MediaWiki\Extensions\PageViewInfo\WikimediaPageViewService
  */
 class WikimediaPageViewServiceTest extends TestCase {
-	/** @var [ MockObject, callable ] */
+	/** @var array [ MockObject, callable ] */
 	protected $calls = [];
 
 	public function setUp() : void {
@@ -31,7 +31,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	/**
 	 * Creates and returns a mock MWHttpRequest which will be used for the next call
 	 * @param WikimediaPageViewService $service
-	 * @param callable $assertUrl A callable that gets the URL
+	 * @param callable|null $assertUrl A callable that gets the URL
 	 * @return MockObject
 	 */
 	protected function mockNextRequest(
@@ -66,6 +66,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 
 	/**
 	 * Imitate a no-data 404 error from the REST API
+	 * @return string
 	 */
 	protected function get404ErrorJson() {
 		return json_encode( [
