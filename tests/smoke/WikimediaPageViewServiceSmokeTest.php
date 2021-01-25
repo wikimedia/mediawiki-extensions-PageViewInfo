@@ -10,8 +10,6 @@ use Wikimedia\TestingAccessWrapper;
  * @coversNothing smoke tests
  */
 class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
-	protected $data;
-
 	protected function getService() {
 		global $wgPageViewInfoWikimediaEndpoint;
 		return new WikimediaPageViewService( $wgPageViewInfoWikimediaEndpoint,
