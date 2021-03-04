@@ -3,12 +3,14 @@
 		"authors": [
 			"Gomoko",
 			"Trial",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
 	"pvi-desc": "Ajoute l’information de vues de la page à l’action info",
 	"pvi-month-count": "Vues de la page dans les 30 derniers jours",
 	"pvi-close": "Fermer",
+	"pvi-range": "$1 – $2",
 	"pvi-invalidresponse": "Réponse incorrecte",
 	"pvi-cached-error": "Une précédente tentative d'extraction de ces données a échoué. Afin de limiter la charge du serveur, les tentatives ont été bloquées pour $1.",
 	"pvi-cached-error-title": "Une précédente tentative d'extraction de la page \"$1\" a échoué. Afin de limiter la charge du serveur, les tentatives ont été bloqués pour $2."
