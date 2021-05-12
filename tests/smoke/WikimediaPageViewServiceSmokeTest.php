@@ -20,7 +20,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$service = $this->getService();
 		$randomTitle = ucfirst( \MWCryptRand::generateHex( 32 ) );
 		$titles = [ 'Main_Page', 'Mycotoxin', $randomTitle ];
-		$status = $service->getPageData( array_map( function ( $t ) {
+		$status = $service->getPageData( array_map( static function ( $t ) {
 			return \Title::newFromText( $t );
 		}, $titles ), 5 );
 		if ( !$status->isOK() ) {

@@ -138,7 +138,7 @@ class Hooks {
 		/** @var PageViewService $service */
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$metrics = array_keys( array_filter( self::getApiMetricsMap(),
-			function ( $metric ) use ( $scope, $service ) {
+			static function ( $metric ) use ( $scope, $service ) {
 				return $service->supports( $metric, $scope );
 			} ) );
 		$reverseMap = array_flip( self::getApiMetricsMap() );
@@ -149,7 +149,7 @@ class Hooks {
 				ApiBase::PARAM_TYPE => $metrics,
 				ApiBase::PARAM_DFLT => $default,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-pageviewinfo-param-metric',
-				ApiBase::PARAM_HELP_MSG_PER_VALUE => array_map( function ( $metric ) {
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => array_map( static function ( $metric ) {
 					return 'apihelp-pageviewinfo-paramvalue-metric-' . $metric;
 				}, array_combine( $metrics, $metrics ) ),
 			],

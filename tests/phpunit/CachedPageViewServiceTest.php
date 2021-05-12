@@ -30,7 +30,7 @@ class CachedPageViewServiceTest extends TestCase {
 	public function testSupports( $metric, $scope, $expectation ) {
 		$this->mock->expects( $this->once() )
 			->method( 'supports' )
-			->willReturnCallback( function ( $metric, $scope ) {
+			->willReturnCallback( static function ( $metric, $scope ) {
 				return $metric === PageViewService::METRIC_VIEW ||
 					   $scope === PageViewService::SCOPE_SITE;
 			} );
@@ -67,12 +67,12 @@ class CachedPageViewServiceTest extends TestCase {
 				PageViewService::METRIC_VIEW, PageViewService::METRIC_UNIQUE ) )
 			->willReturnCallback( function ( $titles, $days, $metric ) use ( &$expectedTitles ) {
 				$metric = ( $metric === PageViewService::METRIC_VIEW ) + 1;
-				$titles = array_fill_keys( array_map( function ( \Title $t ) {
+				$titles = array_fill_keys( array_map( static function ( \Title $t ) {
 					return $t->getPrefixedDBkey();
 				}, $titles ), null );
 				$this->assertSame( $expectedTitles, array_keys( $titles ) );
 				// 'A' => 1, 'B' => 2, ...
-				$pages = array_combine( array_map( function ( $n ) {
+				$pages = array_combine( array_map( static function ( $n ) {
 					return chr( ord( 'A' ) + $n - 1 );
 				}, range( 1, 20 ) ), range( 1, 20 ) );
 				// simulate a page-per-query limit of 3
@@ -85,11 +85,11 @@ class CachedPageViewServiceTest extends TestCase {
 					'2000-01-05' => $metric * 5,
 				], -$days );
 				// add some errors
-				$data = array_map( function ( $multiplier ) use ( $perDay ) {
+				$data = array_map( static function ( $multiplier ) use ( $perDay ) {
 					if ( $multiplier > 10 && $multiplier % 2 ) {
 						return null;
 					}
-					return array_map( function ( $count ) use ( $multiplier ) {
+					return array_map( static function ( $count ) use ( $multiplier ) {
 						return $count * $multiplier;
 					}, $perDay );
 				}, $base );
@@ -99,18 +99,18 @@ class CachedPageViewServiceTest extends TestCase {
 						$status->error( '500 #' . $title );
 					}
 				}
-				$status->success = array_map( function ( $v ) {
+				$status->success = array_map( static function ( $v ) {
 					return $v !== null;
 				}, $data );
 				$status->successCount = count( array_filter( $status->success ) );
 				$status->failCount = count( $status->success ) - $status->successCount;
-				$status->setResult( $status->successCount, array_map( function ( $titleData ) use ( $perDay ) {
+				$status->setResult( $status->successCount, array_map( static function ( $titleData ) use ( $perDay ) {
 					return $titleData ?: array_fill_keys( array_keys( $perDay ), null );
 				}, $data ) );
 				return $status;
 			} );
-		$makeTitles = function ( $titles ) {
-			return array_map( function ( $t ) {
+		$makeTitles = static function ( $titles ) {
+			return array_map( static function ( $t ) {
 				return \Title::newFromText( $t );
 			}, $titles );
 		};

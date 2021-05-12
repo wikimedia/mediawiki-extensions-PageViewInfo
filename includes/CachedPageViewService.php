@@ -144,7 +144,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 */
 	protected function getTitlesWithCache( $metric, array $titles ) {
 		// Set up the response array, without any values. This will help preserve the order of titles.
-		$data = array_fill_keys( array_map( function ( Title $t ) {
+		$data = array_fill_keys( array_map( static function ( Title $t ) {
 			return $t->getPrefixedDBkey();
 		}, $titles ), false );
 
@@ -211,7 +211,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 
 		$status = StatusValue::newGood( $data );
 		array_walk( $statuses, [ $status, 'merge' ] );
-		$status->success = array_map( function ( StatusValue $s ) {
+		$status->success = array_map( static function ( StatusValue $s ) {
 			 return $s->isOK();
 		}, $statuses );
 		$status->successCount = count( array_filter( $status->success ) );

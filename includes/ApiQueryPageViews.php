@@ -23,15 +23,15 @@ class ApiQueryPageViews extends ApiQueryBase {
 			+ $this->getPageSet()->getGoodTitles();
 
 		// sort titles alphabetically and discard those already processed in a previous request
-		$indexToTitle = array_map( function ( Title $t ) {
+		$indexToTitle = array_map( static function ( Title $t ) {
 			return $t->getPrefixedDBkey();
 		}, $titles );
 		asort( $indexToTitle );
-		$indexToTitle = array_filter( $indexToTitle, function ( $title ) use ( $continue ) {
+		$indexToTitle = array_filter( $indexToTitle, static function ( $title ) use ( $continue ) {
 			return $title >= $continue;
 		} );
 		$titleToIndex = array_flip( $indexToTitle );
-		$titles = array_filter( array_values( array_map( function ( $index ) use ( $titles ) {
+		$titles = array_filter( array_values( array_map( static function ( $index ) use ( $titles ) {
 			return $titles[$index] ?? null;
 		}, $titleToIndex ) ) );
 

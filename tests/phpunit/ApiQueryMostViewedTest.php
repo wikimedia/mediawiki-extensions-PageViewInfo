@@ -84,7 +84,7 @@ class ApiQueryMostViewedTest extends \ApiTestCase {
 		$service = new WikimediaPageViewService( 'http://example.test/',
 			[ 'project' => 'foo.project.test' ], false );
 		$wrapper = TestingAccessWrapper::newFromObject( $service );
-		$wrapper->requestFactory = function ( $url ) use ( &$responses ) {
+		$wrapper->requestFactory = static function ( $url ) use ( &$responses ) {
 			return array_shift( $responses );
 		};
 		$this->setService( 'PageViewService', $service );

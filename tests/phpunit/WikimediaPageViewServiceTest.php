@@ -81,7 +81,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	}
 
 	public function testConstructor() {
-		$this->assertThrows( \InvalidArgumentException::class, function () {
+		$this->assertThrows( \InvalidArgumentException::class, static function () {
 			new WikimediaPageViewService( 'null:', [], false );
 		} );
 		new WikimediaPageViewService( 'null:', [ 'project' => 'http://example.com/' ], false );

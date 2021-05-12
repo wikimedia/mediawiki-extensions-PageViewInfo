@@ -308,7 +308,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 			$msg = $status->isOK()
 				? 'Problems fetching {requesturl}: {error}'
 				: 'Failed fetching {requesturl}: {error}';
-			$prefixedApiErrorData = array_combine( array_map( function ( $k ) {
+			$prefixedApiErrorData = array_combine( array_map( static function ( $k ) {
 				return 'apierror_' . $k;
 			}, array_keys( $apiErrorData ) ), $apiErrorData );
 			$this->logger->log( $severity, $msg, [
