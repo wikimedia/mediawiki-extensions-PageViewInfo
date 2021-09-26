@@ -17,7 +17,8 @@ class ApiQueryPageViews extends ApiQueryBase {
 	}
 
 	public function execute() {
-		$continue = $this->getParameter( 'continue' );
+		$params = $this->extractRequestParams();
+		$continue = $params['continue'];
 		$titles = $this->getPageSet()->getMissingTitles()
 			+ $this->getPageSet()->getSpecialTitles()
 			+ $this->getPageSet()->getGoodTitles();
@@ -37,8 +38,8 @@ class ApiQueryPageViews extends ApiQueryBase {
 
 		/** @var PageViewService $service */
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
-		$metric = Hooks::getApiMetricsMap()[$this->getParameter( 'metric' )];
-		$status = $service->getPageData( $titles, $this->getParameter( 'days' ), $metric );
+		$metric = Hooks::getApiMetricsMap()[$params['metric']];
+		$status = $service->getPageData( $titles, $params['days'], $metric );
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
 			$data = $status->getValue();

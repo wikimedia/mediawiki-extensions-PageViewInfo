@@ -15,10 +15,11 @@ class ApiQuerySiteViews extends ApiQueryBase {
 	}
 
 	public function execute() {
+		$params = $this->extractRequestParams();
 		/** @var PageViewService $service */
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
-		$metric = Hooks::getApiMetricsMap()[$this->getParameter( 'metric' )];
-		$status = $service->getSiteData( $this->getParameter( 'days' ), $metric );
+		$metric = Hooks::getApiMetricsMap()[$params['metric']];
+		$status = $service->getSiteData( $params['days'], $metric );
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
 			$result = $this->getResult();

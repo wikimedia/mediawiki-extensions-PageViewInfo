@@ -28,15 +28,16 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 	 * @param ApiPageSet|null $resultPageSet
 	 */
 	private function run( ApiPageSet $resultPageSet = null ) {
+		$params = $this->extractRequestParams();
 		/** @var PageViewService $service */
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
-		$metric = Hooks::getApiMetricsMap()[$this->getParameter( 'metric' )];
+		$metric = Hooks::getApiMetricsMap()[$params['metric']];
 		$status = $service->getTopPages( $metric );
 
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
-			$limit = $this->getParameter( 'limit' );
-			$offset = $this->getParameter( 'offset' );
+			$limit = $params['limit'];
+			$offset = $params['offset'];
 
 			$data = $status->getValue();
 			if ( count( $data ) > $offset + $limit ) {
