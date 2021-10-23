@@ -26,7 +26,7 @@ interface PageViewService {
 	 * Whether the service can provide data for the given metric/scope combination.
 	 * @param string $metric One of the METRIC_* constants.
 	 * @param string $scope One of the METRIC_* constants.
-	 * @return boolean
+	 * @return bool
 	 */
 	public function supports( $metric, $scope );
 
