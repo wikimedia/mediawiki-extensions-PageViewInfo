@@ -1,9 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Dhallin",
+			"Felba"
 		]
 	},
+	"apihelp-pageviewinfo-param-metric": "Mätetalet som ska användas för att räkna visningar. Beroende på vilken backend som används, stöds eventuellt inte alla mätetal. Du kan använda API för sidinformation ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) för att validera, under <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Vanliga sidvisningar.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unika besökare",
-	"apihelp-query+mostviewed-param-limit": "Antal sidor att returnera."
+	"apihelp-pageviewinfo-param-days": "Antal dagar som ska visas.",
+	"apihelp-query+pageviews-description": "Visar sidvisningsdata per sida (antal dagliga sidvisningar för varje dag de senaste <var>$1days</var> dagarna). \nResultatformatet är sidrubrik (med understrykningar) => datum (Ymd) => antal.",
+	"apihelp-query+pageviews-summary": "Visar sidvisningsdata per sida (antal dagliga sidvisningar för varje dag de senaste <var>$1days</var> dagarna).",
+	"apihelp-query+pageviews-extended-description": "Resultatformatet är sidrubrik (med understrykningar) => datum (Åmd) => antal.",
+	"apihelp-query+pageviews-example": "Visa sidvisningsstatistik för huvudsidan.",
+	"apihelp-query+siteviews-description": "Visar sidvisningsdata för hela webbsidan (totala dagliga sidvisningar för de senaste <var>$1days</var> dagarna). \nResultatformatet är datum (Åmd) => antal.",
+	"apihelp-query+siteviews-summary": "Visar sidvisningsdata för hela webbsidan (totala dagliga sidvisningar för de senaste <var>$1days</var> dagarna).",
+	"apihelp-query+siteviews-extended-description": "Resultatformatet är datum (Åmd) => antal.",
+	"apihelp-query+siteviews-example": "Visa totala antalet sidvisningar för hela webbsidan.",
+	"apihelp-query+siteviews-example2": "Visa totala antalet unika besökare för hela webbsidan.",
+	"apihelp-query+mostviewed-description": "Listar de mest besökta sidorna (baserat på antal sidvisningar för föregående dag).",
+	"apihelp-query+mostviewed-summary": "Listar de mest besökta sidorna (baserat på antal sidvisningar för föregående dag).",
+	"apihelp-query+mostviewed-param-limit": "Antal sidor att returnera.",
+	"apihelp-query+mostviewed-example": "Listar de topp 10 sidorna.",
+	"apihelp-query+mostviewed-example2": "Visar sidvisningsdata för varje sida i topp 10-sidorna."
 }
