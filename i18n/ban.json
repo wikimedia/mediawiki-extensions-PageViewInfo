@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chinamoonroll"
+		]
+	},
+	"pvi-desc": "Nambahin inpormasi cingakan kaca nuju inpo tatindakan",
+	"pvi-month-count": "Nyingakin kaca ring 30 rahina ungkur",
+	"pvi-close": "Sineb",
+	"pvi-range": "$1 - $2",
+	"pvi-invalidresponse": "Cawisan nénten patut",
+	"pvi-cached-error": "Upaya sadurungné antuk ngambil data puniki tan kaprasida. Antuk ngawatesin bebayan peladén, pacobaan malih sampun kacadel antuk $1.",
+	"pvi-cached-error-title": "Upaya sadurungné antuk ngambil kaca \"$1\" tan kaprasida. Antuk ngawatesin bebayan peladén, pacoban malih sampun kacadel saakéh $2."
+}

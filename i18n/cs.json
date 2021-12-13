@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Mormegil",
-			"Patriccck"
+			"Patriccck",
+			"Patrik L."
 		]
 	},
 	"pvi-desc": "Přidává informace o zobrazení stránky do infa",
 	"pvi-month-count": "Počet zhlédnutí stránky za posledních 30 dní",
-	"pvi-close": "Zavřít"
+	"pvi-close": "Zavřít",
+	"pvi-range": "$1 – $2"
 }
