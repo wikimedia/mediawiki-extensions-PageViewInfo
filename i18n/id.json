@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daud I.F. Argana"
+		]
+	},
+	"pvi-desc": "Menambahkan informasi kunjungan halaman ke tindakan info",
+	"pvi-month-count": "Kunjungan halaman selama 30 hari terakhir",
+	"pvi-close": "Tutup",
+	"pvi-invalidresponse": "Respons tidak sah",
+	"pvi-cached-error": "Usaha sebelumnya untuk mendapatkan data ini gagal. Untuk membatasi beban peladen, percobaan ulang diblokir selama $1.",
+	"pvi-cached-error-title": "Usaha sebelumnya untuk mendapatkan halaman \"$1\" gagal. Untuk membatasi beban peladen, percobaan ulang diblokir selama $2."
+}
