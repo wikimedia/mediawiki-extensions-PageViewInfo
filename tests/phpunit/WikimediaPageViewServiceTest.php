@@ -1,13 +1,13 @@
 <?php
 
-namespace MediaWiki\Extensions\PageViewInfo;
+namespace MediaWiki\Extension\PageViewInfo;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \MediaWiki\Extensions\PageViewInfo\WikimediaPageViewService
+ * @covers \MediaWiki\Extension\PageViewInfo\WikimediaPageViewService
  */
 class WikimediaPageViewServiceTest extends TestCase {
 	/** @var array [ MockObject, callable ] */

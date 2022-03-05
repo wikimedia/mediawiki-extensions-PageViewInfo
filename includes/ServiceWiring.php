@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\PageViewInfo;
+namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;

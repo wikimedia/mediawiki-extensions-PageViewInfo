@@ -1,12 +1,12 @@
 <?php
 
-namespace MediaWiki\Extensions\PageViewInfo;
+namespace MediaWiki\Extension\PageViewInfo;
 
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group medium
- * @covers \MediaWiki\Extensions\PageViewInfo\ApiQueryMostViewed
+ * @covers \MediaWiki\Extension\PageViewInfo\ApiQueryMostViewed
  */
 class ApiQueryMostViewedTest extends \ApiTestCase {
 	public function provideRequestResponses() {

@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\PageViewInfo;
+namespace MediaWiki\Extension\PageViewInfo;
 
 use StatusValue;
 use Title;
@@ -80,3 +80,5 @@ interface PageViewService {
 	 */
 	public function getCacheExpiry( $metric, $scope );
 }
+
+class_alias( PageViewService::class, 'MediaWiki\\Extensions\\PageViewInfo\\PageViewService' );

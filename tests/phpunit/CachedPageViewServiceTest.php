@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\PageViewInfo;
+namespace MediaWiki\Extension\PageViewInfo;
 
 use HashBagOStuff;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use StatusValue;
 
 /**
- * @covers \MediaWiki\Extensions\PageViewInfo\CachedPageViewService
+ * @covers \MediaWiki\Extension\PageViewInfo\CachedPageViewService
  */
 class CachedPageViewServiceTest extends TestCase {
 	/** @var CachedPageViewService */

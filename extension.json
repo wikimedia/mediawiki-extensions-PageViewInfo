@@ -12,16 +12,17 @@
 	},
 	"Hooks": {
 		"InfoAction": [
-			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onInfoAction"
+			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onInfoAction"
 		],
 		"ApiQuery::moduleManager": [
-			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onApiQueryModuleManager"
+			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onApiQueryModuleManager"
 		],
 		"APIQuerySiteInfoGeneralInfo": [
-			"MediaWiki\\Extensions\\PageViewInfo\\Hooks::onAPIQuerySiteInfoGeneralInfo"
+			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onAPIQuerySiteInfoGeneralInfo"
 		]
 	},
 	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\PageViewInfo\\": "includes/",
 		"MediaWiki\\Extensions\\PageViewInfo\\": "includes/"
 	},
 	"MessagesDirs": {
