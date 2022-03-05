@@ -80,5 +80,3 @@ interface PageViewService {
 	 */
 	public function getCacheExpiry( $metric, $scope );
 }
-
-class_alias( PageViewService::class, 'MediaWiki\\Extensions\\PageViewInfo\\PageViewService' );
