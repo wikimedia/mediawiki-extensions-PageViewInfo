@@ -22,8 +22,7 @@
 		]
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\PageViewInfo\\": "includes/",
-		"MediaWiki\\Extensions\\PageViewInfo\\": "includes/"
+		"MediaWiki\\Extension\\PageViewInfo\\": "includes/"
 	},
 	"MessagesDirs": {
 		"PageViewInfo": [
