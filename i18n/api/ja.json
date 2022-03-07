@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sou0012"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "ユニークビジター",
+	"apihelp-pageviewinfo-param-days": "表示する日数。"
+}
