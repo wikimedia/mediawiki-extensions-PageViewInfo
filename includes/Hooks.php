@@ -10,6 +10,7 @@ use Html;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use StatusValue;
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 class Hooks {
 	/**
@@ -167,8 +168,8 @@ class Hooks {
 			'days' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => $days,
-				ApiBase::PARAM_MAX => $days,
-				ApiBase::PARAM_MIN => 1,
+				IntegerDef::PARAM_MAX => $days,
+				IntegerDef::PARAM_MIN => 1,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-pageviewinfo-param-days',
 			],
 		];
