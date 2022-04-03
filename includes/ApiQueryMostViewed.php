@@ -7,6 +7,7 @@ use ApiPageSet;
 use ApiQueryGeneratorBase;
 use MediaWiki\MediaWikiServices;
 use Title;
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
@@ -89,15 +90,15 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 	public function getAllowedParams() {
 		return Hooks::getApiMetricsHelp( PageViewService::SCOPE_TOP ) + [
 			'limit' => [
-				ApiBase::PARAM_DFLT => 10,
-				ApiBase::PARAM_TYPE => 'limit',
+				ParamValidator::PARAM_DEFAULT => 10,
+				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2,
 			],
 			'offset' => [
-				ApiBase::PARAM_DFLT => 0,
-				ApiBase::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
 		];

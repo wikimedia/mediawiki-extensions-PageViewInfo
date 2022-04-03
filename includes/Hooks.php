@@ -10,6 +10,7 @@ use Html;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use StatusValue;
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 class Hooks {
@@ -147,8 +148,8 @@ class Hooks {
 
 		return $default ? [
 			'metric' => [
-				ApiBase::PARAM_TYPE => $metrics,
-				ApiBase::PARAM_DFLT => $default,
+				ParamValidator::PARAM_TYPE => $metrics,
+				ParamValidator::PARAM_DEFAULT => $default,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-pageviewinfo-param-metric',
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => array_map( static function ( $metric ) {
 					return 'apihelp-pageviewinfo-paramvalue-metric-' . $metric;
@@ -166,8 +167,8 @@ class Hooks {
 			->get( 'PageViewApiMaxDays' );
 		return [
 			'days' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => $days,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => $days,
 				IntegerDef::PARAM_MAX => $days,
 				IntegerDef::PARAM_MIN => 1,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-pageviewinfo-param-days',
