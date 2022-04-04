@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"Ladsgroup",
 			"Reza1615"
 		]
 	},
 	"pvi-desc": "افزودن اطلاعات بازدید از صفحه به بخش اطلاعات فعالیت",
-	"pvi-month-count": "بازدید از صفحه در ۳۰ روز اخیر",
+	"pvi-month-count": "بازدیدهای صفحه در ۳۰ روز گذشته",
 	"pvi-close": "بستن",
 	"pvi-invalidresponse": "پاسخ نامعتبر"
 }
