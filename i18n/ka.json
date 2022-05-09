@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"MIKHEIL"
+			"MIKHEIL",
+			"Გიო ოქრო"
 		]
 	},
-	"apihelp-pageviewinfo-paramvalue-metric-uniques": "უნიკალური ვიზიტორები"
+	"pvi-month-count": "გვერდის ნახვები უკანასკნელ 30 დღეში",
+	"pvi-close": "დახურვა",
+	"pvi-range": "$1 – $2"
 }
