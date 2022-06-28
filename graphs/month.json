@@ -3,7 +3,7 @@
 	"data": [
 		{
 			"name": "pageviews",
-			"values": false,
+			"values": [],
 			"transform": [
 				{
 					"type": "formula",
