@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use BagOStuff;
 use InvalidArgumentException;
+use Message;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -102,10 +103,17 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * @return StatusValue
 	 */
 	protected function getWithCache( $metric, $scope ) {
-		$key = $this->cache->makeKey( 'pvi', $this->prefix, ( $scope === self::SCOPE_SITE ) ?
-			$this->cachedDays : null, $metric, $scope );
+		$key = $this->cache->makeKey(
+			'pvi',
+			$this->prefix,
+			( $scope === self::SCOPE_SITE ) ? $this->cachedDays : null,
+			$metric,
+			$scope
+		);
 		$data = $this->cache->get( $key );
-		if ( $data === false ) { // no cached data
+
+		if ( $data === false ) {
+			// no cached data
 			/** @var StatusValue $status */
 			switch ( $scope ) {
 				case self::SCOPE_SITE:
@@ -125,10 +133,12 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 				$expiry = self::ERROR_EXPIRY;
 			}
 			$this->cache->set( $key, $data, $expiry );
-		} elseif ( $data === null ) { // cached error
+		} elseif ( $data === null ) {
+			// cached error
 			$status = StatusValue::newGood( [] );
 			$status->fatal( 'pvi-cached-error', \Message::durationParam( self::ERROR_EXPIRY ) );
-		} else { // valid cached data
+		} else {
+			// valid cached data
 			$status = StatusValue::newGood( $data );
 		}
 		return $status;
@@ -152,8 +162,14 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		// a cheap getMulti implementation.
 		$titleToCacheKey = $statuses = [];
 		foreach ( $titles as $title ) {
-			$titleToCacheKey[$title->getPrefixedDBkey()] = $this->cache->makeKey( 'pvi', $this->prefix,
-				$this->cachedDays, $metric, self::SCOPE_ARTICLE, md5( $title->getPrefixedDBkey() ) );
+			$dbKey = $title->getPrefixedDBkey();
+			$titleToCacheKey[$dbKey] = $this->cache->makeKey(
+				'pvi', $this->prefix,
+				$this->cachedDays,
+				$metric,
+				self::SCOPE_ARTICLE,
+				md5( $dbKey )
+			);
 		}
 		$cacheKeyToTitle = array_flip( $titleToCacheKey );
 		$rawData = $this->cache->getMulti( array_keys( $cacheKeyToTitle ) );
@@ -162,8 +178,11 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 			// assume some implementations might return that key with a value of false
 			if ( $value !== false ) {
 				$statuses[$cacheKeyToTitle[$key]] = empty( $value['#error'] ) ? StatusValue::newGood()
-					: StatusValue::newFatal( 'pvi-cached-error-title', wfEscapeWikiText( $cacheKeyToTitle[$key] ),
-						\Message::durationParam( self::ERROR_EXPIRY ) );
+					: StatusValue::newFatal(
+						'pvi-cached-error-title',
+						wfEscapeWikiText( $cacheKeyToTitle[$key] ),
+						Message::durationParam( self::ERROR_EXPIRY )
+					);
 				unset( $value['#error'] );
 				$data[$cacheKeyToTitle[$key]] = $value;
 			}
@@ -183,10 +202,13 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 				// PageViewService is expected to return [ date => null ] for all requested dates
 				$this->logger->warning( 'Upstream service returned invalid data for {title}', [
 					'title' => $title,
-					'statusMessage' => Status::wrap( $uncachedStatus )->getWikiText( false, false, 'en' ),
+					'statusMessage' => Status::wrap( $uncachedStatus )
+						->getWikiText( false, false, 'en' ),
 				] );
-				$titleData = $this->extendDateRange( is_array( $titleData ) ? $titleData : [],
-					$this->cachedDays );
+				$titleData = $this->extendDateRange(
+					is_array( $titleData ) ? $titleData : [],
+					$this->cachedDays
+				);
 			}
 			$data[$title] = $titleData;
 			if ( $success ) {
@@ -194,8 +216,11 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 				$expiry = $this->getCacheExpiry( $metric, self::SCOPE_ARTICLE );
 			} else {
 				$data[$title]['#error'] = true;
-				$statuses[$title] = StatusValue::newFatal( 'pvi-cached-error-title', wfEscapeWikiText( $title ),
-					\Message::durationParam( self::ERROR_EXPIRY ) );
+				$statuses[$title] = StatusValue::newFatal(
+					'pvi-cached-error-title',
+					wfEscapeWikiText( $title ),
+					Message::durationParam( self::ERROR_EXPIRY )
+				);
 				$expiry = self::ERROR_EXPIRY;
 			}
 			$this->cache->set( $titleToCacheKey[$title], $data[$title], $expiry );

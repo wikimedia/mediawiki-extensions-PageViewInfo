@@ -9,6 +9,7 @@ use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
+use RawMessage;
 use Status;
 use StatusValue;
 use Title;
@@ -36,7 +37,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	/** @var string 'all-agents', 'user', 'spider' or 'bot' */
 	protected $agent;
 	/** @var string 'hourly', 'daily' or 'monthly' */
-	protected $granularity = 'daily'; // allowing other options would make the interafce too complex
+	protected $granularity = 'daily'; // allowing other options would make the interface too complex
 	/** @var int UNIX timestamp of 0:00 of the last day with complete data */
 	protected $lastCompleteDay;
 
@@ -244,13 +245,15 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 				// Use plain urlencode instead of wfUrlencode because we need
 				// "/" to be encoded, which wfUrlencode doesn't.
 				$encodedTitle = urlencode( $title->getPrefixedDBkey() );
-				$start = substr( $start, 0, 8 ); // YYYYMMDD
+				// YYYYMMDD
+				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
 				return "$this->endpoint/metrics/pageviews/per-article/$this->project/$this->access/"
 					. "$this->agent/$encodedTitle/$this->granularity/$start/$end";
 			case self::METRIC_VIEW:
 			case self::SCOPE_SITE:
-				$start = substr( $start, 0, 10 ); // YYYYMMDDHH
+			// YYYYMMDDHH
+				$start = substr( $start, 0, 10 );
 				$end = substr( $end, 0, 10 );
 				return "$this->endpoint/metrics/pageviews/aggregate/$this->project/$this->access/$this->agent/"
 					   . "$this->granularity/$start/$end";
@@ -265,7 +268,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 					'desktop' => 'desktop-site',
 					'mobile-web' => 'mobile-site',
 				][$this->access];
-				$start = substr( $start, 0, 8 ); // YYYYMMDD
+				// YYYYMMDD
+				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
 				return "$this->endpoint/metrics/unique-devices/$this->project/$access/"
 					. "$this->granularity/$start/$end";
@@ -289,7 +293,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 		$apiErrorData = [];
 		if ( !$status->isOK() && $parseStatus->isOK() && is_array( $parseStatus->getValue() ) ) {
-			$apiErrorData = $parseStatus->getValue(); // hash of: type, title, method, uri, [detail]
+			// hash of: type, title, method, uri, [detail]
+			$apiErrorData = $parseStatus->getValue();
 			if ( isset( $apiErrorData['detail'] ) && is_array( $apiErrorData['detail'] ) ) {
 				$apiErrorData['detail'] = implode( ', ', $apiErrorData['detail'] );
 			}
@@ -317,7 +322,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 			] + $prefixedApiErrorData );
 		}
 		if ( !$status->isOK() && isset( $apiErrorData['detail'] ) ) {
-			$status->error( ( new \RawMessage( '$1' ) )->params( $apiErrorData['detail'] ) );
+			$status->error( ( new RawMessage( '$1' ) )->params( $apiErrorData['detail'] ) );
 		}
 
 		return $status;

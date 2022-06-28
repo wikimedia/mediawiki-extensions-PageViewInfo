@@ -71,8 +71,7 @@ class ApiQueryPageViews extends ApiQueryBase {
 		$value = $data[$title->getPrefixedDBkey()];
 		ApiResult::setArrayType( $value, 'kvp', 'date' );
 		ApiResult::setIndexedTagName( $value, 'count' );
-		$retval = $this->addPageSubItems( $index, $value );
-		return $retval;
+		return $this->addPageSubItems( $index, $value );
 	}
 
 	public function getCacheMode( $params ) {

@@ -18,10 +18,13 @@ return [
 		$logger = LoggerFactory::getInstance( 'PageViewInfo' );
 		$cachedDays = max( 30, $extensionConfig->get( 'PageViewApiMaxDays' ) );
 
-		$service = new WikimediaPageViewService( $endpoint, [ 'project' => $project ],
-			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' ) );
+		$service = new WikimediaPageViewService(
+			$endpoint, [ 'project' => $project ],
+			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' )
+		);
 		$service->setLogger( $logger );
 		$service->setOriginalRequest( RequestContext::getMain()->getRequest() );
+
 		$cachedService = new CachedPageViewService( $service, $cache );
 		$cachedService->setCachedDays( $cachedDays );
 		$cachedService->setLogger( $logger );
