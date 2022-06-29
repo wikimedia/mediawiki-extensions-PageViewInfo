@@ -32,7 +32,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	/** @var int */
 	protected $cachedDays = 30;
 
-	public function __construct( PageViewService $service, BagOStuff $cache, $prefix = null ) {
+	public function __construct( PageViewService $service, BagOStuff $cache, string $prefix = '' ) {
 		$this->service = $service;
 		$this->logger = new NullLogger();
 		$this->cache = $cache;
