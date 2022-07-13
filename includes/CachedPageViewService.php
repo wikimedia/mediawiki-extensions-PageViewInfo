@@ -106,7 +106,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		$key = $this->cache->makeKey(
 			'pvi',
 			$this->prefix,
-			( $scope === self::SCOPE_SITE ) ? $this->cachedDays : null,
+			( $scope === self::SCOPE_SITE ) ? $this->cachedDays : "",
 			$metric,
 			$scope
 		);
