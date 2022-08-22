@@ -8,18 +8,17 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:PageViewInfo",
 	"descriptionmsg": "pvi-desc",
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.35.0"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\PageViewInfo\\Hooks"
+		}
 	},
 	"Hooks": {
-		"InfoAction": [
-			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onInfoAction"
-		],
-		"ApiQuery::moduleManager": [
-			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onApiQueryModuleManager"
-		],
-		"APIQuerySiteInfoGeneralInfo": [
-			"MediaWiki\\Extension\\PageViewInfo\\Hooks::onAPIQuerySiteInfoGeneralInfo"
-		]
+		"InfoAction": "main",
+		"ApiQuery::moduleManager": "main",
+		"APIQuerySiteInfoGeneralInfo": "main"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\PageViewInfo\\": "includes/"

@@ -8,18 +8,28 @@ use ApiQuerySiteinfo;
 use FormatJson;
 use Html;
 use IContextSource;
+use MediaWiki\Api\Hook\ApiQuery__moduleManagerHook;
+use MediaWiki\Api\Hook\APIQuerySiteInfoGeneralInfoHook;
+use MediaWiki\Hook\InfoActionHook;
 use MediaWiki\MediaWikiServices;
 use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
-class Hooks {
+/**
+ * @phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+ */
+class Hooks implements
+	ApiQuery__moduleManagerHook,
+	APIQuerySiteInfoGeneralInfoHook,
+	InfoActionHook
+{
 	/**
 	 * Display total pageviews in the last 30 days and show a graph with details when clicked.
 	 * @param IContextSource $ctx
 	 * @param array &$pageInfo
 	 */
-	public static function onInfoAction( IContextSource $ctx, array &$pageInfo ) {
+	public function onInfoAction( $ctx, &$pageInfo ) {
 		/** @var PageViewService $pageViewService */
 		$pageViewService = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		if ( !$pageViewService->supports( PageViewService::METRIC_VIEW,
@@ -72,7 +82,7 @@ class Hooks {
 	 * Limit enabled PageViewInfo API modules to those which are supported by the service.
 	 * @param ApiModuleManager $moduleManager
 	 */
-	public static function onApiQueryModuleManager( ApiModuleManager $moduleManager ) {
+	public function onApiQuery__ModuleManager( $moduleManager ) {
 		$moduleMap = [
 			'pageviews' => [ 'pageviews', 'prop', ApiQueryPageViews::class ],
 			'siteviews' => [ 'siteviews', 'meta', ApiQuerySiteViews::class ],
@@ -95,7 +105,7 @@ class Hooks {
 	 * @param ApiQuerySiteinfo $module
 	 * @param array &$result
 	 */
-	public static function onAPIQuerySiteInfoGeneralInfo( ApiQuerySiteinfo $module, array &$result ) {
+	public function onAPIQuerySiteInfoGeneralInfo( $module, &$result ) {
 		/** @var PageViewService $service */
 		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$supportedMetrics = [];
