@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"Janezdrilc"
 		]
 	},
+	"pvi-desc": "Dejanju info doda informacije o ogledu strani",
 	"pvi-month-count": "Število ogledov strani v zadnjih 30 dneh",
 	"pvi-close": "Zapri",
 	"pvi-invalidresponse": "Neveljaven odziv"
