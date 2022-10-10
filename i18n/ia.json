@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"pvi-desc": "Adde information de visitas de pagina al action 'info'",
+	"pvi-month-count": "Visitas de pagina in le ultime 30 dies",
+	"pvi-close": "Clauder",
+	"pvi-invalidresponse": "Responsa non valide",
+	"pvi-cached-error": "Un tentativa anterior de obtener iste datos ha fallite. Pro limitar le carga sur le servitor, le retentativas ha essite blocate pro $1.",
+	"pvi-cached-error-title": "Un tentativa anterior de obtener le pagina \"$1\" ha fallite. Pro limitar le carga sur le servitor, le retentativas ha essite blocate pro $2."
+}
