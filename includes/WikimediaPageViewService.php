@@ -286,7 +286,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		/** @var MWHttpRequest $request */
 		$request = call_user_func( $this->requestFactory, $url, __METHOD__ );
 		$status = $request->execute();
-		$parseStatus = FormatJson::parse( $request->getContent(), FormatJson::FORCE_ASSOC );
+		$parseStatus = FormatJson::parse( $request->getContent() ?? '', FormatJson::FORCE_ASSOC );
 		if ( $status->isOK() ) {
 			$status->merge( $parseStatus, true );
 		}
