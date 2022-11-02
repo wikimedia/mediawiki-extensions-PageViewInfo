@@ -187,6 +187,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mockB->expects( $this->any() )->method( 'getStatus' )->willReturn( 404 );
 		$mockC = $this->mockNextRequest( $service );
 		$mockC->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockC->method( 'getContent' )->willReturn( '' );
 		$mockC->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getPageData( [ \Title::newFromText( 'A' ),
 			\Title::newFromText( 'B' ), \Title::newFromText( 'C' ) ], 1 );
@@ -214,9 +215,11 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$this->calls = [];
 		$mockA = $this->mockNextRequest( $service );
 		$mockA->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockA->method( 'getContent' )->willReturn( '' );
 		$mockA->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$mockB = $this->mockNextRequest( $service );
 		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockB->method( 'getContent' )->willReturn( '' );
 		$mockB->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getPageData( [ \Title::newFromText( 'A' ), \Title::newFromText( 'B' ) ], 1 );
 		$this->assertFalse( $status->isOK() );
@@ -299,6 +302,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$this->calls = [];
 		$mock = $this->mockNextRequest( $service );
 		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getSiteData( 5 );
 		$this->assertFalse( $status->isOK() );
@@ -376,6 +380,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$this->calls = [];
 		$mock = $this->mockNextRequest( $service );
 		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getSiteData( 5, PageViewService::METRIC_UNIQUE );
 		$this->assertFalse( $status->isOK() );
@@ -448,6 +453,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$this->calls = [];
 		$mock = $this->mockNextRequest( $service );
 		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->expects( $this->any() )->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getTopPages();
 		$this->assertFalse( $status->isOK() );
