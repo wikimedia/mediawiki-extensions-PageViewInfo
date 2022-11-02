@@ -19,7 +19,7 @@ class CachedPageViewServiceTest extends TestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$cache = new HashBagOStuff();
-		$this->mock = $this->getMockBuilder( PageViewService::class )->getMockForAbstractClass();
+		$this->mock = $this->createMock( PageViewService::class );
 		$this->service = new CachedPageViewService( $this->mock, $cache );
 		$this->service->setCachedDays( 2 );
 	}
@@ -58,11 +58,9 @@ class CachedPageViewServiceTest extends TestCase {
 	public function testGetPageData() {
 		$expectedTitles = [];
 		$this->service->setCachedDays( 2 );
-		$this->mock->expects( $this->any() )
-			->method( 'getCacheExpiry' )
+		$this->mock->method( 'getCacheExpiry' )
 			->willReturn( 1000 );
-		$this->mock->expects( $this->any() )
-			->method( 'getPageData' )
+		$this->mock->method( 'getPageData' )
 			->with( $this->anything(), $this->anything(), $this->logicalOr(
 				PageViewService::METRIC_VIEW, PageViewService::METRIC_UNIQUE ) )
 			->willReturnCallback( function ( $titles, $days, $metric ) use ( &$expectedTitles ) {
@@ -239,8 +237,7 @@ class CachedPageViewServiceTest extends TestCase {
 	public function testGetSiteData() {
 		$cached = false;
 		$this->service->setCachedDays( 2 );
-		$this->mock->expects( $this->any() )
-			->method( 'getCacheExpiry' )
+		$this->mock->method( 'getCacheExpiry' )
 			->willReturn( 1000 );
 		$this->mock->expects( $this->exactly( 2 ) )
 			->method( 'getSiteData' )
@@ -281,8 +278,7 @@ class CachedPageViewServiceTest extends TestCase {
 	public function testGetSiteData_error() {
 		$cached = false;
 		$this->service->setCachedDays( 2 );
-		$this->mock->expects( $this->any() )
-			->method( 'getCacheExpiry' )
+		$this->mock->method( 'getCacheExpiry' )
 			->willReturn( 1000 );
 		$this->mock->expects( $this->exactly( 2 ) )
 			->method( 'getSiteData' )
@@ -316,8 +312,7 @@ class CachedPageViewServiceTest extends TestCase {
 
 	public function testGetTopPages() {
 		$cached = false;
-		$this->mock->expects( $this->any() )
-			->method( 'getCacheExpiry' )
+		$this->mock->method( 'getCacheExpiry' )
 			->willReturn( 1000 );
 		$this->mock->expects( $this->exactly( 2 ) )
 			->method( 'getTopPages' )
@@ -352,8 +347,7 @@ class CachedPageViewServiceTest extends TestCase {
 
 	public function testGetTopPages_error() {
 		$cached = false;
-		$this->mock->expects( $this->any() )
-			->method( 'getCacheExpiry' )
+		$this->mock->method( 'getCacheExpiry' )
 			->willReturn( 1000 );
 		$this->mock->expects( $this->exactly( 2 ) )
 			->method( 'getTopPages' )
