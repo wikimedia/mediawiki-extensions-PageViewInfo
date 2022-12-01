@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 use FormatJson;
 use InvalidArgumentException;
 use MWHttpRequest;
+use MWTimestamp;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -71,7 +72,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		$this->agent = $apiOptions['agent'];
 
 		// Skip the current day for which only partial information is available
-		$this->lastCompleteDay = strtotime( '0:0 1 day ago' );
+		$this->lastCompleteDay = strtotime( '0:0 1 day ago', MWTimestamp::time() );
 
 		$this->requestFactory = [ $this, 'requestFactory' ];
 		$this->logger = new NullLogger();
@@ -207,7 +208,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	public function getCacheExpiry( $metric, $scope ) {
 		// data is valid until the end of the day
-		$endOfDay = strtotime( '0:0 next day' );
+		$endOfDay = strtotime( '0:0 next day', MWTimestamp::time() );
 		return $endOfDay - time();
 	}
 
