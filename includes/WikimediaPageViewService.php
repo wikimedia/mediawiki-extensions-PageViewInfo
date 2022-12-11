@@ -46,7 +46,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	protected $range;
 
 	/** @var WebRequest|string[] The request that asked for this data; see the originalRequest
-	 *    parameter of Http::request()
+	 *    parameter of MediaWiki\Http\HttpRequestFactory::request()
 	 */
 	protected $originalRequest;
 
@@ -84,7 +84,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @param WebRequest|string[] $originalRequest See the 'originalRequest' parameter of
-	 *   Http::request().
+	 *   MediaWiki\Http\HttpRequestFactory::request().
 	 */
 	public function setOriginalRequest( $originalRequest ) {
 		$this->originalRequest = $originalRequest;
