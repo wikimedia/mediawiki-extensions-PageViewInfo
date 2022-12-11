@@ -19,7 +19,9 @@ return [
 		$cachedDays = max( 30, $extensionConfig->get( 'PageViewApiMaxDays' ) );
 
 		$service = new WikimediaPageViewService(
-			$endpoint, [ 'project' => $project ],
+			$services->getHttpRequestFactory(),
+			$endpoint,
+			[ 'project' => $project ],
 			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' )
 		);
 		$service->setLogger( $logger );
