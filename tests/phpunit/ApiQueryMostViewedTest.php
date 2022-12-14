@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use Wikimedia\TestingAccessWrapper;
+use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * @group medium
@@ -80,13 +80,16 @@ class ApiQueryMostViewedTest extends \ApiTestCase {
 			 ]
 		] ) );
 
-		$responses = [ $mock ];
-		$service = new WikimediaPageViewService( 'http://example.test/',
-			[ 'project' => 'foo.project.test' ], false );
-		$wrapper = TestingAccessWrapper::newFromObject( $service );
-		$wrapper->requestFactory = static function ( $url ) use ( &$responses ) {
-			return array_shift( $responses );
-		};
+		$httpRequestFactory = $this->createMock( HttpRequestFactory::class );
+		$httpRequestFactory->expects( $this->once() )
+			->method( 'create' )
+			->willReturn( $mock );
+		$service = new WikimediaPageViewService(
+			$httpRequestFactory,
+			'http://example.test/',
+			[ 'project' => 'foo.project.test' ],
+			false
+		);
 		$this->setService( 'PageViewService', $service );
 
 		$ret = $this->doApiRequest( $request );

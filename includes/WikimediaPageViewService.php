@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use FormatJson;
 use InvalidArgumentException;
+use MediaWiki\Http\HttpRequestFactory;
 use MWHttpRequest;
 use MWTimestamp;
 use Psr\Log\LoggerAwareInterface;
@@ -21,8 +22,8 @@ use WebRequest;
  * @see https://wikitech.wikimedia.org/wiki/Analytics/PageviewAPI
  */
 class WikimediaPageViewService implements PageViewService, LoggerAwareInterface {
-	/** @var callable ( URL, caller ) => MWHttpRequest */
-	protected $requestFactory;
+	/** @var HttpRequestFactory */
+	protected $httpRequestFactory;
 	/** @var LoggerInterface */
 	protected $logger;
 
@@ -51,6 +52,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	protected $originalRequest;
 
 	/**
+	 * @param HttpRequestFactory $httpRequestFactory
 	 * @param string $endpoint Wikimedia pageview API endpoint
 	 * @param array $apiOptions Associative array of API URL parameters
 	 *   see https://wikimedia.org/api/rest_v1/#!/Pageviews_data
@@ -58,7 +60,12 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 * @param int|false $lookupLimit Max number of pages to look up (false for unlimited).
 	 *   Data will be returned for no more than this many titles in a getPageData() call.
 	 */
-	public function __construct( $endpoint, array $apiOptions, $lookupLimit ) {
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		$endpoint,
+		array $apiOptions,
+		$lookupLimit
+	) {
 		$this->endpoint = rtrim( $endpoint, '/' );
 		$this->lookupLimit = $lookupLimit;
 		$apiOptions += [
@@ -74,7 +81,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		// Skip the current day for which only partial information is available
 		$this->lastCompleteDay = strtotime( '0:0 1 day ago', MWTimestamp::time() );
 
-		$this->requestFactory = [ $this, 'requestFactory' ];
+		$this->httpRequestFactory = $httpRequestFactory;
 		$this->logger = new NullLogger();
 	}
 
@@ -285,7 +292,10 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 */
 	protected function makeRequest( $url ) {
 		/** @var MWHttpRequest $request */
-		$request = call_user_func( $this->requestFactory, $url, __METHOD__ );
+		$request = $this->httpRequestFactory->create( $url, [ 'timeout' => 10 ], __METHOD__ );
+		if ( $this->originalRequest ) {
+			$request->setOriginalRequest( $this->originalRequest );
+		}
 		$status = $request->execute();
 		$parseStatus = FormatJson::parse( $request->getContent() ?? '', FormatJson::FORCE_ASSOC );
 		if ( $status->isOK() ) {
@@ -327,20 +337,6 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		}
 
 		return $status;
-	}
-
-	/**
-	 * Ugly hack for the lack of an injectable MWHttpRequest factory
-	 * @param string $url
-	 * @param string $caller __METHOD__
-	 * @return MWHttpRequest
-	 */
-	protected function requestFactory( $url, $caller ) {
-		$request = MWHttpRequest::factory( $url, [ 'timeout' => 10 ], $caller );
-		if ( $this->originalRequest ) {
-			$request->setOriginalRequest( $this->originalRequest );
-		}
-		return $request;
 	}
 
 	/**

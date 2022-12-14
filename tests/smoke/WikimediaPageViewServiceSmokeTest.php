@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
+use MediaWiki\Http\HttpRequestFactory;
 use Status;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
@@ -12,8 +13,12 @@ use Wikimedia\TestingAccessWrapper;
 class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 	protected function getService() {
 		global $wgPageViewInfoWikimediaEndpoint;
-		return new WikimediaPageViewService( $wgPageViewInfoWikimediaEndpoint,
-			[ 'project' => 'en.wikipedia.org' ], 3 );
+		return new WikimediaPageViewService(
+			$this->createMock( HttpRequestFactory::class ),
+			$wgPageViewInfoWikimediaEndpoint,
+			[ 'project' => 'en.wikipedia.org' ],
+			3
+		);
 	}
 
 	public function testGetPageData() {
