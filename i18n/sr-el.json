@@ -4,5 +4,7 @@
 			"Obsuser"
 		]
 	},
-	"pvi-month-count": "Pregledi stranice u poslednjih 30 dana"
+	"pvi-month-count": "Prikazi stranice u poslednjih 30 dana",
+	"pvi-close": "Zatvori",
+	"pvi-range": "$1 — $2"
 }
