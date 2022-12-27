@@ -8,5 +8,8 @@
 	"pvi-desc": "Dejanju info doda informacije o ogledu strani",
 	"pvi-month-count": "Število ogledov strani v zadnjih 30 dneh",
 	"pvi-close": "Zapri",
-	"pvi-invalidresponse": "Neveljaven odziv"
+	"pvi-range": "$1–$2",
+	"pvi-invalidresponse": "Neveljaven odziv",
+	"pvi-cached-error": "Prejšnji poskus pridobivanja teh podatkov ni uspel. Za omejitev obremenitve strežnika so bili ponovni poskusi blokirani za $1.",
+	"pvi-cached-error-title": "Prejšnji poskus pridobivanja strani »$1« ni uspel. Za omejitev obremenitve strežnika so bili ponovni poskusi blokirani za $2."
 }
