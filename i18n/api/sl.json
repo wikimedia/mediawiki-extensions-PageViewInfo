@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"Janezdrilc"
 		]
 	},
-	"apihelp-pageviewinfo-param-days": "Želeno število dni."
+	"apihelp-pageviewinfo-param-days": "Želeno število dni.",
+	"apihelp-query+pageviews-example": "Prikaže statistiko ogledov strani za glavno stran."
 }
