@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rail"
 		]
 	},
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalni odwiedzający.",
 	"apihelp-pageviewinfo-param-days": "Liczba dni do pokazania.",
 	"apihelp-query+pageviews-example": "Pokaż statystyki odsłon strony głównej.",
-	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron."
+	"apihelp-query+siteviews-example": "Pokaż łączną liczbę wyświetleń stron w całym projekcie.",
+	"apihelp-query+siteviews-example2": "Pokaż łączną liczbę unikalnych odwiedzających w całym projekcie.",
+	"apihelp-query+mostviewed-param-limit": "Liczba zwracanych stron.",
+	"apihelp-query+mostviewed-example": "Wymień 10 najpopularniejszych stron."
 }
