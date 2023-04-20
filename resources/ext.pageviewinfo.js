@@ -1,6 +1,7 @@
 ( function ( $, mw ) {
 	$( function () {
 		var $count = $( '.mw-pvi-month' ),
+			drawGraph = require( 'ext.graph.lite' ),
 			count = $count.text(),
 			info = mw.config.get( 'wgPageViewInfo' );
 
@@ -25,7 +26,7 @@
 				MyProcessDialog.parent.prototype.initialize.apply( this, arguments );
 				this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
 				this.$body.append( this.content.$element );
-				mw.drawVegaGraph( this.content.$element[ 0 ], info.graph );
+				drawGraph( this.content.$element[ 0 ], info.graph );
 			};
 			MyProcessDialog.prototype.getActionProcess = function ( action ) {
 				var dialog = this;

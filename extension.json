@@ -39,7 +39,7 @@
 				"pvi-range"
 			],
 			"dependencies": [
-				"ext.graph.vega2",
+				"ext.graph.lite",
 				"oojs-ui"
 			]
 		}
