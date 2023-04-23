@@ -1,5 +1,7 @@
 {
-	"version": 2,
+	"$schema": "https://vega.github.io/schema/vega/v5.json",
+	"width": 500,
+	"height": 500,
 	"data": [
 		{
 			"name": "pageviews",
@@ -7,31 +9,8 @@
 			"transform": [
 				{
 					"type": "formula",
-					"field": "date",
-					"expr": "datetime(parseInt(substring(datum.timestamp,0,4)),parseInt(substring(datum.timestamp,4,6))-1,parseInt(substring(datum.timestamp,6,8)))"
-				}
-			]
-		},
-		{
-			"name": "alldata",
-			"source": "pageviews",
-			"transform": [
-				{
-					"type": "formula",
-					"field": "Page views",
-					"expr": "datum.views"
-				},
-				{ "type": "fold", "fields": [ "Page views" ] }
-			]
-		},
-		{
-			"name": "stats",
-			"source": "alldata",
-			"transform": [
-				{
-					"type": "aggregate",
-					"groupby": [ "date" ],
-					"summarize": [ { "field": "value", "ops": [ "sum" ] } ]
+					"expr": "datetime(parseInt(substring(datum.timestamp,0,4)),parseInt(substring(datum.timestamp,4,6))-1,parseInt(substring(datum.timestamp,6,8)))",
+					"as": "date"
 				}
 			]
 		}
@@ -41,51 +20,33 @@
 			"name": "x",
 			"type": "time",
 			"range": "width",
-			"domain": { "data": "alldata", "field": "date" }
+			"domain": { "data": "pageviews", "field": "date" }
 		},
 		{
 			"name": "y",
 			"type": "linear",
 			"range": "height",
 			"nice": true,
-			"domain": { "data": "stats", "field": "sum_value" }
-		},
-		{
-			"name": "c",
-			"type": "ordinal",
-			"range": [ "#5DA5DA" ],
-			"domain": { "data": "alldata", "field": "key" }
+			"domain": { "data": "pageviews", "field": "views" }
 		}
 	],
 	"axes": [
-		{ "type": "x", "scale": "x", "ticks": 5 },
-		{ "type": "y", "scale": "y" }
+		{ "scale": "x", "orient": "bottom", "tickCount": 5 },
+		{ "scale": "y", "orient": "left" }
 	],
 	"marks": [
 		{
-			"type": "group",
-			"from": {
-				"data": "alldata",
-				"transform": [
-					{ "type": "stack", "groupby": [ "date" ], "sortby": [ "key" ], "field": "value" },
-					{ "type": "facet", "groupby": [ "key" ] }
-				]
-			},
-			"marks": [
-				{
-					"type": "area",
-					"properties": {
-						"enter": {
-							"interpolate": { "value": "monotone" },
-							"x": { "scale": "x", "field": "date" },
-							"y": { "scale": "y", "field": "layout_start" },
-							"y2": { "scale": "y", "field": "layout_end" },
-							"fill": { "scale": "c", "field": "key" },
-							"fillOpacity": { "value": 1 }
-						}
-					}
+			"type": "area",
+			"from": { "data": "pageviews" },
+			"encode": {
+				"enter": {
+					"interpolate": { "value": "monotone" },
+					"x": { "scale": "x", "field": "date" },
+					"y": { "scale": "y", "field": "views" },
+					"y2": { "scale": "y", "value": "0" },
+					"color": { "value": "#5DA5DA" }
 				}
-			]
+			}
 		}
 	]
 }
