@@ -39,7 +39,7 @@
 				"pvi-range"
 			],
 			"dependencies": [
-				"ext.graph.lite",
+				"ext.graph.render",
 				"oojs-ui"
 			]
 		}

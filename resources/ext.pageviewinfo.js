@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	$( function () {
 		var $count = $( '.mw-pvi-month' ),
-			loadGraph = require( 'ext.graph.lite' ).loadGraph,
+			loadGraph = require( 'ext.graph.render' ).loadGraph,
 			count = $count.text(),
 			info = mw.config.get( 'wgPageViewInfo' );
 
