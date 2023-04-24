@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 use ApiBase;
 use ApiModuleManager;
 use ApiQuerySiteinfo;
+use ExtensionRegistry;
 use FormatJson;
 use Html;
 use IContextSource;
@@ -58,24 +59,26 @@ class Hooks implements
 			Html::element( 'div', [ 'class' => 'mw-pvi-month' ], $formatted )
 		];
 
-		$info = FormatJson::decode(
-			file_get_contents( __DIR__ . '/../graphs/month.json' ),
-			true
-		);
-		foreach ( $views as $day => $count ) {
-			$info['data'][0]['values'][] = [ 'timestamp' => self::toYmd( $day ), 'views' => $count ];
-		}
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Graph' ) ) {
+			$info = FormatJson::decode(
+				file_get_contents( __DIR__ . '/../graphs/month.json' ),
+				true
+			);
+			foreach ( $views as $day => $count ) {
+				$info['data'][0]['values'][] = [ 'timestamp' => self::toYmd( $day ), 'views' => $count ];
+			}
 
-		$ctx->getOutput()->addModules( 'ext.pageviewinfo' );
-		// Ymd -> YmdHis
-		$user = $ctx->getUser();
-		$ctx->getOutput()->addJsConfigVars( [
-			'wgPageViewInfo' => [
-				'graph' => $info,
-				'start' => $lang->userDate( $start, $user ),
-				'end' => $lang->userDate( $end, $user ),
-			],
-		] );
+			$ctx->getOutput()->addModules( 'ext.pageviewinfo' );
+			// Ymd -> YmdHis
+			$user = $ctx->getUser();
+			$ctx->getOutput()->addJsConfigVars( [
+				'wgPageViewInfo' => [
+					'graph' => $info,
+					'start' => $lang->userDate( $start, $user ),
+					'end' => $lang->userDate( $end, $user ),
+				],
+			] );
+		}
 	}
 
 	/**
