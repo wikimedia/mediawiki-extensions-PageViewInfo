@@ -37,7 +37,7 @@ class CachedPageViewServiceTest extends TestCase {
 		$this->assertSame( $expectation, $this->service->supports( $metric, $scope ) );
 	}
 
-	public function provideSupports() {
+	public static function provideSupports() {
 		return [
 			[ PageViewService::METRIC_VIEW, PageViewService::SCOPE_ARTICLE, true ],
 			[ PageViewService::METRIC_UNIQUE, PageViewService::SCOPE_SITE, true ],

@@ -9,7 +9,7 @@ use MediaWiki\Http\HttpRequestFactory;
  * @covers \MediaWiki\Extension\PageViewInfo\ApiQueryMostViewed
  */
 class ApiQueryMostViewedTest extends \ApiTestCase {
-	public function provideRequestResponses() {
+	public static function provideRequestResponses() {
 		return [
 			[
 				[
