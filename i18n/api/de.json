@@ -12,7 +12,6 @@
 	"apihelp-query+siteviews-extended-description": "Das Ergebnisformat ist date (Ymd) => count.",
 	"apihelp-query+siteviews-example": "Zeigt wikiweite Seitenaufruf-Summen an.",
 	"apihelp-query+siteviews-example2": "Zeigt websiteweite Summen eindeutiger Besucher an.",
-	"apihelp-query+mostviewed-description": "Listet die nach dem täglichen Seitenaufrufszähler meistgesehenen Seiten auf.",
 	"apihelp-query+mostviewed-summary": "Listet die am häufigsten aufgerufenen Seiten auf (basierend auf der Anzahl der Seitenaufrufe des letzten Tages).",
 	"apihelp-query+mostviewed-param-limit": "Die Anzahl der zurückzugebenden Seiten.",
 	"apihelp-query+mostviewed-example": "Listet die 10 meistbesuchten Seiten auf.",
