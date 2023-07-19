@@ -56,7 +56,10 @@ class Hooks implements
 		$formatted = $lang->formatNum( $total );
 		$pageInfo['header-basic'][] = [
 			$ctx->msg( 'pvi-month-count' ),
-			Html::element( 'div', [ 'class' => 'mw-pvi-month' ], $formatted )
+			Html::rawElement( 'div',
+				[ 'class' => 'mw-pvi-month' ],
+				$ctx->msg( 'pvi-month-count-value', $formatted, $title->getPrefixedDBkey() )->parse()
+			)
 		];
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Graph' ) ) {

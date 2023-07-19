@@ -9,6 +9,7 @@
 	},
 	"pvi-desc": "{{desc|name=PageViewInfo|url=https://www.mediawiki.org/wiki/Extension:PageViewInfo}}",
 	"pvi-month-count": "Label for table cell containing page views in past 30 days",
+	"pvi-month-count-value": "Value for the table cell containing page views in the past 30 days.\n$1 is the formatted number of the amount of pageviews in that month for the page, $2 is the namespace and page name (Also known as the prefixed db key).",
 	"pvi-close": "Text on button to close a dialog\n{{Identical|Close}}",
 	"pvi-range": "{{optional}}\nTitle of dialog, which is the date range the graph is for. $1 is the starting date, $2 is the ending date.",
 	"pvi-invalidresponse": "Error message when the REST API response data does not have the expected structure.",

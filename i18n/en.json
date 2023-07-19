@@ -6,6 +6,7 @@
 	},
 	"pvi-desc": "Adds page view information to the info action",
 	"pvi-month-count": "Page views in the past 30 days",
+	"pvi-month-count-value": "$1",
 	"pvi-close": "Close",
 	"pvi-range": "$1 - $2",
 	"pvi-invalidresponse": "Invalid response",
