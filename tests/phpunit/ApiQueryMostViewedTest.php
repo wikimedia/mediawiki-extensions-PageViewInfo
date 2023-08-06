@@ -6,6 +6,7 @@ use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * @group medium
+ * @group Database
  * @covers \MediaWiki\Extension\PageViewInfo\ApiQueryMostViewed
  */
 class ApiQueryMostViewedTest extends \ApiTestCase {
