@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Paprastos puslapių peržiūros.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unikalūs lankytojai.",
+	"apihelp-pageviewinfo-param-days": "Rodytinų dienų skaičius.",
+	"apihelp-query+pageviews-summary": "Rodo kiekvieno puslapio peržiūrų duomenis (kasdienių puslapio peržiūrų skaičius kiekvienai iš paskutinių <var>$1days</var> dienų).",
+	"apihelp-query+pageviews-example": "Rodyti pagrindinio puslapio peržiūrų statistiką.",
+	"apihelp-query+siteviews-summary": "Rodo visos svetainės puslapio peržiūrų duomenis (kasdienių puslapio peržiūrų bendras skaičius kiekvienai iš paskutinių <var>$1days</var> dienų).",
+	"apihelp-query+siteviews-example": "Rodyti svetainės puslapio peržiūrų sumas.",
+	"apihelp-query+siteviews-example2": "Rodyti svetainės unikalių lankytojų sumas.",
+	"apihelp-query+mostviewed-summary": "Nurodo daugiausia peržiūrimus puslapius (pagal praeitos dienos puslapio peržiūras).",
+	"apihelp-query+mostviewed-param-limit": "Grąžinamų puslapių skaičius.",
+	"apihelp-query+mostviewed-example": "Nurodyti top 10 puslapių.",
+	"apihelp-query+mostviewed-example2": "Rodyti kiekvieno iš top 10 puslapių peržiūrų duomenis."
+}
