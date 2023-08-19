@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use HashBagOStuff;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use StatusValue;
@@ -65,7 +66,7 @@ class CachedPageViewServiceTest extends TestCase {
 				PageViewService::METRIC_VIEW, PageViewService::METRIC_UNIQUE ) )
 			->willReturnCallback( function ( $titles, $days, $metric ) use ( &$expectedTitles ) {
 				$metric = ( $metric === PageViewService::METRIC_VIEW ) + 1;
-				$titles = array_fill_keys( array_map( static function ( \Title $t ) {
+				$titles = array_fill_keys( array_map( static function ( Title $t ) {
 					return $t->getPrefixedDBkey();
 				}, $titles ), null );
 				$this->assertSame( $expectedTitles, array_keys( $titles ) );
@@ -109,7 +110,7 @@ class CachedPageViewServiceTest extends TestCase {
 			} );
 		$makeTitles = static function ( $titles ) {
 			return array_map( static function ( $t ) {
-				return \Title::newFromText( $t );
+				return Title::newFromText( $t );
 			}, $titles );
 		};
 

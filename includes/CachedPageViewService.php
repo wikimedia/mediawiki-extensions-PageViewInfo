@@ -4,13 +4,13 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use BagOStuff;
 use InvalidArgumentException;
+use MediaWiki\Title\Title;
 use Message;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Status;
 use StatusValue;
-use Title;
 
 /**
  * Wraps a PageViewService and caches the results.

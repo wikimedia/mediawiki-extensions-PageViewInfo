@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
+use MediaWiki\Title\Title;
 use StatusValue;
-use Title;
 
 /**
  * PageViewService provides an abstraction for different methods to access pageview data

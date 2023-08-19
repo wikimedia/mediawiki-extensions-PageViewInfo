@@ -6,7 +6,7 @@ use ApiBase;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Expose PageViewService::getPageData().

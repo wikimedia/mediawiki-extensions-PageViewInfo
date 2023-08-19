@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Wikimedia\TestingAccessWrapper;
@@ -154,8 +155,8 @@ class WikimediaPageViewServiceTest extends TestCase {
 			] ) );
 			$mock->method( 'getStatus' )->willReturn( 200 );
 		}
-		$status = $service->getPageData( [ \Title::newFromText( 'Foo' ),
-			\Title::newFromText( 'Bar' ) ], 5 );
+		$status = $service->getPageData( [ Title::newFromText( 'Foo' ),
+			Title::newFromText( 'Bar' ) ], 5 );
 		if ( !$status->isGood() ) {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
 		}
@@ -206,8 +207,8 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mockC->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
 		$mockC->method( 'getContent' )->willReturn( '' );
 		$mockC->method( 'getStatus' )->willReturn( 500 );
-		$status = $service->getPageData( [ \Title::newFromText( 'A' ),
-			\Title::newFromText( 'B' ), \Title::newFromText( 'C' ) ], 1 );
+		$status = $service->getPageData( [ Title::newFromText( 'A' ),
+			Title::newFromText( 'B' ), Title::newFromText( 'C' ) ], 1 );
 		$this->assertFalse( $status->isGood() );
 		if ( !$status->isOK() ) {
 			$this->fail( \Status::wrap( $status )->getWikiText() );
@@ -238,7 +239,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
 		$mockB->method( 'getContent' )->willReturn( '' );
 		$mockB->method( 'getStatus' )->willReturn( 500 );
-		$status = $service->getPageData( [ \Title::newFromText( 'A' ), \Title::newFromText( 'B' ) ], 1 );
+		$status = $service->getPageData( [ Title::newFromText( 'A' ), Title::newFromText( 'B' ) ], 1 );
 		$this->assertFalse( $status->isOK() );
 		$this->assertSame( [ 'A' => false, 'B' => false ], $status->success );
 		$this->assertSame( 0, $status->successCount );
