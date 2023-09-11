@@ -11,7 +11,7 @@
 	"apihelp-pageviewinfo-param-days": "כמה ימים להציג.",
 	"apihelp-query+pageviews-summary": "הצגת נתוני צפייה לפי דף (מספר הצפיות בכל אחד מ־<var>$1days</var> הימים האחרונים).",
 	"apihelp-query+pageviews-extended-description": "תחביר התוצאה הוא: שם הדף (עם קווים תחתיים) => תאריך (Ymd) => מספר.",
-	"apihelp-query+pageviews-example": "הצגת סטטיסטיקת צפיות בדפים עבור הדף הראשי.",
+	"apihelp-query+pageviews-example": "הצגת סטטיסטיקת צפיות בדפים עבור העמוד הראשי.",
 	"apihelp-query+siteviews-summary": "הצגת נתוני צפייה עבור כל האתר (מספר הצפיות הכולל בכל אחד מ־<var>$1days</var> הימים האחרונים).",
 	"apihelp-query+siteviews-extended-description": "תחביר התוצאה הוא: תאריך (Ymd) => מספר.",
 	"apihelp-query+siteviews-example": "הצגת סך כל הצפיות בדפים עבור כל האתר.",
