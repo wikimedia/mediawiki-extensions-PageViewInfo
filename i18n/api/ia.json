@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"McDutchie"
 		]
 	},
@@ -11,7 +12,7 @@
 	"apihelp-query+pageviews-summary": "Monstra datos de visitas per pagina (le numero de visitas de paginas per die pro cata un del ultime <var>$1days</var> dies).",
 	"apihelp-query+pageviews-extended-description": "Le formato del resultato es: titulo del pagina (con tractos de sublineamento) => data (Amd) => numero.",
 	"apihelp-query+pageviews-example": "Monstrar statisticas de visitas del pagina principal.",
-	"apihelp-query+siteviews-summary": "Monstrar datos de visitas del paginas de tote le sito (le total de visitas pro cata un del ultime  <var>$1days</var> dies).",
+	"apihelp-query+siteviews-summary": "Monstrar datos de visitas del paginas de tote le sito (le total de visitas pro cata un del ultime <var>$1days</var> dies).",
 	"apihelp-query+siteviews-extended-description": "Le formato del resultato es: data (Amd) => numero.",
 	"apihelp-query+siteviews-example": "Monstrar le totales de visitas de paginas pro tote le sito.",
 	"apihelp-query+siteviews-example2": "Monstrar le totales de visitatores unic pro tote le sito.",
