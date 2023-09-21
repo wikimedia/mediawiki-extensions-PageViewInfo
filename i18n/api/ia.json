@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Amire80"
 		]
 	},
 	"apihelp-pageviewinfo-param-metric": "Le metrica a usar pro contar le visitas. Dependente de qual motor (''backend'') es usate, es possibile que non tote le metricas es supportate. Tu pote usar le API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pro verificar, sub <samp>pageviewservice-supported-metrics</samp> / <nomine del modulo>",
@@ -13,7 +14,7 @@
 	"apihelp-query+pageviews-extended-description": "Le formato del resultato es: titulo del pagina (con tractos de sublineamento) => data (Amd) => numero.",
 	"apihelp-query+pageviews-example": "Monstrar statisticas de visitas del pagina principal.",
 	"apihelp-query+siteviews-description": "Monstrar datos de visitas del paginas de tote le sito (le total de visitas pro cata un del ultime  <var>$1days</var> dies).\nLe formato del resultato es: data (Amd) => numero.",
-	"apihelp-query+siteviews-summary": "Monstrar datos de visitas del paginas de tote le sito (le total de visitas pro cata un del ultime  <var>$1days</var> dies).",
+	"apihelp-query+siteviews-summary": "Monstrar datos de visitas del paginas de tote le sito (le total de visitas pro cata un del ultime <var>$1days</var> dies).",
 	"apihelp-query+siteviews-extended-description": "Le formato del resultato es: data (Amd) => numero.",
 	"apihelp-query+siteviews-example": "Monstrar le totales de visitas de paginas pro tote le sito.",
 	"apihelp-query+siteviews-example2": "Monstrar le totales de visitatores unic pro tote le sito.",
