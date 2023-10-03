@@ -153,6 +153,10 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * @suppress SecurityCheck-DoubleEscaped
 	 */
 	protected function getTitlesWithCache( $metric, array $titles ) {
+		if ( !$titles ) {
+			return StatusValue::newGood( [] );
+		}
+
 		// Set up the response array, without any values. This will help preserve the order of titles.
 		$data = array_fill_keys( array_map( static function ( Title $t ) {
 			return $t->getPrefixedDBkey();
@@ -241,7 +245,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		}, $statuses );
 		$status->successCount = count( array_filter( $status->success ) );
 		$status->failCount = count( $status->success ) - $status->successCount;
-		$status->setResult( $status->successCount || !$titles, $data );
+		$status->setResult( (bool)$status->successCount, $data );
 		return $status;
 	}
 
