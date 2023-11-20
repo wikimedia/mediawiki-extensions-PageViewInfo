@@ -1,9 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Romaine"
+			"Romaine",
+			"McDutchie"
 		]
 	},
+	"apihelp-pageviewinfo-param-metric": "De statistiek die moet worden gebruikt voor het tellen van weergaven. Afhankelijk van welke backend wordt gebruikt, worden mogelijk niet alle statistieken ondersteund. U kunt de siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) gebruiken om dit te controleren, onder <samp>pageviewservice-supported-metrics</samp> / <modulenaam>",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Eenvoudige paginaweergaven.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unieke bezoekers.",
-	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen."
+	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen.",
+	"apihelp-query+pageviews-summary": "Toont paginaweergavegegevens per pagina (het aantal dagelijkse paginaweergaven voor elk van de afgelopen <var>$1days</var> dagen).",
+	"apihelp-query+pageviews-extended-description": "Het resultaatformaat is paginatitel (met onderstrepingstekens) => datum (Jmd) => aantal.",
+	"apihelp-query+pageviews-example": "Toont paginaweergavestatistieken voor de hoofdpagina.",
+	"apihelp-query+siteviews-summary": "Toont paginaweergavegegevens voor de hele site (dagelijkse paginaweergavetotalen voor elk van de afgelopen <var>$1days</var> dagen).",
+	"apihelp-query+siteviews-extended-description": "Het resultaatformaat is datum (Jmd) => aantal.",
+	"apihelp-query+siteviews-example": "Toon de totalen van paginaweergaven voor de hele site.",
+	"apihelp-query+siteviews-example2": "Toon unieke bezoekerstotalen voor de hele site.",
+	"apihelp-query+mostviewed-summary": "Geeft een overzicht van de meest bekeken pagina’s (gebaseerd op het aantal paginaweergaven van de afgelopen dag).",
+	"apihelp-query+mostviewed-param-limit": "Het aantal te retourneren pagina’s.",
+	"apihelp-query+mostviewed-example": "Geeft een overzicht van de top 10 pagina’s.",
+	"apihelp-query+mostviewed-example2": "Toont paginaweergavegegevens voor elke van de top 10 pagina’s."
 }
