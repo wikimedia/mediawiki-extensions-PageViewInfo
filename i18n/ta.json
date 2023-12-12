@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Balajijagadesh"
+			"Balajijagadesh",
+			"Fahimrazick"
 		]
 	},
 	"pvi-month-count": "கடந்த 30 நாட்களின் பக்கப் பார்ப்பு",
-	"pvi-close": "மூடுக",
+	"pvi-close": "மூடு",
 	"pvi-invalidresponse": "செல்லாத பதில்"
 }
