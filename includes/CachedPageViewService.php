@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use BagOStuff;
 use InvalidArgumentException;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use Message;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Status;
 use StatusValue;
 
 /**

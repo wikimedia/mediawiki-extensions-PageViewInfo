@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -121,7 +122,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		} );
 		foreach ( [ 'Foo' => $mockFoo, 'Bar' => $mockBar ] as $page => $mock ) {
 			/** @var MockObject $mock */
-			$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+			$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 			$mock->method( 'getContent' )->willReturn( json_encode( [
 				'items' => [
 					[
@@ -158,7 +159,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$status = $service->getPageData( [ Title::newFromText( 'Foo' ),
 			Title::newFromText( 'Bar' ) ], 5 );
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'Foo' => [
@@ -184,7 +185,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// valid, 404 and error, combined
 		$this->calls = [];
 		$mockA = $this->mockNextRequest();
-		$mockA->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+		$mockA->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 		$mockA->method( 'getContent' )->willReturn( json_encode( [
 			'items' => [
 				[
@@ -200,18 +201,18 @@ class WikimediaPageViewServiceTest extends TestCase {
 		] ) );
 		$mockA->method( 'getStatus' )->willReturn( 200 );
 		$mockB = $this->mockNextRequest();
-		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '404' ) );
+		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
 		$mockB->method( 'getContent' )->willReturn( $this->get404ErrorJson() );
 		$mockB->method( 'getStatus' )->willReturn( 404 );
 		$mockC = $this->mockNextRequest();
-		$mockC->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockC->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mockC->method( 'getContent' )->willReturn( '' );
 		$mockC->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getPageData( [ Title::newFromText( 'A' ),
 			Title::newFromText( 'B' ), Title::newFromText( 'C' ) ], 1 );
 		$this->assertFalse( $status->isGood() );
 		if ( !$status->isOK() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'A' => [
@@ -232,11 +233,11 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// all error out
 		$this->calls = [];
 		$mockA = $this->mockNextRequest();
-		$mockA->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockA->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mockA->method( 'getContent' )->willReturn( '' );
 		$mockA->method( 'getStatus' )->willReturn( 500 );
 		$mockB = $this->mockNextRequest();
-		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mockB->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mockB->method( 'getContent' )->willReturn( '' );
 		$mockB->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getPageData( [ Title::newFromText( 'A' ), Title::newFromText( 'B' ) ], 1 );
@@ -260,7 +261,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 			$this->assertSame( 'http://endpoint.example.com/metrics/pageviews/aggregate/'
 			. 'project.example.com/all-access/user/daily/2000010100/2000010500', $url );
 		} );
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 		$mock->method( 'getContent' )->willReturn( json_encode( [
 			'items' => [
 				[
@@ -292,7 +293,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mock->method( 'getStatus' )->willReturn( 200 );
 		$status = $service->getSiteData( 5 );
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'2000-01-01' => 1000,
@@ -305,12 +306,12 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// 404
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '404' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
 		$mock->method( 'getContent' )->willReturn( $this->get404ErrorJson() );
 		$mock->method( 'getStatus' )->willReturn( 404 );
 		$status = $service->getSiteData( 5 );
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'2000-01-01' => null,
@@ -323,7 +324,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// genuine error
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getSiteData( 5 );
@@ -345,7 +346,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 			$this->assertSame( 'http://endpoint.example.com/metrics/unique-devices/'
 				. 'project.example.com/all-sites/daily/20000101/20000105', $url );
 		} );
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 		$mock->method( 'getContent' )->willReturn( json_encode( [
 			'items' => [
 				[
@@ -374,7 +375,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mock->method( 'getStatus' )->willReturn( 200 );
 		$status = $service->getSiteData( 5, PageViewService::METRIC_UNIQUE );
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'2000-01-01' => 1000,
@@ -387,12 +388,12 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// 404
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '404' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
 		$mock->method( 'getContent' )->willReturn( $this->get404ErrorJson() );
 		$mock->method( 'getStatus' )->willReturn( 404 );
 		$status = $service->getSiteData( 5, PageViewService::METRIC_UNIQUE );
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'2000-01-01' => null,
@@ -405,7 +406,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// genuine error
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getSiteData( 5, PageViewService::METRIC_UNIQUE );
@@ -427,7 +428,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 			$this->assertSame( 'http://endpoint.example.com/metrics/pageviews/top/'
 				. 'project.example.com/all-access/2000/01/05', $url );
 		} );
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 		$mock->method( 'getContent' )->willReturn( json_encode( [
 			'items' => [
 				[
@@ -459,7 +460,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$mock->method( 'getStatus' )->willReturn( 200 );
 		$status = $service->getTopPages();
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [
 			'Main_Page' => 1000,
@@ -470,19 +471,19 @@ class WikimediaPageViewServiceTest extends TestCase {
 		// 404
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '404' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
 		$mock->method( 'getContent' )->willReturn( $this->get404ErrorJson() );
 		$mock->method( 'getStatus' )->willReturn( 404 );
 		$status = $service->getTopPages();
 		if ( !$status->isGood() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$this->assertSame( [], $status->getValue() );
 
 		// genuine error
 		$this->calls = [];
 		$mock = $this->mockNextRequest();
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newFatal( '500' ) );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '500' ) );
 		$mock->method( 'getContent' )->willReturn( '' );
 		$mock->method( 'getStatus' )->willReturn( 500 );
 		$status = $service->getTopPages();

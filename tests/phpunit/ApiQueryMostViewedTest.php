@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Status\Status;
 
 /**
  * @group medium
@@ -50,7 +51,7 @@ class ApiQueryMostViewedTest extends \ApiTestCase {
 	 */
 	public function testMostviewed_invalid( $request, $response ) {
 		$mock = $this->createMock( \MWHttpRequest::class );
-		$mock->expects( $this->once() )->method( 'execute' )->willReturn( \Status::newGood() );
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newGood() );
 		$mock->method( 'getStatus' )->willReturn( 200 );
 		$mock->method( 'getContent' )->willReturn( json_encode( [
 			'items' => [

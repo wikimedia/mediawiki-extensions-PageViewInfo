@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use Status;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
@@ -30,7 +30,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 			return Title::newFromText( $t );
 		}, $titles ), 5 );
 		if ( !$status->isOK() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
 		$this->assertIsArray( $data, $this->debug( $data, $status ) );
@@ -53,7 +53,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$service = $this->getService();
 		$status = $service->getSiteData( 5 );
 		if ( !$status->isOK() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
 		$this->assertIsArray( $data, $this->debug( $data, $status ) );
@@ -68,7 +68,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$service = $this->getService();
 		$status = $service->getSiteData( 5, PageViewService::METRIC_UNIQUE );
 		if ( !$status->isOK() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
 		$this->assertIsArray( $data, $this->debug( $data, $status ) );
@@ -83,7 +83,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$service = $this->getService();
 		$status = $service->getTopPages();
 		if ( !$status->isOK() ) {
-			$this->fail( \Status::wrap( $status )->getWikiText() );
+			$this->fail( Status::wrap( $status )->getWikiText() );
 		}
 		$data = $status->getValue();
 		$this->assertIsArray( $data, $this->debug( $data, $status ) );

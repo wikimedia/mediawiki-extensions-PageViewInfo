@@ -6,16 +6,16 @@ use FormatJson;
 use InvalidArgumentException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Request\WebRequest;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\Utils\MWTimestamp;
 use MWHttpRequest;
-use MWTimestamp;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
-use Status;
 use StatusValue;
-use WebRequest;
 
 /**
  * PageViewService implementation for Wikimedia wikis, using the pageview API
