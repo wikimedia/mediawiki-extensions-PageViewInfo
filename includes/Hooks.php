@@ -25,21 +25,26 @@ class Hooks implements
 	APIQuerySiteInfoGeneralInfoHook,
 	InfoActionHook
 {
+
+	private PageViewService $pageViewService;
+
+	public function __construct( PageViewService $pageViewService ) {
+		$this->pageViewService = $pageViewService;
+	}
+
 	/**
 	 * Display total pageviews in the last 30 days and show a graph with details when clicked.
 	 * @param IContextSource $ctx
 	 * @param array &$pageInfo
 	 */
 	public function onInfoAction( $ctx, &$pageInfo ) {
-		/** @var PageViewService $pageViewService */
-		$pageViewService = MediaWikiServices::getInstance()->getService( 'PageViewService' );
-		if ( !$pageViewService->supports( PageViewService::METRIC_VIEW,
+		if ( !$this->pageViewService->supports( PageViewService::METRIC_VIEW,
 			PageViewService::SCOPE_ARTICLE )
 		) {
 			return;
 		}
 		$title = $ctx->getTitle();
-		$status = $pageViewService->getPageData( [ $title ], 30, PageViewService::METRIC_VIEW );
+		$status = $this->pageViewService->getPageData( [ $title ], 30, PageViewService::METRIC_VIEW );
 		$data = $status->getValue();
 		if ( !$status->isOK() ) {
 			return;
@@ -94,11 +99,9 @@ class Hooks implements
 			'siteviews' => [ 'siteviews', 'meta', ApiQuerySiteViews::class ],
 			'mostviewed' => [ 'mostviewed', 'list', ApiQueryMostViewed::class ],
 		];
-		/** @var PageViewService $service */
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		foreach ( self::getApiScopeMap() as $apiModuleName => $serviceScopeConstant ) {
 			foreach ( self::getApiMetricsMap() as $serviceMetricConstant ) {
-				if ( $service->supports( $serviceMetricConstant, $serviceScopeConstant ) ) {
+				if ( $this->pageViewService->supports( $serviceMetricConstant, $serviceScopeConstant ) ) {
 					call_user_func_array( [ $moduleManager, 'addModule' ], $moduleMap[$apiModuleName] );
 					continue 2;
 				}
@@ -112,13 +115,11 @@ class Hooks implements
 	 * @param array &$result
 	 */
 	public function onAPIQuerySiteInfoGeneralInfo( $module, &$result ) {
-		/** @var PageViewService $service */
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$supportedMetrics = [];
 		foreach ( self::getApiScopeMap() as $apiModuleName => $serviceScopeConstant ) {
 			foreach ( self::getApiMetricsMap() as $apiMetricsName => $serviceMetricConstant ) {
 				$supportedMetrics[$apiModuleName][$apiMetricsName] =
-					$service->supports( $serviceMetricConstant, $serviceScopeConstant );
+					$this->pageViewService->supports( $serviceMetricConstant, $serviceScopeConstant );
 			}
 		}
 		$result['pageviewservice-supported-metrics'] = $supportedMetrics;

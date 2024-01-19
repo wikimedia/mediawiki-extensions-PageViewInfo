@@ -12,7 +12,10 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "MediaWiki\\Extension\\PageViewInfo\\Hooks"
+			"class": "MediaWiki\\Extension\\PageViewInfo\\Hooks",
+			"services": [
+				"PageViewService"
+			]
 		}
 	},
 	"Hooks": {
