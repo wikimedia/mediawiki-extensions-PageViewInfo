@@ -8,7 +8,7 @@ use ObjectCache;
 use RequestContext;
 
 return [
-	'PageViewService' => static function ( MediaWikiServices $services ) {
+	'PageViewService' => static function ( MediaWikiServices $services ): PageViewService {
 		$mainConfig = $services->getMainConfig();
 		$extensionConfig = $services->getConfigFactory()->makeConfig( 'PageViewInfo' );
 		$endpoint = $extensionConfig->get( 'PageViewInfoWikimediaEndpoint' );
