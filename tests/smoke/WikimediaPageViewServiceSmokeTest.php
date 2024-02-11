@@ -88,7 +88,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$data = $status->getValue();
 		$this->assertIsArray( $data, $this->debug( $data, $status ) );
 		$this->assertArrayHasKey( 'Main_Page', $data, $this->debug( $data, $status ) );
-		$this->assertSame( 'Main_Page', key( $data ), $this->debug( $data, $status ) );
+		$this->assertSame( 'Main_Page', array_key_first( $data ), $this->debug( $data, $status ) );
 		$this->assertGreaterThan( 100000, $data['Main_Page'], $this->debug( $data, $status ) );
 	}
 

@@ -52,10 +52,8 @@ class Hooks implements
 		$views = $data[$title->getPrefixedDBkey()];
 
 		$total = array_sum( $views );
-		reset( $views );
-		$start = self::toYmdHis( key( $views ) );
-		end( $views );
-		$end = self::toYmdHis( key( $views ) );
+		$start = self::toYmdHis( array_key_first( $views ) );
+		$end = self::toYmdHis( array_key_last( $views ) );
 
 		$lang = $ctx->getLanguage();
 		$formatted = $lang->formatNum( $total );

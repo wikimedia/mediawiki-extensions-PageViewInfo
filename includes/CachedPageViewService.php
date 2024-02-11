@@ -257,9 +257,8 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * @return array
 	 */
 	protected function extendDateRange( $data, $days ) {
-		reset( $data );
 		// set to noon to avoid skip second and similar problems
-		$day = strtotime( key( $data ) . 'T00:00Z' ) + 12 * 3600;
+		$day = strtotime( array_key_first( $data ) . 'T00:00Z' ) + 12 * 3600;
 		for ( $i = $days - count( $data ); $i > 0; $i-- ) {
 			$day -= 24 * 3600;
 			$data = [ gmdate( 'Y-m-d', $day ) => null ] + $data;
