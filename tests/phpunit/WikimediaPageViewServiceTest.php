@@ -38,7 +38,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 				if ( !$this->calls ) {
 					$this->fail( 'Unexpected call!' );
 				}
-				list( $mock, $assertUrl ) = array_shift( $this->calls );
+				[ $mock, $assertUrl ] = array_shift( $this->calls );
 				if ( $assertUrl ) {
 					$assertUrl( $url );
 				}

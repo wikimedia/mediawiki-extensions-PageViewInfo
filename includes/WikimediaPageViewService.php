@@ -244,7 +244,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 * @return string
 	 */
 	protected function getRequestUrl( $scope, Title $title = null, $days = null ) {
-		list( $start, $end ) = $this->getStartEnd( $days );
+		[ $start, $end ] = $this->getStartEnd( $days );
 		switch ( $scope ) {
 			case self::SCOPE_ARTICLE:
 				if ( !$title ) {

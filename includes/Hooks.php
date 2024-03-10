@@ -197,7 +197,7 @@ class Hooks implements
 	 * @return StatusValue
 	 */
 	public static function makeWarningsOnlyStatus( StatusValue $status ) {
-		list( $errors, $warnings ) = $status->splitByErrorType();
+		[ $errors, $warnings ] = $status->splitByErrorType();
 		foreach ( $errors->getErrors() as $error ) {
 			call_user_func_array( [ $warnings, 'warning' ],
 				array_merge( [ $error['message'] ], $error['params'] ) );
