@@ -4,7 +4,7 @@
 			"Legoktm"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) to check, under <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-param-metric": "The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) to check which ones are supported, under <samp>pageviewservice-supported-metrics</samp> / ''module name'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Plain pageviews.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unique visitors.",
 	"apihelp-pageviewinfo-param-days": "The number of days to show.",
