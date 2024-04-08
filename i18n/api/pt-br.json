@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Felipe L. Ewald"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "A métrica para usar para contagem de visualizações. Dependendo do backend usado, nem todas as métricas podem ser suportadas. Você pode usar a API do siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar, em <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-param-metric": "A métrica para usar para contagem de visualizações. Dependendo do backend usado, nem todas as métricas podem ser suportadas. Você pode usar a API do siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar quais são suportados, em <samp>pageviewservice-supported-metrics</samp> / ''o nome do módulo'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Pageviews simples.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "O número de dias para mostrar.",

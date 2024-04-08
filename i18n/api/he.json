@@ -5,7 +5,7 @@
 			"Guycn2"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "המדד לספירת צפיות. בהתאם לשרת, לא כל המדדים נתמכים. באפשרותך להשתמש ב־API של siteinfo כדי לבדוק את זה ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]), תחת <samp>pageviewservice-supported-metrics</samp> / <שם המודול>",
+	"apihelp-pageviewinfo-param-metric": "המדד לספירת צפיות. בהתאם לסוג שרת, לא כל המדדים נתמכים. אפשר להשתמש ב־API של siteinfo (ר' [[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) כדי לבדוק מה נתמך, תחת <samp dir=\"ltr\">pageviewservice-supported-metrics</samp> / ''שם המודול'' (<samp dir=\"ltr\">siteviews</samp>, <samp dir=\"ltr\">mostviewed</samp>, וכו')",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "צפיות רגילות בדפים.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "מבקרים ייחודיים.",
 	"apihelp-pageviewinfo-param-days": "כמה ימים להציג.",

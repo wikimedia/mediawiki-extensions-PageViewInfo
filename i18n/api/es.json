@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Dgstranz",
+			"Eulalio",
 			"Fitoschido"
 		]
 	},
+	"apihelp-pageviewinfo-param-metric": "La métrica que se utilizará para contar las vistas. Dependiendo del backend que se utilice, es posible que no se admitan todas las métricas. Puede utilizar la API de información del sitio ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar cuáles son compatibles, en <samp>pageviewservice-supported-metrics</samp> / ''nombre del módulo'' ( <samp>siteviews</samp> , <samp>mostviewed</samp> , etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "La cantidad de días que mostrar.",
 	"apihelp-query+mostviewed-param-limit": "La cantidad de páginas que devolver.",

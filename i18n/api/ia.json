@@ -5,7 +5,7 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Le metrica a usar pro contar le visitas. Dependente de qual motor (''backend'') es usate, es possibile que non tote le metricas es supportate. Tu pote usar le API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pro verificar, sub <samp>pageviewservice-supported-metrics</samp> / <nomine del modulo>",
+	"apihelp-pageviewinfo-param-metric": "Le metrica a usar pro contar le visitas. Dependente de qual motor (''backend'') es usate, es possibile que non tote le metricas es supportate. Tu pote usar le API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) pro verificar quales es supportate, sub <samp>pageviewservice-supported-metrics</samp> / ''nomine del modulo'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Numero brute de visitas.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitatores unic.",
 	"apihelp-pageviewinfo-param-days": "Le numero de dies a monstrar.",

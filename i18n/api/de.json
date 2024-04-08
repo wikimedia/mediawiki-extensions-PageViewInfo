@@ -5,10 +5,14 @@
 			"Metalhead64"
 		]
 	},
+	"apihelp-pageviewinfo-param-metric": "Die zum Zählen der Ansichten zu verwendende Metrik. Je nachdem, welches Backend verwendet wird, werden möglicherweise nicht alle Metriken unterstützt. Du kannst die Siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) verwenden, um unter <samp>pageviewservice-supported-metrics</samp> / ''Modulname'' ( <samp>siteviews</samp>, <samp>mostviewed</samp>, usw.) zu prüfen, welche unterstützt werden.",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Einfache Seitenaufrufe.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unterschiedliche Besucher.",
 	"apihelp-pageviewinfo-param-days": "Die Anzahl der anzuzeigenden Tage.",
+	"apihelp-query+pageviews-summary": "Zeigt die Seitenaufrufdaten pro Seite an (die Anzahl der täglichen Seitenaufrufe für jeden der letzten <var>$1</var> Tage).",
+	"apihelp-query+pageviews-extended-description": "Das Ergebnisformat ist Seitentitel (mit Unterstrichen) => date (Ymd) => count.",
 	"apihelp-query+pageviews-example": "Zeigt die Seitenaufrufsstatistik der Hauptseite.",
+	"apihelp-query+siteviews-summary": "Zeigt die Daten zu den Seitenaufrufen der gesamten Site an (Gesamtzahl der täglichen Seitenaufrufe für jeden der letzten <var>$1</var> Tage).",
 	"apihelp-query+siteviews-extended-description": "Das Ergebnisformat ist date (Ymd) => count.",
 	"apihelp-query+siteviews-example": "Zeigt wikiweite Seitenaufruf-Summen an.",
 	"apihelp-query+siteviews-example2": "Zeigt websiteweite Summen eindeutiger Besucher an.",

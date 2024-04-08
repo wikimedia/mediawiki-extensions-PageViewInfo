@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"GuoPC",
 			"Liuxinyu970226"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "要用于计算浏览数的度量标准。取决于使用什么后端，不是所有度量标准都可以支持。您可以使用网站信息API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）来检查，在<samp>pageviewservice-supported-metrics</samp> / <module name>下方",
+	"apihelp-pageviewinfo-param-metric": "要用于计算浏览数的度量标准。取决于使用什么后端，不是所有度量标准都可以支持。您可以使用网站信息API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）来检查受支持的度量标准，在<samp>pageviewservice-supported-metrics</samp> / ''module name''（<samp>siteviews</samp>、<samp>mostviewed</samp>等）下方",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "纯页面浏览。",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "唯一访问者。",
 	"apihelp-pageviewinfo-param-days": "要显示的日数。",

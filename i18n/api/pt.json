@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Athena in Wonderland",
+			"B3rnas",
 			"Hamilton Abreu"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "A métrica a ser usada para contar visionamentos. Dependendo do servidor usado, poderão não ser suportadas todas as métricas. Pode usar a API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar, em <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-param-metric": "A métrica a ser utilizada para contar visualizações. Dependendo do backend utilizado, nem todas as métricas podem ser suportadas. Pode usar a API siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar quais são suportadas, em <samp>pageviewservice-supported-metrics</samp> / ''o nome do módulo'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Número bruto de visionamentos.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Visitantes únicos.",
 	"apihelp-pageviewinfo-param-days": "O número de dias a serem mostrados.",
