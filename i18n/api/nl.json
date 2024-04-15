@@ -5,7 +5,7 @@
 			"Romaine"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "De statistiek die moet worden gebruikt voor het tellen van weergaven. Afhankelijk van welke backend wordt gebruikt, worden mogelijk niet alle statistieken ondersteund. U kunt de siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) gebruiken om dit te controleren, onder <samp>pageviewservice-supported-metrics</samp> / <modulenaam>",
+	"apihelp-pageviewinfo-param-metric": "De statistiek waarmee weergaven moeten worden geteld. Afhankelijk van de gebruikte backend worden mogelijk niet alle statistieken ondersteund. U kunt de siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) gebruiken om te kijken welke ondersteund worden, onder <samp>pageviewservice-supported-metrics</samp> / ''modulenaam'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, enz.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Eenvoudige paginaweergaven.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unieke bezoekers.",
 	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen.",
