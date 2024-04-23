@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Mellogabi03"
 		]
 	},
 	"apihelp-pageviewinfo-param-metric": "A métrica para usar para contagem de visualizações. Dependendo do backend usado, nem todas as métricas podem ser suportadas. Você pode usar a API do siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) para verificar quais são suportados, em <samp>pageviewservice-supported-metrics</samp> / ''o nome do módulo'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, etc.)",
