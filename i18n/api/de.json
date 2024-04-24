@@ -6,7 +6,7 @@
 			"TomatoCake"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Die zum Zählen der Ansichten zu verwendende Metrik. Je nachdem, welches Backend verwendet wird, werden möglicherweise nicht alle Metriken unterstützt. Du kannst die Siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) verwenden, um unter <samp>pageviewservice-supported-metrics</samp> / ''Modulname'' ( <samp>siteviews</samp>, <samp>mostviewed</samp>, usw.) zu prüfen, welche unterstützt werden.",
+	"apihelp-pageviewinfo-param-metric": "Die zum Zählen der Aufrufe zu verwendende Metrik. Je nachdem, welches Backend verwendet wird, werden möglicherweise nicht alle Metriken unterstützt. Du kannst die Siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) verwenden, um unter <samp>pageviewservice-supported-metrics</samp> / ''Modulname'' ( <samp>siteviews</samp>, <samp>mostviewed</samp>, usw.) zu prüfen, welche unterstützt werden.",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Einfache Seitenaufrufe.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unterschiedliche Besucher.",
 	"apihelp-pageviewinfo-param-days": "Die Anzahl der anzuzeigenden Tage.",
