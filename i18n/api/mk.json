@@ -5,7 +5,7 @@
 		]
 	},
 	"apihelp-pageviewinfo-param-metric": "Метриката што ќе се користи за броење на посетите. Зависно од тоа која заднина ја користите, може да не се поддржани сите метрики. Проверете ги поддржаните метрики со прилогот siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) под <samp>pageviewservice-supported-metrics</samp> / <module name>",
-	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Обични посети",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Обични посети.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Поединечни посетители.",
 	"apihelp-pageviewinfo-param-days": "Број на денови во приказот.",
 	"apihelp-query+pageviews-summary": "Прикажува податоци по посети (број на дневни посети за секој од последните <var>$1days</var> дена).",
