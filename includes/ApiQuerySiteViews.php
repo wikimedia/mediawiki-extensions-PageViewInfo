@@ -4,22 +4,27 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use ApiQueryBase;
 use ApiResult;
-use MediaWiki\MediaWikiServices;
 
 /**
  * Expose PageViewService::getSiteData().
  */
 class ApiQuerySiteViews extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+
+	private PageViewService $pageViewService;
+
+	public function __construct(
+		$query,
+		$moduleName,
+		PageViewService $pageViewService
+	) {
 		parent::__construct( $query, $moduleName, 'pvis' );
+		$this->pageViewService = $pageViewService;
 	}
 
 	public function execute() {
 		$params = $this->extractRequestParams();
-		/** @var PageViewService $service */
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$metric = Hooks::getApiMetricsMap()[$params['metric']];
-		$status = $service->getSiteData( $params['days'], $metric );
+		$status = $this->pageViewService->getSiteData( $params['days'], $metric );
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
 			$result = $this->getResult();

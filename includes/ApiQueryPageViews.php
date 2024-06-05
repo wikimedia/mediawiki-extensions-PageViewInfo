@@ -5,15 +5,22 @@ namespace MediaWiki\Extension\PageViewInfo;
 use ApiBase;
 use ApiQueryBase;
 use ApiResult;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
  * Expose PageViewService::getPageData().
  */
 class ApiQueryPageViews extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+
+	private PageViewService $pageViewService;
+
+	public function __construct(
+		$query,
+		$moduleName,
+		PageViewService $pageViewService
+	) {
 		parent::__construct( $query, $moduleName, 'pvip' );
+		$this->pageViewService = $pageViewService;
 	}
 
 	public function execute() {
@@ -36,10 +43,8 @@ class ApiQueryPageViews extends ApiQueryBase {
 			return $titles[$index] ?? null;
 		}, $titleToIndex ) ) );
 
-		/** @var PageViewService $service */
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$metric = Hooks::getApiMetricsMap()[$params['metric']];
-		$status = $service->getPageData( $titles, $params['days'], $metric );
+		$status = $this->pageViewService->getPageData( $titles, $params['days'], $metric );
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
 			$data = $status->getValue();

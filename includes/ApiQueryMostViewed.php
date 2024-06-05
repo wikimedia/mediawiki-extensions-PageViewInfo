@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\PageViewInfo;
 use ApiBase;
 use ApiPageSet;
 use ApiQueryGeneratorBase;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
@@ -14,8 +13,16 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  * Expose PageViewService::getTopPages().
  */
 class ApiQueryMostViewed extends ApiQueryGeneratorBase {
-	public function __construct( $query, $moduleName ) {
+
+	private PageViewService $pageViewService;
+
+	public function __construct(
+		$query,
+		$moduleName,
+		PageViewService $pageViewService
+	) {
 		parent::__construct( $query, $moduleName, 'pvim' );
+		$this->pageViewService = $pageViewService;
 	}
 
 	public function execute() {
@@ -31,10 +38,8 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 	 */
 	private function run( ApiPageSet $resultPageSet = null ) {
 		$params = $this->extractRequestParams();
-		/** @var PageViewService $service */
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
 		$metric = Hooks::getApiMetricsMap()[$params['metric']];
-		$status = $service->getTopPages( $metric );
+		$status = $this->pageViewService->getTopPages( $metric );
 
 		if ( $status->isOK() ) {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );

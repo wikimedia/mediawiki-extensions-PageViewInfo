@@ -93,9 +93,37 @@ class Hooks implements
 	 */
 	public function onApiQuery__ModuleManager( $moduleManager ) {
 		$moduleMap = [
-			'pageviews' => [ 'pageviews', 'prop', ApiQueryPageViews::class ],
-			'siteviews' => [ 'siteviews', 'meta', ApiQuerySiteViews::class ],
-			'mostviewed' => [ 'mostviewed', 'list', ApiQueryMostViewed::class ],
+			// Order is: module name, module group, objectFactory spec
+			'pageviews' => [
+				'pageviews',
+				'prop',
+				[
+					'class' => ApiQueryPageViews::class,
+					'services' => [
+						'PageViewService',
+					]
+				]
+			],
+			'siteviews' => [
+				'siteviews',
+				'meta',
+				[
+					'class' => ApiQuerySiteViews::class,
+					'services' => [
+						'PageViewService',
+					]
+				]
+			],
+			'mostviewed' => [
+				'mostviewed',
+				'list',
+				[
+					'class' => ApiQueryMostViewed::class,
+					'services' => [
+						'PageViewService',
+					]
+				]
+			],
 		];
 		foreach ( self::getApiScopeMap() as $apiModuleName => $serviceScopeConstant ) {
 			foreach ( self::getApiMetricsMap() as $serviceMetricConstant ) {
