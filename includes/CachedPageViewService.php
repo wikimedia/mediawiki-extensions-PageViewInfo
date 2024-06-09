@@ -4,9 +4,9 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use BagOStuff;
 use InvalidArgumentException;
+use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use Message;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -136,7 +136,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		} elseif ( $data === null ) {
 			// cached error
 			$status = StatusValue::newGood( [] );
-			$status->fatal( 'pvi-cached-error', \Message::durationParam( self::ERROR_EXPIRY ) );
+			$status->fatal( 'pvi-cached-error', Message::durationParam( self::ERROR_EXPIRY ) );
 		} else {
 			// valid cached data
 			$status = StatusValue::newGood( $data );

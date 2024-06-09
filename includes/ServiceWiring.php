@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use ObjectCache;
-use RequestContext;
 
 return [
 	'PageViewService' => static function ( MediaWikiServices $services ): PageViewService {

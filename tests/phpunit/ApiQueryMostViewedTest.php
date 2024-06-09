@@ -4,13 +4,14 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Status\Status;
+use MediaWiki\Tests\Api\ApiTestCase;
 
 /**
  * @group medium
  * @group Database
  * @covers \MediaWiki\Extension\PageViewInfo\ApiQueryMostViewed
  */
-class ApiQueryMostViewedTest extends \ApiTestCase {
+class ApiQueryMostViewedTest extends ApiTestCase {
 	public static function provideRequestResponses() {
 		return [
 			[
