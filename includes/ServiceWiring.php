@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\PageViewInfo;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use ObjectCache;
 
 return [
 	'PageViewService' => static function ( MediaWikiServices $services ): PageViewService {
@@ -14,7 +13,7 @@ return [
 		$endpoint = $extensionConfig->get( 'PageViewInfoWikimediaEndpoint' );
 		$project = $extensionConfig->get( 'PageViewInfoWikimediaDomain' )
 			?: $mainConfig->get( 'ServerName' );
-		$cache = ObjectCache::getLocalClusterInstance();
+		$cache = $services->getObjectCacheFactory()->getLocalClusterInstance();
 		$logger = LoggerFactory::getInstance( 'PageViewInfo' );
 		$cachedDays = max( 30, $extensionConfig->get( 'PageViewApiMaxDays' ) );
 
