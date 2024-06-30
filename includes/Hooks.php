@@ -101,6 +101,7 @@ class Hooks implements
 					'class' => ApiQueryPageViews::class,
 					'services' => [
 						'PageViewService',
+						'TitleFormatter',
 					]
 				]
 			],

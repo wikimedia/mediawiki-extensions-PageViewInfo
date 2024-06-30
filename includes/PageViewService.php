@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use MediaWiki\Title\Title;
+use MediaWiki\Page\PageReference;
 use StatusValue;
 
 /**
@@ -43,7 +43,7 @@ interface PageViewService {
 	 * the same as in the parameter $titles, but some implementations might return fewer titles than
 	 * requested, if fetching more data is considered too expensive. In that case the returned data
 	 * will be for a prefix slice of the $titles array.
-	 * @param Title[] $titles
+	 * @param PageReference[] $titles
 	 * @param int $days The number of days.
 	 * @param string $metric One of the METRIC_* constants.
 	 * @return StatusValue A status object with the data. Its success property will contain
@@ -65,7 +65,7 @@ interface PageViewService {
 	 * Returns a list of the top pages according to some metric, sorted in descending order
 	 * by that metric, in
 	 *   title => count
-	 * format (where title has the same format as Title::getPrefixedDBKey()).
+	 * format (where title has the same format as TitleFormatter::getPrefixedDBKey()).
 	 * @param string $metric One of the METRIC_* constants.
 	 * @return StatusValue A status object with the data.
 	 */

@@ -5,8 +5,9 @@ namespace MediaWiki\Extension\PageViewInfo;
 use BagOStuff;
 use InvalidArgumentException;
 use MediaWiki\Message\Message;
+use MediaWiki\Page\PageReference;
 use MediaWiki\Status\Status;
-use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -27,16 +28,24 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	/** @var LoggerInterface */
 	protected $logger;
 
+	private TitleFormatter $titleFormatter;
+
 	/** @var string Cache prefix, in case multiple instances of this service coexist */
 	protected $prefix;
 
 	/** @var int */
 	protected $cachedDays = 30;
 
-	public function __construct( PageViewService $service, BagOStuff $cache, string $prefix = '' ) {
+	public function __construct(
+		PageViewService $service,
+		BagOStuff $cache,
+		TitleFormatter $titleFormatter,
+		string $prefix = ''
+	) {
 		$this->service = $service;
 		$this->logger = new NullLogger();
 		$this->cache = $cache;
+		$this->titleFormatter = $titleFormatter;
 		$this->prefix = $prefix;
 	}
 
@@ -148,7 +157,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	 * The equivalent of getWithCache for multiple titles (ie. for SCOPE_ARTICLE).
 	 * Errors are also handled per-article.
 	 * @param string $metric A METRIC_* constant
-	 * @param Title[] $titles
+	 * @param PageReference[] $titles
 	 * @return StatusValue
 	 * @suppress SecurityCheck-DoubleEscaped
 	 */
@@ -158,15 +167,15 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		}
 
 		// Set up the response array, without any values. This will help preserve the order of titles.
-		$data = array_fill_keys( array_map( static function ( Title $t ) {
-			return $t->getPrefixedDBkey();
+		$data = array_fill_keys( array_map( function ( PageReference $t ) {
+			return $this->titleFormatter->getPrefixedDBkey( $t );
 		}, $titles ), false );
 
 		// Fetch data for all titles from cache. Hopefully we are using a cache which has
 		// a cheap getMulti implementation.
 		$titleToCacheKey = $statuses = [];
 		foreach ( $titles as $title ) {
-			$dbKey = $title->getPrefixedDBkey();
+			$dbKey = $this->titleFormatter->getPrefixedDBkey( $title );
 			$titleToCacheKey[$dbKey] = $this->cache->makeKey(
 				'pvi', $this->prefix,
 				$this->cachedDays,
@@ -195,7 +204,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		// Now get and cache the data for the remaining titles from the real service. It might not
 		// return data for all of them.
 		foreach ( $titles as $i => $titleObj ) {
-			if ( $data[$titleObj->getPrefixedDBkey()] !== false ) {
+			if ( $data[$this->titleFormatter->getPrefixedDBkey( $titleObj )] !== false ) {
 				unset( $titles[$i] );
 			}
 		}

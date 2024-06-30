@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Wikimedia\TestingAccessWrapper;
@@ -89,6 +90,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$this->assertThrows( \InvalidArgumentException::class, function () {
 			new WikimediaPageViewService(
 				$this->createMock( HttpRequestFactory::class ),
+				$this->createMock( TitleFormatter::class ),
 				'null:',
 				[],
 				false
@@ -96,6 +98,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		} );
 		new WikimediaPageViewService(
 			$this->createMock( HttpRequestFactory::class ),
+			$this->createMock( TitleFormatter::class ),
 			'null:',
 			[ 'project' => 'http://example.com/' ],
 			false
@@ -103,8 +106,13 @@ class WikimediaPageViewServiceTest extends TestCase {
 	}
 
 	public function testGetPageData() {
+		$titleFormatter = $this->createMock( TitleFormatter::class );
+		$titleFormatter->method( 'getPrefixedDBkey' )->willReturnCallback( static function ( $t ) {
+			return $t->getDBkey();
+		} );
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
+			$titleFormatter,
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
@@ -250,6 +258,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	public function testGetSiteData() {
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
+			$this->createMock( TitleFormatter::class ),
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
@@ -335,6 +344,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	public function testGetSiteData_unique() {
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
+			$this->createMock( TitleFormatter::class ),
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
@@ -417,6 +427,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	public function testGetTopPages() {
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
+			$this->createMock( TitleFormatter::class ),
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false

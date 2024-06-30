@@ -14,11 +14,13 @@ return [
 		$project = $extensionConfig->get( 'PageViewInfoWikimediaDomain' )
 			?: $mainConfig->get( 'ServerName' );
 		$cache = $services->getObjectCacheFactory()->getLocalClusterInstance();
+		$titleFormatter = $services->getTitleFormatter();
 		$logger = LoggerFactory::getInstance( 'PageViewInfo' );
 		$cachedDays = max( 30, $extensionConfig->get( 'PageViewApiMaxDays' ) );
 
 		$service = new WikimediaPageViewService(
 			$services->getHttpRequestFactory(),
+			$titleFormatter,
 			$endpoint,
 			[ 'project' => $project ],
 			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' )
@@ -26,7 +28,11 @@ return [
 		$service->setLogger( $logger );
 		$service->setOriginalRequest( RequestContext::getMain()->getRequest() );
 
-		$cachedService = new CachedPageViewService( $service, $cache );
+		$cachedService = new CachedPageViewService(
+			$service,
+			$cache,
+			$titleFormatter
+		);
 		$cachedService->setCachedDays( $cachedDays );
 		$cachedService->setLogger( $logger );
 		return $cachedService;

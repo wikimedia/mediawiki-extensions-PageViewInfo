@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Tests\Api\ApiTestCase;
+use MediaWiki\Title\TitleFormatter;
 
 /**
  * @group medium
@@ -89,6 +90,7 @@ class ApiQueryMostViewedTest extends ApiTestCase {
 			->willReturn( $mock );
 		$service = new WikimediaPageViewService(
 			$httpRequestFactory,
+			$this->createMock( TitleFormatter::class ),
 			'http://example.test/',
 			[ 'project' => 'foo.project.test' ],
 			false

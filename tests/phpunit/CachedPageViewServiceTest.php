@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use HashBagOStuff;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use StatusValue;
@@ -21,7 +22,16 @@ class CachedPageViewServiceTest extends TestCase {
 		parent::setUp();
 		$cache = new HashBagOStuff();
 		$this->mock = $this->createMock( PageViewService::class );
-		$this->service = new CachedPageViewService( $this->mock, $cache );
+		$titleFormatter = $this->createMock( TitleFormatter::class );
+		$titleFormatter->method( 'getPrefixedDBkey' )->willReturnCallback( static function ( $t ) {
+			return $t->getDBkey();
+		} );
+
+		$this->service = new CachedPageViewService(
+			$this->mock,
+			$cache,
+			$titleFormatter
+		);
 		$this->service->setCachedDays( 2 );
 	}
 

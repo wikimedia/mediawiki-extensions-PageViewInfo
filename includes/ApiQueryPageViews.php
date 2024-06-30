@@ -5,7 +5,8 @@ namespace MediaWiki\Extension\PageViewInfo;
 use ApiBase;
 use ApiQueryBase;
 use ApiResult;
-use MediaWiki\Title\Title;
+use MediaWiki\Page\PageReference;
+use MediaWiki\Title\TitleFormatter;
 
 /**
  * Expose PageViewService::getPageData().
@@ -13,26 +14,30 @@ use MediaWiki\Title\Title;
 class ApiQueryPageViews extends ApiQueryBase {
 
 	private PageViewService $pageViewService;
+	private TitleFormatter $titleFormatter;
 
 	public function __construct(
 		$query,
 		$moduleName,
-		PageViewService $pageViewService
+		PageViewService $pageViewService,
+		TitleFormatter $titleFormatter
 	) {
 		parent::__construct( $query, $moduleName, 'pvip' );
 		$this->pageViewService = $pageViewService;
+		$this->titleFormatter = $titleFormatter;
 	}
 
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$continue = $params['continue'];
-		$titles = $this->getPageSet()->getMissingTitles()
-			+ $this->getPageSet()->getSpecialTitles()
-			+ $this->getPageSet()->getGoodTitles();
+		$pageSet = $this->getPageSet();
+		$titles = $pageSet->getMissingPages()
+			+ $pageSet->getSpecialPages()
+			+ $pageSet->getGoodPages();
 
 		// sort titles alphabetically and discard those already processed in a previous request
-		$indexToTitle = array_map( static function ( Title $t ) {
-			return $t->getPrefixedDBkey();
+		$indexToTitle = array_map( function ( PageReference $t ) {
+			return $this->titleFormatter->getPrefixedDBkey( $t );
 		}, $titles );
 		asort( $indexToTitle );
 		$indexToTitle = array_filter( $indexToTitle, static function ( $title ) use ( $continue ) {
@@ -49,10 +54,11 @@ class ApiQueryPageViews extends ApiQueryBase {
 			$this->addMessagesFromStatus( Hooks::makeWarningsOnlyStatus( $status ) );
 			$data = $status->getValue();
 			foreach ( $titles as $title ) {
-				$index = $titleToIndex[$title->getPrefixedDBkey()];
-				$fit = $this->addData( $index, $title, $data );
+				$prefixedDBkey = $this->titleFormatter->getPrefixedDBkey( $title );
+				$index = $titleToIndex[$prefixedDBkey];
+				$fit = $this->addData( $index, $prefixedDBkey, $data );
 				if ( !$fit ) {
-					$this->setContinueEnumParameter( 'continue', $title->getPrefixedDBkey() );
+					$this->setContinueEnumParameter( 'continue', $prefixedDBkey );
 					break;
 				}
 			}
@@ -63,17 +69,17 @@ class ApiQueryPageViews extends ApiQueryBase {
 
 	/**
 	 * @param int $index Pageset ID (real or fake)
-	 * @param Title $title
+	 * @param string $prefixedDBkey
 	 * @param array $data Data for all titles.
 	 * @return bool Success.
 	 */
-	protected function addData( $index, Title $title, array $data ) {
-		if ( !isset( $data[$title->getPrefixedDBkey()] ) ) {
+	protected function addData( $index, string $prefixedDBkey, array $data ) {
+		if ( !isset( $data[$prefixedDBkey] ) ) {
 			// PageViewService retains the ordering of titles so the first missing title means we
 			// have run out of data.
 			return false;
 		}
-		$value = $data[$title->getPrefixedDBkey()];
+		$value = $data[$prefixedDBkey];
 		ApiResult::setArrayType( $value, 'kvp', 'date' );
 		ApiResult::setIndexedTagName( $value, 'count' );
 		return $this->addPageSubItems( $index, $value );

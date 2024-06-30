@@ -6,9 +6,10 @@ use FormatJson;
 use InvalidArgumentException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Page\PageReference;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Status\Status;
-use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Utils\MWTimestamp;
 use MWHttpRequest;
 use Psr\Log\LoggerAwareInterface;
@@ -26,6 +27,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	protected $httpRequestFactory;
 	/** @var LoggerInterface */
 	protected $logger;
+
+	private TitleFormatter $titleFormatter;
 
 	/** @var string */
 	protected $endpoint;
@@ -53,6 +56,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @param HttpRequestFactory $httpRequestFactory
+	 * @param TitleFormatter $titleFormatter
 	 * @param string $endpoint Wikimedia pageview API endpoint
 	 * @param array $apiOptions Associative array of API URL parameters
 	 *   see https://wikimedia.org/api/rest_v1/#!/Pageviews_data
@@ -62,6 +66,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 */
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
+		TitleFormatter $titleFormatter,
 		$endpoint,
 		array $apiOptions,
 		$lookupLimit
@@ -82,6 +87,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		$this->lastCompleteDay = strtotime( '0:0 1 day ago', MWTimestamp::time() );
 
 		$this->httpRequestFactory = $httpRequestFactory;
+		$this->titleFormatter = $titleFormatter;
 		$this->logger = new NullLogger();
 	}
 
@@ -125,25 +131,26 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		$status = StatusValue::newGood();
 		$result = [];
 		foreach ( $titles as $title ) {
-			/** @var Title $title */
-			$result[$title->getPrefixedDBkey()] = $this->getEmptyDateRange( $days );
+			/** @var PageReference $title */
+			$prefixedDBkey = $this->titleFormatter->getPrefixedDBkey( $title );
+			$result[$prefixedDBkey] = $this->getEmptyDateRange( $days );
 			$requestStatus = $this->makeRequest(
-				$this->getRequestUrl( self::SCOPE_ARTICLE, $title, $days ) );
+				$this->getRequestUrl( self::SCOPE_ARTICLE, $prefixedDBkey, $days ) );
 			if ( $requestStatus->isOK() ) {
 				$data = $requestStatus->getValue();
 				if ( isset( $data['items'] ) && is_array( $data['items'] ) ) {
 					foreach ( $data['items'] as $item ) {
 						$ts = $item['timestamp'];
 						$day = substr( $ts, 0, 4 ) . '-' . substr( $ts, 4, 2 ) . '-' . substr( $ts, 6, 2 );
-						$result[$title->getPrefixedDBkey()][$day] = $item['views'];
+						$result[$prefixedDBkey][$day] = $item['views'];
 					}
-					$status->success[$title->getPrefixedDBkey()] = true;
+					$status->success[$prefixedDBkey] = true;
 				} else {
 					$status->error( 'pvi-invalidresponse' );
-					$status->success[$title->getPrefixedDBkey()] = false;
+					$status->success[$prefixedDBkey] = false;
 				}
 			} else {
-				$status->success[$title->getPrefixedDBkey()] = false;
+				$status->success[$prefixedDBkey] = false;
 			}
 			$status->merge( $requestStatus );
 		}
@@ -239,20 +246,20 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 
 	/**
 	 * @param string $scope SCOPE_* constant or METRIC_UNIQUE
-	 * @param Title|null $title
+	 * @param string|null $prefixedDBkey
 	 * @param int|null $days
 	 * @return string
 	 */
-	protected function getRequestUrl( $scope, Title $title = null, $days = null ) {
+	protected function getRequestUrl( $scope, string $prefixedDBkey = null, $days = null ) {
 		[ $start, $end ] = $this->getStartEnd( $days );
 		switch ( $scope ) {
 			case self::SCOPE_ARTICLE:
-				if ( !$title ) {
+				if ( $prefixedDBkey === null ) {
 					throw new InvalidArgumentException( 'Title is required when using article scope' );
 				}
 				// Use plain urlencode instead of wfUrlencode because we need
 				// "/" to be encoded, which wfUrlencode doesn't.
-				$encodedTitle = urlencode( $title->getPrefixedDBkey() );
+				$encodedTitle = urlencode( $prefixedDBkey );
 				// YYYYMMDD
 				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
