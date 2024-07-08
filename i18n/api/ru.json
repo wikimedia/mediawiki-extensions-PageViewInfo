@@ -1,8 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Redredsonia"
+			"Redredsonia",
+			"Facenapalm"
 		]
 	},
-	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Уникальные посетители."
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Уникальные посетители.",
+	"apihelp-pageviewinfo-param-days": "Сколько дней показывать.",
+	"apihelp-query+mostviewed-summary": "Перечисляет самые просматриваемые страницы (по данным предыдущего дня).",
+	"apihelp-query+mostviewed-param-limit": "Количество возвращаемых страниц.",
+	"apihelp-query+mostviewed-example": "Перечислить 10 самых посещаемых страниц.",
+	"apihelp-query+mostviewed-example2": "Показать информацию о просмотрах для каждой из 10 самых посещаемых страниц."
 }
