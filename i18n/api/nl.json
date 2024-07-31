@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Romaine",
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"apihelp-pageviewinfo-param-metric": "De statistiek die moet worden gebruikt voor het tellen van weergaven. Afhankelijk van welke backend wordt gebruikt, worden mogelijk niet alle statistieken ondersteund. U kunt de siteinfo-API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) gebruiken om dit te controleren, onder <samp>pageviewservice-supported-metrics</samp> / <modulenaam>",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Eenvoudige paginaweergaven.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unieke bezoekers.",
-	"apihelp-pageviewinfo-param-days": "Het aantal te tonen dagen.",
+	"apihelp-pageviewinfo-param-days": "Het aantal weer te geven dagen.",
 	"apihelp-query+pageviews-summary": "Toont paginaweergavegegevens per pagina (het aantal dagelijkse paginaweergaven voor elk van de afgelopen <var>$1days</var> dagen).",
 	"apihelp-query+pageviews-extended-description": "Het resultaatformaat is paginatitel (met onderstrepingstekens) => datum (Jmd) => aantal.",
 	"apihelp-query+pageviews-example": "Toont paginaweergavestatistieken voor de hoofdpagina.",
