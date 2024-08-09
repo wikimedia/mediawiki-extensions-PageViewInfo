@@ -4,7 +4,7 @@
 			"Kly"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "使用來計算瀏覽次數的計量。因取決於所使用的後端，而非所有計量都可支援。您可以使用在 <samp>pageviewservice-supported-metrics</samp> / <module name> 下方的站台訊息 API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）來檢查",
+	"apihelp-pageviewinfo-param-metric": "使用來計算瀏覽次數的計量。因取決於所使用的後端，而非所有計量都可支援。您可以使用在 <samp>pageviewservice-supported-metrics</samp> / ''module name''（<samp>siteviews</samp>、 <samp>mostviewed</samp>、或其他）下方的站台訊息 API（[[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]）來檢查是否支援",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "純頁面檢視。",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "獨一訪問者。",
 	"apihelp-pageviewinfo-param-days": "要顯示的日子數。",
