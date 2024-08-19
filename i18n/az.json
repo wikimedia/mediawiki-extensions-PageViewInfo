@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nemoralis",
 			"Wertuose"
 		]
 	},
-	"pvi-month-count": "Son 30 gündə səhifəyə baxış sayı"
+	"pvi-desc": "Məlumat əməliyyatına səhifə oxunuşu məlumatını əlavə edir",
+	"pvi-month-count": "Son 30 gündə səhifəyə baxış sayı",
+	"pvi-close": "Bağla",
+	"pvi-invalidresponse": "Yanlış cavab",
+	"pvi-cached-error": "Bu datanı əldə etmək üçün əvvəlki cəhd uğursuz oldu. Server yükünü məhdudlaşdırmaq üçün $1 müddətinə təkrar cəhdləri bloklandı."
 }
