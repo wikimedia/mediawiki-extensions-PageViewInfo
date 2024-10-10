@@ -4,7 +4,7 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Målingen som skal brukes for å telle visninger. Avhengig av hvilket bakstykke som brukes støttes ikke alle målinger. Du kan bruke siteinfo-API-et ([[Special:ApiHelp/query+siteinfo|action=query&metadata=siteinfo]]) for å sjekke, under <samp>pageviewservice-supported-metrics</samp>/<modulnavn>",
+	"apihelp-pageviewinfo-param-metric": "Målingen som skal brukes for å telle visninger. Avhengig av hvilket bakstykke som brukes støttes ikke alle målinger. Du kan bruke siteinfo-API-et ([[Special:ApiHelp/query+siteinfo|action=query&metadata=siteinfo]]) for å sjekke hvilke som støttes, under <samp>pageviewservice-supported-metrics</samp> / ''modulnavn'' (<samp>siteviews</samp>, <samp>mostviewed</samp> osv.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Vanlige sidevisninger.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unike besøkende.",
 	"apihelp-pageviewinfo-param-days": "Antall dager som skal vises.",
