@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use BagOStuff;
 use InvalidArgumentException;
 use MediaWiki\Message\Message;
 use MediaWiki\Page\PageReference;
@@ -12,6 +11,7 @@ use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use StatusValue;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Wraps a PageViewService and caches the results.

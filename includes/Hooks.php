@@ -2,17 +2,17 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use ApiBase;
-use ApiModuleManager;
-use ApiQuerySiteinfo;
-use ExtensionRegistry;
-use FormatJson;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiModuleManager;
+use MediaWiki\Api\ApiQuerySiteinfo;
 use MediaWiki\Api\Hook\ApiQuery__moduleManagerHook;
 use MediaWiki\Api\Hook\APIQuerySiteInfoGeneralInfoHook;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Hook\InfoActionHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;

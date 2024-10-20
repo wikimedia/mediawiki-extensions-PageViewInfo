@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use HashBagOStuff;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use StatusValue;
+use Wikimedia\ObjectCache\HashBagOStuff;
 
 /**
  * @covers \MediaWiki\Extension\PageViewInfo\CachedPageViewService

@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use FormatJson;
 use InvalidArgumentException;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Request\WebRequest;

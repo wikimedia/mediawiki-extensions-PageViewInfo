@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use ApiBase;
-use ApiPageSet;
-use ApiQueryGeneratorBase;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiPageSet;
+use MediaWiki\Api\ApiQueryGeneratorBase;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;

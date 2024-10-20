@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use ApiQueryBase;
-use ApiResult;
+use MediaWiki\Api\ApiQueryBase;
+use MediaWiki\Api\ApiResult;
 
 /**
  * Expose PageViewService::getSiteData().

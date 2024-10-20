@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use ApiBase;
-use ApiQueryBase;
-use ApiResult;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiQueryBase;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Title\TitleFormatter;
 
