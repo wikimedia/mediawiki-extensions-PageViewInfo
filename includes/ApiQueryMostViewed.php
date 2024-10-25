@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiPageSet;
+use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryGeneratorBase;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -17,8 +18,8 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 	private PageViewService $pageViewService;
 
 	public function __construct(
-		$query,
-		$moduleName,
+		ApiQuery $query,
+		string $moduleName,
 		PageViewService $pageViewService
 	) {
 		parent::__construct( $query, $moduleName, 'pvim' );

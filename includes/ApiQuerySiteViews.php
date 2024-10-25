@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
+use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
 
@@ -13,8 +14,8 @@ class ApiQuerySiteViews extends ApiQueryBase {
 	private PageViewService $pageViewService;
 
 	public function __construct(
-		$query,
-		$moduleName,
+		ApiQuery $query,
+		string $moduleName,
 		PageViewService $pageViewService
 	) {
 		parent::__construct( $query, $moduleName, 'pvis' );
