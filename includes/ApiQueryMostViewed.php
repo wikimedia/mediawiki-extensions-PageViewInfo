@@ -37,7 +37,7 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 	/**
 	 * @param ApiPageSet|null $resultPageSet
 	 */
-	private function run( ApiPageSet $resultPageSet = null ) {
+	private function run( ?ApiPageSet $resultPageSet = null ) {
 		$params = $this->extractRequestParams();
 		$metric = Hooks::getApiMetricsMap()[$params['metric']];
 		$status = $this->pageViewService->getTopPages( $metric );

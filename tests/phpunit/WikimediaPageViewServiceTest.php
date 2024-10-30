@@ -53,7 +53,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	 * @param callable|null $assertUrl A callable that gets the URL
 	 * @return MockObject
 	 */
-	protected function mockNextRequest( callable $assertUrl = null ) {
+	protected function mockNextRequest( ?callable $assertUrl = null ) {
 		$mock = $this->createMock( \MWHttpRequest::class );
 		$this->calls[] = [ $mock, $assertUrl ];
 		return $mock;
