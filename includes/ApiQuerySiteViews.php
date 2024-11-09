@@ -38,14 +38,17 @@ class ApiQuerySiteViews extends ApiQueryBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return Hooks::getApiMetricsHelp( PageViewService::SCOPE_SITE ) + Hooks::getApiDaysHelp();
 	}
 
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&meta=siteviews' => 'apihelp-query+siteviews-example',
@@ -53,6 +56,7 @@ class ApiQuerySiteViews extends ApiQueryBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHelpUrls() {
 		return 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo';
 	}

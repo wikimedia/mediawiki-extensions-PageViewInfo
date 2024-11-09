@@ -103,6 +103,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		$this->originalRequest = $originalRequest;
 	}
 
+	/** @inheritDoc */
 	public function supports( $metric, $scope ) {
 		if ( $metric === self::METRIC_VIEW ) {
 			return true;
@@ -220,6 +221,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		return $status;
 	}
 
+	/** @inheritDoc */
 	public function getCacheExpiry( $metric, $scope ) {
 		// data is valid until the end of the day
 		$endOfDay = strtotime( '0:0 next day', MWTimestamp::time() );

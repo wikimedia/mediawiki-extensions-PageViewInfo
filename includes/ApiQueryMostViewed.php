@@ -30,6 +30,7 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 		$this->run();
 	}
 
+	/** @inheritDoc */
 	public function executeGenerator( $resultPageSet ) {
 		$this->run( $resultPageSet );
 	}
@@ -89,10 +90,12 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return Hooks::getApiMetricsHelp( PageViewService::SCOPE_TOP ) + [
 			'limit' => [
@@ -110,6 +113,7 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 		];
 	}
 
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=mostviewed' => 'apihelp-query+mostviewed-example',
@@ -117,6 +121,7 @@ class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHelpUrls() {
 		return 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo';
 	}

@@ -63,10 +63,12 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		$this->cachedDays = $cachedDays;
 	}
 
+	/** @inheritDoc */
 	public function supports( $metric, $scope ) {
 		return $this->service->supports( $metric, $scope );
 	}
 
+	/** @inheritDoc */
 	public function getPageData( array $titles, $days, $metric = self::METRIC_VIEW ) {
 		$status = $this->getTitlesWithCache( $metric, $titles );
 		$data = $status->getValue();
@@ -81,6 +83,7 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		return $status;
 	}
 
+	/** @inheritDoc */
 	public function getSiteData( $days, $metric = self::METRIC_VIEW ) {
 		$status = $this->getWithCache( $metric, self::SCOPE_SITE );
 		if ( $status->isOK() ) {
@@ -95,10 +98,12 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 		return $status;
 	}
 
+	/** @inheritDoc */
 	public function getTopPages( $metric = self::METRIC_VIEW ) {
 		return $this->getWithCache( $metric, self::SCOPE_TOP );
 	}
 
+	/** @inheritDoc */
 	public function getCacheExpiry( $metric, $scope ) {
 		// add some random delay to avoid cache stampedes
 		return $this->service->getCacheExpiry( $metric, $scope ) + mt_rand( 0, 600 );
