@@ -41,8 +41,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	protected $access;
 	/** @var string 'all-agents', 'user', 'spider' or 'bot' */
 	protected $agent;
-	/** @var string 'hourly', 'daily' or 'monthly' */
-	protected $granularity = 'daily'; // allowing other options would make the interface too complex
+	/** @var string 'hourly', 'daily' or 'monthly', allowing other options would make the interface too complex */
+	protected $granularity = 'daily';
 	/** @var int UNIX timestamp of 0:00 of the last day with complete data */
 	protected $lastCompleteDay;
 
