@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kokage si",
 			"Otokoume",
 			"Shirayuki",
 			"Yusuke1109"
@@ -8,5 +9,8 @@
 	},
 	"pvi-desc": "info 操作にページの閲覧情報を追加する",
 	"pvi-month-count": "過去 30 日間のページビュー数",
-	"pvi-close": "閉じる"
+	"pvi-close": "閉じる",
+	"pvi-invalidresponse": "無効なレスポンス",
+	"pvi-cached-error": "このデータを取得する以前の試みは失敗しました。サーバー負荷を制限するために、再試行は$1の間ブロックされました。",
+	"pvi-cached-error-title": "ページ「$1」を取得する以前の試みは失敗しました。サーバー負荷を制限するために、再試行は$2の間ブロックされました。"
 }
