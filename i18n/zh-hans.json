@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"A2093064",
+			"Diskdance",
 			"Liuxinyu970226",
 			"Xiplus"
 		]
 	},
-	"pvi-desc": "添加页面浏览信息至信息操作中",
-	"pvi-month-count": "过去30天的页面访问量",
+	"pvi-desc": "向info操作中添加页面浏览量信息",
+	"pvi-month-count": "过去30天的页面浏览量",
 	"pvi-close": "关闭",
 	"pvi-invalidresponse": "无效响应",
-	"pvi-cached-error": "之前取得该数据的尝试失败。为了限制服务器加载，已阻止$1内重试。",
-	"pvi-cached-error-title": "之前取得页面“$1”的尝试失败。为了限制服务器加载，已阻止$2内重试。"
+	"pvi-cached-error": "先前无法获取此数据。为了防止服务器过载，已阻止在$1内重试。",
+	"pvi-cached-error-title": "先前无法获取页面“$1”。为了防止服务器过载，已阻止在$2内重试。"
 }
