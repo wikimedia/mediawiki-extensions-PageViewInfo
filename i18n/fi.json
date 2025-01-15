@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"Pxos"
+			"Pxos",
+			"Samoasambia"
 		]
 	},
+	"pvi-desc": "Lisää tietoja sivun katselukerroista sivun tiedot -toimintoon",
 	"pvi-month-count": "Sivua katsottu viimeisen 30 päivän aikana",
-	"pvi-close": "Sulje"
+	"pvi-close": "Sulje",
+	"pvi-invalidresponse": "Virheellinen vastaus",
+	"pvi-cached-error": "Aiempi yritys noutaa nämä tiedot epäonnistui. Palvelimen kuormituksen rajoittamiseksi uudelleenyritykset on estetty $1 ajaksi.",
+	"pvi-cached-error-title": "Aiempi yritys noutaa sivu ”$1” epäonnistui. Palvelimen kuormituksen rajoittamiseksi uudelleenyritykset on estetty $2 ajaksi."
 }
