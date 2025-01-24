@@ -129,7 +129,7 @@ class Hooks implements
 		foreach ( self::getApiScopeMap() as $apiModuleName => $serviceScopeConstant ) {
 			foreach ( self::getApiMetricsMap() as $serviceMetricConstant ) {
 				if ( $this->pageViewService->supports( $serviceMetricConstant, $serviceScopeConstant ) ) {
-					call_user_func_array( [ $moduleManager, 'addModule' ], $moduleMap[$apiModuleName] );
+					$moduleManager->addModule( ...$moduleMap[$apiModuleName] );
 					continue 2;
 				}
 			}
@@ -228,8 +228,7 @@ class Hooks implements
 	public static function makeWarningsOnlyStatus( StatusValue $status ) {
 		[ $errors, $warnings ] = $status->splitByErrorType();
 		foreach ( $errors->getErrors() as $error ) {
-			call_user_func_array( [ $warnings, 'warning' ],
-				array_merge( [ $error['message'] ], $error['params'] ) );
+			$warnings->warning( $error['message'], ...$error['params'] );
 		}
 		return $warnings;
 	}
