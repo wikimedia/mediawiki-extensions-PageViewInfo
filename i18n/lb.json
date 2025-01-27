@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"pvi-close": "Zoumaachen",
-	"pvi-invalidresponse": "Net-valabel Äntwert"
+	"pvi-invalidresponse": "Ongülteg Äntwert"
 }
