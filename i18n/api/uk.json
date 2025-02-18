@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
-			"Piramidion"
+			"Piramidion",
+			"Ата"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Міра для використання для підрахунку кількості переглядів. Залежить від використовуваного бекенду, не всі міри можуть підтримуватись. Можете скористатись Siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]), щоб перевірити, які з них підтримуються, під <samp>pageviewservice-supported-metrics</samp> / ''module name'' (<samp>siteviews</samp>, <samp>mostviewed</samp> тощо)",
+	"apihelp-pageviewinfo-param-metric": "Міра для використання для підрахунку кількості переглядів. Залежно від використовуваного бекенду, не всі міри можуть підтримуватись. Можете скористатись siteinfo API ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]), щоб перевірити, які з них підтримуються, під <samp>pageviewservice-supported-metrics</samp> / ''module name'' (<samp>siteviews</samp>, <samp>mostviewed</samp> тощо)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Просте число переглядів.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Унікальні відвідувачі.",
 	"apihelp-pageviewinfo-param-days": "Кількість днів, яку слід показати.",
