@@ -8,7 +8,7 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:PageViewInfo",
 	"descriptionmsg": "pvi-desc",
 	"requires": {
-		"MediaWiki": ">= 1.43"
+		"MediaWiki": ">= 1.44"
 	},
 	"HookHandlers": {
 		"main": {
