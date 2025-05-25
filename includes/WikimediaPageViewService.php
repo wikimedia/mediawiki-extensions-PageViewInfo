@@ -12,6 +12,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Utils\MWTimestamp;
 use MWHttpRequest;
+use NullHttpRequestFactory;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -300,6 +301,11 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 * @return StatusValue
 	 */
 	protected function makeRequest( $url ) {
+		if ( defined( 'MW_PHPUNIT_TEST' ) &&
+			class_exists( NullHttpRequestFactory::class ) &&
+			$this->httpRequestFactory instanceof NullHttpRequestFactory ) {
+			return StatusValue::newGood();
+		}
 		/** @var MWHttpRequest $request */
 		$request = $this->httpRequestFactory->create( $url, [ 'timeout' => 10 ], __METHOD__ );
 		if ( $this->originalRequest ) {
