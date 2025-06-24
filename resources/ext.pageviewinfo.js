@@ -12,7 +12,7 @@
 			var dialog, windowManager;
 			e.preventDefault();
 			function MyProcessDialog( config ) {
-				MyProcessDialog.parent.call( this, config );
+				MyProcessDialog.super.call( this, config );
 			}
 			OO.inheritClass( MyProcessDialog, OO.ui.ProcessDialog );
 
@@ -23,7 +23,7 @@
 			];
 
 			MyProcessDialog.prototype.initialize = function () {
-				MyProcessDialog.parent.prototype.initialize.apply( this, arguments );
+				MyProcessDialog.super.prototype.initialize.apply( this, arguments );
 				this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
 				this.$body.append( this.content.$element );
 				loadGraph( this.content.$element[ 0 ], info.graph );
@@ -35,7 +35,7 @@
 						dialog.close( { action: action } );
 					} );
 				}
-				return MyProcessDialog.parent.prototype.getActionProcess.call( this, action );
+				return MyProcessDialog.super.prototype.getActionProcess.call( this, action );
 			};
 
 			windowManager = new OO.ui.WindowManager();
