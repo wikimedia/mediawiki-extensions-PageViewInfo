@@ -52,7 +52,7 @@
 		"remoteExtPath": "PageViewInfo/resources"
 	},
 	"ConfigRegistry": {
-		"PageViewInfo": "GlobalVarConfig::newInstance"
+		"PageViewInfo": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
