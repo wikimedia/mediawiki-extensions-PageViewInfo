@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\PageViewInfo;
 use ApiBase;
 use ApiModuleManager;
 use ApiQuerySiteinfo;
-use FormatJson;
 use Html;
 use IContextSource;
 use MediaWiki\Api\Hook\ApiQuery__moduleManagerHook;
@@ -25,7 +24,8 @@ class Hooks implements
 	InfoActionHook
 {
 	/**
-	 * Display total pageviews in the last 30 days and show a graph with details when clicked.
+	 * Display total pageviews in the last 30 days.
+	 *
 	 * @param IContextSource $ctx
 	 * @param array &$pageInfo
 	 */
@@ -57,25 +57,6 @@ class Hooks implements
 			$ctx->msg( 'pvi-month-count' ),
 			Html::element( 'div', [ 'class' => 'mw-pvi-month' ], $formatted )
 		];
-
-		$info = FormatJson::decode(
-			file_get_contents( __DIR__ . '/../graphs/month.json' ),
-			true
-		);
-		foreach ( $views as $day => $count ) {
-			$info['data'][0]['values'][] = [ 'timestamp' => self::toYmd( $day ), 'views' => $count ];
-		}
-
-		$ctx->getOutput()->addModules( 'ext.pageviewinfo' );
-		// Ymd -> YmdHis
-		$user = $ctx->getUser();
-		$ctx->getOutput()->addJsConfigVars( [
-			'wgPageViewInfo' => [
-				'graph' => $info,
-				'start' => $lang->userDate( $start, $user ),
-				'end' => $lang->userDate( $end, $user ),
-			],
-		] );
 	}
 
 	/**
