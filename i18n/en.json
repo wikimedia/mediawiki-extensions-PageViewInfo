@@ -7,8 +7,6 @@
 	"pvi-desc": "Adds page view information to the info action",
 	"pvi-month-count": "Page views in the past 30 days",
 	"pvi-month-count-value": "$1",
-	"pvi-close": "Close",
-	"pvi-range": "$1 - $2",
 	"pvi-invalidresponse": "Invalid response",
 	"pvi-cached-error": "An earlier attempt to fetch this data failed. To limit server load, retries have been blocked for $1.",
 	"pvi-cached-error-title": "An earlier attempt to fetch page \"$1\" failed. To limit server load, retries have been blocked for $2."

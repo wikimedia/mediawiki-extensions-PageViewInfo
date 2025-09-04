@@ -32,25 +32,6 @@
 			"i18n/api"
 		]
 	},
-	"ResourceModules": {
-		"ext.pageviewinfo": {
-			"scripts": [
-				"ext.pageviewinfo.js"
-			],
-			"messages": [
-				"pvi-close",
-				"pvi-range"
-			],
-			"dependencies": [
-				"ext.graph.render",
-				"oojs-ui"
-			]
-		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "resources",
-		"remoteExtPath": "PageViewInfo/resources"
-	},
 	"ConfigRegistry": {
 		"PageViewInfo": "GlobalVarConfig::newInstance"
 	},
