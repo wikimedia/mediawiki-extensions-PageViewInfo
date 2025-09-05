@@ -9,7 +9,6 @@
 	},
 	"pvi-desc": "Voegt informatie toe aan de handeling \"info\" over het aantal keren dat de pagina is bekeken",
 	"pvi-month-count": "Aantal keren bekeken in de afgelopen 30 dagen",
-	"pvi-close": "Sluiten",
 	"pvi-invalidresponse": "Ongeldige antwoord",
 	"pvi-cached-error": "Een eerdere poging om deze gegevens op te halen is mislukt. Om de serverbelasting te beperken zijn nieuwe pogingen voor $1 geblokkeerd.",
 	"pvi-cached-error-title": "Een eerdere poging om de pagina “$1” op te halen is mislukt. Om de serverbelasting te beperken zijn nieuwe pogingen voor $2 geblokkeerd."

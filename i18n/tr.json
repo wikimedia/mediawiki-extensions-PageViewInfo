@@ -7,7 +7,6 @@
 	},
 	"pvi-desc": "Bilgi işlemine sayfa görüntüleme bilgisi ekler",
 	"pvi-month-count": "Son 30 gündeki sayfa görüntüleme sayısı",
-	"pvi-close": "Kapat",
 	"pvi-invalidresponse": "Geçersiz cevap",
 	"pvi-cached-error": "Bu verileri almak için daha önce yapılan bir girişim başarısız oldu. Sunucu yükünü sınırlandırmak için yeniden deneme $1 engellendi.",
 	"pvi-cached-error-title": "\"$1\" sayfası getirme girişimi başarısız oldu. Sunucu yükünü sınırlandırmak için yeniden deneme $2 engellendi."

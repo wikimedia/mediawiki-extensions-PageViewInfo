@@ -8,7 +8,6 @@
 	},
 	"pvi-desc": "Lägger till sidvisningsinformation till informationshandlingen",
 	"pvi-month-count": "Sidvisningar under de senaste 30 dagarna",
-	"pvi-close": "Stäng",
 	"pvi-invalidresponse": "Ogiltigt svar",
 	"pvi-cached-error": "Ett tidigare försök att hämta dessa data misslyckades. För att begränsa serverbelastningen har försök blockerats för $1.",
 	"pvi-cached-error-title": "Ett tidigare försök att hämta sidan \"$1\" misslyckades. För att begränsa serverbelastningen har försök blockerats för $2."

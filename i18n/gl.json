@@ -8,7 +8,6 @@
 	},
 	"pvi-desc": "Engade información de visitas ás páxinas á acción de información",
 	"pvi-month-count": "Visitas á páxina nos últimos 30 días",
-	"pvi-close": "Pechar",
 	"pvi-invalidresponse": "Resposta non válida",
 	"pvi-cached-error": "Fallou un intento anterior de extraer estes datos. Para limitar a carga de traballo no servidor, bloqueáronse os reintentos durante $1.",
 	"pvi-cached-error-title": "Fallou un intento anterior de obter a páxina «$1». Para limitar a carga de traballo no servidor, bloqueáronse os reintentos durante $2."
