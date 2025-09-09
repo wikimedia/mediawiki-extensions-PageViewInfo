@@ -11,15 +11,12 @@ use MediaWiki\Api\ApiResult;
  */
 class ApiQuerySiteViews extends ApiQueryBase {
 
-	private PageViewService $pageViewService;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		PageViewService $pageViewService
+		private readonly PageViewService $pageViewService,
 	) {
 		parent::__construct( $query, $moduleName, 'pvis' );
-		$this->pageViewService = $pageViewService;
 	}
 
 	public function execute() {

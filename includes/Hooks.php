@@ -24,10 +24,9 @@ class Hooks implements
 	InfoActionHook
 {
 
-	private PageViewService $pageViewService;
-
-	public function __construct( PageViewService $pageViewService ) {
-		$this->pageViewService = $pageViewService;
+	public function __construct(
+		private readonly PageViewService $pageViewService,
+	) {
 	}
 
 	/**

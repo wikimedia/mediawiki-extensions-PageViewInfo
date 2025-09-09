@@ -19,16 +19,8 @@ use Wikimedia\ObjectCache\BagOStuff;
 class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	private const ERROR_EXPIRY = 1800;
 
-	/** @var PageViewService */
-	protected $service;
-
-	/** @var BagOStuff */
-	protected $cache;
-
 	/** @var LoggerInterface */
 	protected $logger;
-
-	private TitleFormatter $titleFormatter;
 
 	/** @var string Cache prefix, in case multiple instances of this service coexist */
 	protected $prefix;
@@ -37,16 +29,12 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 	protected $cachedDays = 30;
 
 	public function __construct(
-		PageViewService $service,
-		BagOStuff $cache,
-		TitleFormatter $titleFormatter,
+		private readonly PageViewService $service,
+		private readonly BagOStuff $cache,
+		private readonly TitleFormatter $titleFormatter,
 		string $prefix = ''
 	) {
-		$this->service = $service;
 		$this->logger = new NullLogger();
-		$this->cache = $cache;
-		$this->titleFormatter = $titleFormatter;
-		$this->prefix = $prefix;
 	}
 
 	public function setLogger( LoggerInterface $logger ): void {

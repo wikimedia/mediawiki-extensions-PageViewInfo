@@ -14,18 +14,13 @@ use MediaWiki\Title\TitleFormatter;
  */
 class ApiQueryPageViews extends ApiQueryBase {
 
-	private PageViewService $pageViewService;
-	private TitleFormatter $titleFormatter;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		PageViewService $pageViewService,
-		TitleFormatter $titleFormatter
+		private readonly PageViewService $pageViewService,
+		private readonly TitleFormatter $titleFormatter,
 	) {
 		parent::__construct( $query, $moduleName, 'pvip' );
-		$this->pageViewService = $pageViewService;
-		$this->titleFormatter = $titleFormatter;
 	}
 
 	public function execute() {

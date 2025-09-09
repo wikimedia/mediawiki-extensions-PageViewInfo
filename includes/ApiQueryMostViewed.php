@@ -15,15 +15,12 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  */
 class ApiQueryMostViewed extends ApiQueryGeneratorBase {
 
-	private PageViewService $pageViewService;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		PageViewService $pageViewService
+		private readonly PageViewService $pageViewService,
 	) {
 		parent::__construct( $query, $moduleName, 'pvim' );
-		$this->pageViewService = $pageViewService;
 	}
 
 	public function execute() {

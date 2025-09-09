@@ -24,12 +24,8 @@ use StatusValue;
  * @see https://wikitech.wikimedia.org/wiki/Analytics/PageviewAPI
  */
 class WikimediaPageViewService implements PageViewService, LoggerAwareInterface {
-	/** @var HttpRequestFactory */
-	protected $httpRequestFactory;
 	/** @var LoggerInterface */
 	protected $logger;
-
-	private TitleFormatter $titleFormatter;
 
 	/** @var string */
 	protected $endpoint;
@@ -66,8 +62,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	 *   Data will be returned for no more than this many titles in a getPageData() call.
 	 */
 	public function __construct(
-		HttpRequestFactory $httpRequestFactory,
-		TitleFormatter $titleFormatter,
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly TitleFormatter $titleFormatter,
 		$endpoint,
 		array $apiOptions,
 		$lookupLimit
@@ -87,8 +83,6 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		// Skip the current day for which only partial information is available
 		$this->lastCompleteDay = strtotime( '0:0 1 day ago', MWTimestamp::time() );
 
-		$this->httpRequestFactory = $httpRequestFactory;
-		$this->titleFormatter = $titleFormatter;
 		$this->logger = new NullLogger();
 	}
 
