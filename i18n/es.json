@@ -9,7 +9,6 @@
 	},
 	"pvi-desc": "Añade información de visitas a páginas a la acción 'información'",
 	"pvi-month-count": "Visitas a la página en los últimos 30 días",
-	"pvi-close": "Cerrar",
 	"pvi-invalidresponse": "Respuesta no válida",
 	"pvi-cached-error-title": "Ha fallado un intento anterior por obtener la página «$1». Para limitar la carga de trabajo en el servidor, se han bloqueado los reintentos por $2."
 }

@@ -7,8 +7,6 @@
 	},
 	"pvi-desc": "Adiciona informações de exibição de página à ação de informações",
 	"pvi-month-count": "Visualizações da página nos últimos 30 dias",
-	"pvi-close": "Fechar",
-	"pvi-range": "$1 - $2",
 	"pvi-invalidresponse": "Resposta inválida",
 	"pvi-cached-error": "Uma tentativa anterior de obter esses dados falhou. Para limitar a carga do servidor, as tentativas foram bloqueadas por $1.",
 	"pvi-cached-error-title": "Uma tentativa anterior de buscar a página \"$1\" falhou. Para limitar a carga do servidor, as tentativas foram bloqueadas por $2."

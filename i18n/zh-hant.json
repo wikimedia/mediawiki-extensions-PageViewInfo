@@ -10,7 +10,6 @@
 	},
 	"pvi-desc": "於資訊操作加入頁面檢視資訊",
 	"pvi-month-count": "過去30天的頁面瀏覽量",
-	"pvi-close": "關閉",
 	"pvi-invalidresponse": "無效回應",
 	"pvi-cached-error": "先前嘗試索取此資料失敗。為限制伺服器負荷，已阻擋了在 $1 內的重新嘗試。",
 	"pvi-cached-error-title": "先前嘗試索取此資料「$1」失敗。為限制伺服器負荷，已阻擋了在 $2 內的重新嘗試。"

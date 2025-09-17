@@ -8,7 +8,6 @@
 	},
 	"pvi-desc": "Adiciona informações de visionamento da página à interface \"Informações de páginas\"",
 	"pvi-month-count": "Visionamentos da página nos últimos 30 dias",
-	"pvi-close": "Fechar",
 	"pvi-invalidresponse": "Resposta inválida",
 	"pvi-cached-error": "Uma tentativa anterior de extração destes dados falhou. Para limitar a carga sobre o servidor, novas tentativas estarão bloqueadas durante $1.",
 	"pvi-cached-error-title": "Uma tentativa anterior de obtenção da página \"$1\" falhou. Para limitar a carga sobre o servidor, novas tentativas estarão bloqueadas durante $2."

@@ -7,7 +7,6 @@
 	},
 	"pvi-desc": "Fügt Informationen zu Seitenaufrufen zur Aktion „Seiteninformationen“ hinzu",
 	"pvi-month-count": "Seitenaufrufe in den letzten 30 Tagen",
-	"pvi-close": "Schließen",
 	"pvi-invalidresponse": "Ungültige Antwort",
 	"pvi-cached-error": "Ein früherer Versuch, diese Daten abzurufen, ist fehlgeschlagen. Um die Serverauslastung zu begrenzen, wurden neue Versuche für $1 gesperrt.",
 	"pvi-cached-error-title": "Ein früherer Versuch, die Seite „$1“ abzurufen, ist fehlgeschlagen. Um die Serverauslastung zu begrenzen, wurden neue Versuche für $2 gesperrt."
