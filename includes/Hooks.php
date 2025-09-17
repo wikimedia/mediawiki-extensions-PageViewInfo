@@ -15,9 +15,6 @@ use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
-/**
- * @phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
- */
 class Hooks implements
 	ApiQuery__moduleManagerHook,
 	APIQuerySiteInfoGeneralInfoHook,
@@ -68,7 +65,7 @@ class Hooks implements
 	 * Limit enabled PageViewInfo API modules to those which are supported by the service.
 	 * @param ApiModuleManager $moduleManager
 	 */
-	public function onApiQuery__ModuleManager( $moduleManager ) {
+	public function onApiQuery__moduleManager( $moduleManager ) {
 		$moduleMap = [
 			// Order is: module name, module group, objectFactory spec
 			'pageviews' => [
