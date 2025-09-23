@@ -6,7 +6,6 @@
 	},
 	"pvi-desc": "喺資訊操作加版睇資訊",
 	"pvi-month-count": "最近30日版睇人次",
-	"pvi-close": "閂",
 	"pvi-invalidresponse": "無效嘅回應",
 	"pvi-cached-error": "頭先攞唔到資料。為限制伺服器負荷，阻止咗喺 $1 內再試過。",
 	"pvi-cached-error-title": "頭先攞唔到「$1」嘅資料。為限制伺服器負荷，阻止咗喺 $2 內再試過。"

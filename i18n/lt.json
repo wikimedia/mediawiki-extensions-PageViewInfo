@@ -6,7 +6,6 @@
 		]
 	},
 	"pvi-month-count": "Puslapio peržiūros per paskutines 30 dienų",
-	"pvi-close": "Uždaryti",
 	"pvi-invalidresponse": "Netinkamas atsakymas",
 	"pvi-cached-error": "Ankstesnis bandymas gauti šiuos duomenis nepavyko. Siekiant riboti serverio apkrova, pakartotinai $1 bandymai blokuojami.",
 	"pvi-cached-error-title": "Ankstesnis bandymas gauti puslapį „$1“ nepavyko. Siekiant riboti serverio apkrova, pakartotinai $2 bandymai blokuojami."

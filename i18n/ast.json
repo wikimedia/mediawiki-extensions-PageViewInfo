@@ -6,7 +6,6 @@
 	},
 	"pvi-desc": "Amiesta la información de visites a la páxina a l'aición info",
 	"pvi-month-count": "Visites a la páxina nos caberos 30 díes",
-	"pvi-close": "Zarrar",
 	"pvi-invalidresponse": "Respuesta inválida",
 	"pvi-cached-error": "Falló un intentu anterior pa estrayer estos datos. Pa llendar la carga del sirvidor, bloquiáronse otros intentos demientres $1.",
 	"pvi-cached-error-title": "Falló un intentu anterior pa estrayer la páxina «$1». Pa llendar la carga del sirvidor, bloquiáronse otros intentos demientres $2."
