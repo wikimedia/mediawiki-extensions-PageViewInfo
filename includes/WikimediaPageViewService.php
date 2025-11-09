@@ -275,11 +275,11 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 				$day = substr( $end, 6, 2 );
 				return "$this->endpoint/metrics/pageviews/top/$this->project/$this->access/$year/$month/$day";
 			case self::METRIC_UNIQUE:
-				$access = [
+				$access = match ( $this->access ) {
 					'all-access' => 'all-sites',
 					'desktop' => 'desktop-site',
 					'mobile-web' => 'mobile-site',
-				][$this->access];
+				};
 				// YYYYMMDD
 				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
