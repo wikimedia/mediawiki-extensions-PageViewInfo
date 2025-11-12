@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"Cobija"
+			"Cobija",
+			"SaldırganSincap"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Görünümleri saymak için kullanılacak metrik. Hangi arka ucun kullanıldığına bağlı olarak, tüm metrikler desteklenmeyebilir. <samp>pageviewservice-supported-metrics</samp> / <modül adı> altında, kontrol etmek için site bilgisi API'sını ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) kullanabilirsiniz.",
+	"apihelp-pageviewinfo-param-metric": "Görünümleri saymak için kullanılacak metrik. Hangi arka ucun kullanıldığına bağlı olarak, tüm metrikler desteklenmeyebilir. Hangilerinin desteklendiğini kontrol etmek için <samp>pageviewservice-supported-metrics</samp> / ''modül adı'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, vb.) altında siteinfo API'sini ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) kullanabilirsiniz.",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Düz sayfa görünümleri.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Benzersiz ziyaretçiler.",
 	"apihelp-pageviewinfo-param-days": "Gösterilecek gün sayısı.",
