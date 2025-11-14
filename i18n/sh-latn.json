@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
 	"pvi-desc": "Dodaje podatke o posjećenosti stranice u djelu za informacije",
-	"pvi-month-count": "Posjete u zadnjih 30 dana",
+	"pvi-month-count": "Posjete u posljednih 30 dana",
 	"pvi-invalidresponse": "Nevaljan odaziv"
 }
