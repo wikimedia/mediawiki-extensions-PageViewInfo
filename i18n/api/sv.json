@@ -3,10 +3,11 @@
 		"authors": [
 			"Dhallin",
 			"Felba",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
-	"apihelp-pageviewinfo-param-metric": "Mätetalet som ska användas för att räkna visningar. Beroende på vilken backend som används, stöds eventuellt inte alla mätetal. Du kan använda API för sidinformation ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) för att validera, under <samp>pageviewservice-supported-metrics</samp> / <module name>",
+	"apihelp-pageviewinfo-param-metric": "Mätetalet som ska användas för att räkna visningar. Beroende på vilken bakända som används, stöds eventuellt inte alla mätetal. Du kan använda API för sidinformation ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) för att kontrollera vilka som stöds, under <samp>pageviewservice-supported-metrics</samp> / ''module name'' ( <samp>siteviews</samp> , <samp>mostviewed</samp> , etc.)",
 	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Vanliga sidvisningar.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Unika besökare",
 	"apihelp-pageviewinfo-param-days": "Antal dagar som ska visas.",
