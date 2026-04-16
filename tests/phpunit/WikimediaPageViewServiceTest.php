@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\PageViewInfo;
 
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
@@ -54,7 +55,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 	 * @return MockObject
 	 */
 	protected function mockNextRequest( ?callable $assertUrl = null ) {
-		$mock = $this->createMock( \MWHttpRequest::class );
+		$mock = $this->createMock( MWHttpRequest::class );
 		$this->calls[] = [ $mock, $assertUrl ];
 		return $mock;
 	}

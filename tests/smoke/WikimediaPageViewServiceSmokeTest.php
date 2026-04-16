@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\Utils\MWCryptRand;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
@@ -24,7 +25,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 
 	public function testGetPageData() {
 		$service = $this->getService();
-		$randomTitle = ucfirst( \MWCryptRand::generateHex( 32 ) );
+		$randomTitle = ucfirst( MWCryptRand::generateHex( 32 ) );
 		$titles = [ 'Main_Page', 'Mycotoxin', $randomTitle ];
 		$status = $service->getPageData( array_map( static function ( $t ) {
 			return Title::newFromText( $t );

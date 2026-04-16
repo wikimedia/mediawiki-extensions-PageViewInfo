@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\PageViewInfo;
 
 use InvalidArgumentException;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Page\PageReference;
@@ -11,7 +12,6 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Utils\MWTimestamp;
-use MWHttpRequest;
 use NullHttpRequestFactory;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
