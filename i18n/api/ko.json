@@ -4,14 +4,22 @@
 			"Apzp79",
 			"Jerrykim306",
 			"Kwj2772",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "평문 pageview입니다.",
 	"apihelp-pageviewinfo-paramvalue-metric-uniques": "순수 방문자.",
 	"apihelp-pageviewinfo-param-days": "표시할 일 수",
+	"apihelp-query+pageviews-summary": "문서 당 pageview 데이터를 표시합니다 (최근 <var>$1days</var>에 대한 각 일간 pageview 수).",
 	"apihelp-query+pageviews-extended-description": "결과 형식은 문서 제목 (밑줄 포함) => 날짜 (년월일) => 카운트입니다.",
+	"apihelp-query+pageviews-example": "대문에 대한 pageview 통계를 표시합니다.",
+	"apihelp-query+siteviews-summary": "사이트 전체에 대한 pageview 데이터를 표시합니다 (최근 <var>$1days</var>에 대한 각 일간 전체 pageview).",
 	"apihelp-query+siteviews-extended-description": "결과 형식은 날짜 (년월일) => 카운트입니다.",
+	"apihelp-query+siteviews-example": "사이트 전체의 전체 pageview를 표시합니다.",
+	"apihelp-query+siteviews-example2": "사이트 전체의 전체 고유한 방문자를 표시합니다.",
 	"apihelp-query+mostviewed-summary": "조회수가 가장 많은 문서를 나열합니다. (마지막 날의 조회수에 기반)",
 	"apihelp-query+mostviewed-param-limit": "반환할 문서 수입니다.",
-	"apihelp-query+mostviewed-example": "최상위 10개의 문서 보이기."
+	"apihelp-query+mostviewed-example": "최상위 10개의 문서 보이기.",
+	"apihelp-query+mostviewed-example2": "최상위 10개의 문서 각각에 대한 pageview 데이터를 표시합니다."
 }
