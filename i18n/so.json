@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"pvi-desc": "Waxay ku darsataa macluumaadka booqashooyinka bogga falka macluumaad.",
+	"pvi-month-count": "Booqashooyinka bogga ee 30 ka maalmood ee la soo dhaafay",
+	"pvi-invalidresponse": "Jawaab aan sax ahayn",
+	"pvi-cached-error": "Isku day hore oo xogtan lagu soo helayay wuu fashilmay. Si loo yareeyo culayska server-ka, dib isku dayga waa la xannibay muddo $1 ah.",
+	"pvi-cached-error-title": "Isku day hore oo lagu soo helayay bogga \"$1\" wuu fashilmay. Si loo yareeyo culayska server-ka, dib isku dayga waa la xannibay muddo $2 ah."
+}
