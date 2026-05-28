@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-pageviewinfo-param-metric": "Cabirka loo adeegsanayo tirinta booqashooyinka. Iyadoo ku xiran adeegga gadaale (backend) ee la isticmaalayo, dhammaan cabbirrada lama taageeri karo. Waxaad isticmaali kartaa API-ga siteinfo ([[Special:ApiHelp/query+siteinfo|action=query&meta=siteinfo]]) si aad u hubiso kuwa la taageerayo, qaybta <samp>pageviewservice-supported-metrics</samp> / ''magaca module-ka'' (<samp>siteviews</samp>, <samp>mostviewed</samp>, iwm.)",
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "Booqashooyinka bogga ee caadiga ah.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "Booqdayaal gaar ah.",
+	"apihelp-pageviewinfo-param-days": "Tirada maalmaha la muujinayo.",
+	"apihelp-query+pageviews-summary": "Waxay muujisaa xogta booqashooyinka bog kasta (tirada booqashooyinka maalinlaha ah ee mid kasta oo ka mid ah <var>$1 maalmood</var> ee ugu dambeeyay).",
+	"apihelp-query+pageviews-extended-description": "Qaabka natiijadu waa cinwaanka bogga (oo leh hoos-xariiqyo) => taariikh (Ymd) => tirin.",
+	"apihelp-query+pageviews-example": "Muuji tirakoobka booqashooyinka bogga ee bogga hore.",
+	"apihelp-query+siteviews-summary": "Waxay muujisaa xogta booqashooyinka guud ee bogga (wadarta booqashooyinka maalinlaha ah ee mid kasta oo ka mid ah <var>$1 maalmood</var> ee ugu dambeeyay).",
+	"apihelp-query+siteviews-extended-description": "Qaabka natiijadu waa taariikh (Ymd) => tirin.",
+	"apihelp-query+siteviews-example": "Muuji wadarta guud ee booqashooyinka bogagga ee dhammaan goobta.",
+	"apihelp-query+siteviews-example2": "Muuji wadarta guud ee booqdayaasha gaarka ah ee dhammaan goobta.",
+	"apihelp-query+mostviewed-summary": "Waxay taxdaa bogagga ugu booqashada badan (iyadoo lagu salaynayo tirada booqashooyinka maalintii hore).",
+	"apihelp-query+mostviewed-param-limit": "Tirada bogagga la soo celinayo.",
+	"apihelp-query+mostviewed-example": "Liiska 10-ka bog ee ugu sarreeya.",
+	"apihelp-query+mostviewed-example2": "Muuji xogta booqashooyinka bog kasta oo ka mid ah 10-ka bog ee ugu sarreeya."
+}
