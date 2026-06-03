@@ -28,7 +28,9 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	protected $logger;
 
 	/** @var string */
-	protected $endpoint;
+	protected $pageAnalyticsEndpoint;
+	/** @var string */
+	protected $deviceAnalyticsEndpoint;
 	/** @var int|false Max number of pages to look up (false for unlimited) */
 	protected $lookupLimit;
 
@@ -54,7 +56,8 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	/**
 	 * @param HttpRequestFactory $httpRequestFactory
 	 * @param TitleFormatter $titleFormatter
-	 * @param string $endpoint Wikimedia pageview API endpoint
+	 * @param string $pageAnalyticsEndpoint Endpoint for metrics/pageviews calls
+	 * @param string $deviceAnalyticsEndpoint Endpoint for metrics/unique-devices calls
 	 * @param array $apiOptions Associative array of API URL parameters
 	 *   see https://wikimedia.org/api/rest_v1/#!/Pageviews_data
 	 *   project is the only required parameter. Granularity, start and end are not supported.
@@ -64,11 +67,13 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 	public function __construct(
 		private readonly HttpRequestFactory $httpRequestFactory,
 		private readonly TitleFormatter $titleFormatter,
-		$endpoint,
+		$pageAnalyticsEndpoint,
+		$deviceAnalyticsEndpoint,
 		array $apiOptions,
 		$lookupLimit
 	) {
-		$this->endpoint = rtrim( $endpoint, '/' );
+		$this->pageAnalyticsEndpoint = rtrim( $pageAnalyticsEndpoint, '/' );
+		$this->deviceAnalyticsEndpoint = rtrim( $deviceAnalyticsEndpoint, '/' );
 		$this->lookupLimit = $lookupLimit;
 		$apiOptions += [
 			'access' => 'all-access',
@@ -260,20 +265,21 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 				// YYYYMMDD
 				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
-				return "$this->endpoint/metrics/pageviews/per-article/$this->project/$this->access/"
+				return "$this->pageAnalyticsEndpoint/metrics/pageviews/per-article/$this->project/$this->access/"
 					. "$this->agent/$encodedTitle/$this->granularity/$start/$end";
 			case self::METRIC_VIEW:
 			case self::SCOPE_SITE:
 			// YYYYMMDDHH
 				$start = substr( $start, 0, 10 );
 				$end = substr( $end, 0, 10 );
-				return "$this->endpoint/metrics/pageviews/aggregate/$this->project/$this->access/$this->agent/"
-					   . "$this->granularity/$start/$end";
+				return "$this->pageAnalyticsEndpoint/metrics/pageviews/aggregate/$this->project/"
+					   . "$this->access/$this->agent/$this->granularity/$start/$end";
 			case self::SCOPE_TOP:
 				$year = substr( $end, 0, 4 );
 				$month = substr( $end, 4, 2 );
 				$day = substr( $end, 6, 2 );
-				return "$this->endpoint/metrics/pageviews/top/$this->project/$this->access/$year/$month/$day";
+				return "$this->pageAnalyticsEndpoint/metrics/pageviews/top/$this->project/"
+					   . "$this->access/$year/$month/$day";
 			case self::METRIC_UNIQUE:
 				$access = match ( $this->access ) {
 					'all-access' => 'all-sites',
@@ -283,7 +289,7 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 				// YYYYMMDD
 				$start = substr( $start, 0, 8 );
 				$end = substr( $end, 0, 8 );
-				return "$this->endpoint/metrics/unique-devices/$this->project/$access/"
+				return "$this->deviceAnalyticsEndpoint/metrics/unique-devices/$this->project/$access/"
 					. "$this->granularity/$start/$end";
 			default:
 				throw new InvalidArgumentException( 'Invalid scope: ' . $scope );

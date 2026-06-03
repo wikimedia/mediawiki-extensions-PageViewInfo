@@ -93,6 +93,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 				$this->createMock( HttpRequestFactory::class ),
 				$this->createMock( TitleFormatter::class ),
 				'null:',
+				'null:',
 				[],
 				false
 			);
@@ -100,6 +101,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		new WikimediaPageViewService(
 			$this->createMock( HttpRequestFactory::class ),
 			$this->createMock( TitleFormatter::class ),
+			'null:',
 			'null:',
 			[ 'project' => 'http://example.com/' ],
 			false
@@ -114,6 +116,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
 			$titleFormatter,
+			'http://endpoint.example.com/',
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
@@ -261,6 +264,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 			$this->mockHttpRequestFactory(),
 			$this->createMock( TitleFormatter::class ),
 			'http://endpoint.example.com/',
+			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
 		);
@@ -347,6 +351,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 			$this->mockHttpRequestFactory(),
 			$this->createMock( TitleFormatter::class ),
 			'http://endpoint.example.com/',
+			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false
 		);
@@ -429,6 +434,7 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$service = new WikimediaPageViewService(
 			$this->mockHttpRequestFactory(),
 			$this->createMock( TitleFormatter::class ),
+			'http://endpoint.example.com/',
 			'http://endpoint.example.com/',
 			[ 'project' => 'project.example.com' ],
 			false

@@ -93,6 +93,7 @@ class ApiQueryMostViewedTest extends ApiTestCase {
 			$httpRequestFactory,
 			$this->createMock( TitleFormatter::class ),
 			'http://example.test/',
+			'http://example.test/',
 			[ 'project' => 'foo.project.test' ],
 			false
 		);

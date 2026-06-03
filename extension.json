@@ -43,6 +43,14 @@
 			"value": "https://wikimedia.org/api/rest_v1",
 			"description": "URL of the Wikimedia Pageview API - see https://wikitech.wikimedia.org/wiki/Analytics/PageviewAPI"
 		},
+		"PageViewInfoWikimediaPageAnalyticsEndpoint": {
+			"value": false,
+			"description": "URL of the endpoint for metrics/pageviews calls. Defaults to PageViewInfoWikimediaEndpoint when false."
+		},
+		"PageViewInfoWikimediaDeviceAnalyticsEndpoint": {
+			"value": false,
+			"description": "URL of the endpoint for metrics/unique-devices calls. Defaults to PageViewInfoWikimediaEndpoint when false."
+		},
 		"PageViewInfoWikimediaDomain": {
 			"value": false,
 			"description": "Domain name to request data for from the Wikimedia Pageview API, or false to fall back to $wgServerName. This is mainly meant for testing."

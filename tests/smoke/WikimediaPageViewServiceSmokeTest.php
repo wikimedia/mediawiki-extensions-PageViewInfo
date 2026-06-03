@@ -14,10 +14,15 @@ use Wikimedia\TestingAccessWrapper;
  */
 class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 	protected function getService() {
-		global $wgPageViewInfoWikimediaEndpoint;
+		global $wgPageViewInfoWikimediaEndpoint, $wgPageViewInfoWikimediaPageAnalyticsEndpoint,
+			$wgPageViewInfoWikimediaDeviceAnalyticsEndpoint;
+		$pageAnalyticsEndpoint = $wgPageViewInfoWikimediaPageAnalyticsEndpoint ?: $wgPageViewInfoWikimediaEndpoint;
+		$deviceAnalyticsEndpoint = $wgPageViewInfoWikimediaDeviceAnalyticsEndpoint ?: $wgPageViewInfoWikimediaEndpoint;
 		return new WikimediaPageViewService(
 			$this->createMock( HttpRequestFactory::class ),
-			$wgPageViewInfoWikimediaEndpoint,
+			$this->createMock( TitleFormatter::class ),
+			$pageAnalyticsEndpoint,
+			$deviceAnalyticsEndpoint,
 			[ 'project' => 'en.wikipedia.org' ],
 			3
 		);

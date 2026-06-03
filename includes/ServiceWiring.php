@@ -11,6 +11,8 @@ return [
 		$mainConfig = $services->getMainConfig();
 		$extensionConfig = $services->getConfigFactory()->makeConfig( 'PageViewInfo' );
 		$endpoint = $extensionConfig->get( 'PageViewInfoWikimediaEndpoint' );
+		$pageAnalyticsEndpoint = $extensionConfig->get( 'PageViewInfoWikimediaPageAnalyticsEndpoint' ) ?: $endpoint;
+		$deviceAnalyticsEndpoint = $extensionConfig->get( 'PageViewInfoWikimediaDeviceAnalyticsEndpoint' ) ?: $endpoint;
 		$project = $extensionConfig->get( 'PageViewInfoWikimediaDomain' )
 			?: $mainConfig->get( 'ServerName' );
 		$cache = $services->getObjectCacheFactory()->getLocalClusterInstance();
@@ -21,7 +23,8 @@ return [
 		$service = new WikimediaPageViewService(
 			$services->getHttpRequestFactory(),
 			$titleFormatter,
-			$endpoint,
+			$pageAnalyticsEndpoint,
+			$deviceAnalyticsEndpoint,
 			[ 'project' => $project ],
 			$extensionConfig->get( 'PageViewInfoWikimediaRequestLimit' )
 		);
