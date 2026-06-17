@@ -120,7 +120,7 @@ class CachedPageViewServiceTest extends TestCase {
 			} );
 		$makeTitles = static function ( $titles ) {
 			return array_map( static function ( $t ) {
-				return Title::newFromText( $t );
+				return Title::makeTitle( NS_MAIN, $t );
 			}, $titles );
 		};
 

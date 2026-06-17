@@ -33,7 +33,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$randomTitle = ucfirst( MWCryptRand::generateHex( 32 ) );
 		$titles = [ 'Main_Page', 'Mycotoxin', $randomTitle ];
 		$status = $service->getPageData( array_map( static function ( $t ) {
-			return Title::newFromText( $t );
+			return Title::makeTitle( NS_MAIN, $t );
 		}, $titles ), 5 );
 		if ( !$status->isOK() ) {
 			$this->fail( Status::wrap( $status )->getWikiText() );
@@ -104,7 +104,7 @@ class WikimediaPageViewServiceSmokeTest extends \PHPUnit\Framework\TestCase {
 		$wrapper->access = 'fail';
 		$logger = new \TestLogger( true, null, true );
 		$service->setLogger( $logger );
-		$status = $service->getPageData( [ Title::newFromText( 'Main_Page' ) ], 5 );
+		$status = $service->getPageData( [ Title::makeTitle( NS_MAIN, 'Main_Page' ) ], 5 );
 		$this->assertFalse( $status->isOK() );
 		$logBuffer = $logger->getBuffer();
 		$this->assertNotEmpty( $logBuffer );
