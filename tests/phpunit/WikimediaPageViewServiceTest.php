@@ -72,12 +72,12 @@ class WikimediaPageViewServiceTest extends TestCase {
 	}
 
 	/**
-	 * Imitate a no-data 404 error from the REST API
+	 * @param string $type Error type URI (RFC 9457)
 	 * @return string
 	 */
-	protected function get404ErrorJson() {
+	protected function get404ErrorJson( $type = 'about:blank' ) {
 		return json_encode( [
-			'type' => 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found',
+			'type' => $type,
 			'title' => 'Not found.',
 			'method' => 'get',
 			'detail' => 'The date(s) you used are valid, but we either do not have data for those date(s), '
@@ -507,5 +507,76 @@ class WikimediaPageViewServiceTest extends TestCase {
 		$status = $service->getTopPages();
 		$this->assertFalse( $status->isOK() );
 		$this->assertTrue( $status->hasMessage( '500' ) );
+	}
+
+	/**
+	 * @dataProvider provide404ErrorTypes
+	 */
+	public function testGetPageData404HandlesAllErrorTypes( string $errorType ) {
+		$titleFormatter = $this->createMock( TitleFormatter::class );
+		$titleFormatter->method( 'getPrefixedDBkey' )->willReturnCallback( static function ( $t ) {
+			return $t->getDBkey();
+		} );
+		$service = new WikimediaPageViewService(
+			$this->mockHttpRequestFactory(),
+			$titleFormatter,
+			'http://endpoint.example.com/',
+			'http://endpoint.example.com/',
+			[ 'project' => 'project.example.com' ],
+			false
+		);
+		$this->mockDate( $service, '2000-01-01' );
+
+		$mock = $this->mockNextRequest();
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
+		$mock->method( 'getContent' )->willReturn( $this->get404ErrorJson( $errorType ) );
+		$mock->method( 'getStatus' )->willReturn( 404 );
+
+		$status = $service->getPageData( [ Title::makeTitle( NS_MAIN, 'A' ) ], 1 );
+		$this->assertTrue( $status->isOK(),
+			"404 with type '$errorType' should be treated as empty data, not an error" );
+		$this->assertSame( [
+			'A' => [
+				'2000-01-01' => null,
+			],
+		], $status->getValue() );
+	}
+
+	public static function provide404ErrorTypes(): array {
+		return [
+			'AQS 2.0 (RFC 9457)' => [ 'about:blank' ],
+			'AQS 1.0 (HyperSwitch)' => [ 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found' ],
+		];
+	}
+
+	/**
+	 * Infrastructure 404 (no 'type' field) must not be swallowed.
+	 */
+	public function testGetPageData404InfrastructureErrorNotSwallowed() {
+		$titleFormatter = $this->createMock( TitleFormatter::class );
+		$titleFormatter->method( 'getPrefixedDBkey' )->willReturnCallback( static function ( $t ) {
+			return $t->getDBkey();
+		} );
+		$service = new WikimediaPageViewService(
+			$this->mockHttpRequestFactory(),
+			$titleFormatter,
+			'http://endpoint.example.com/',
+			'http://endpoint.example.com/',
+			[ 'project' => 'project.example.com' ],
+			false
+		);
+		$this->mockDate( $service, '2000-01-01' );
+
+		$mock = $this->mockNextRequest();
+		$mock->expects( $this->once() )->method( 'execute' )->willReturn( Status::newFatal( '404' ) );
+		// Infrastructure 404 without RFC 9457 'type' field
+		$mock->method( 'getContent' )->willReturn(
+			json_encode( [ 'code' => 404, 'message' => 'no healthy upstream' ] )
+		);
+		$mock->method( 'getStatus' )->willReturn( 404 );
+
+		$status = $service->getPageData( [ Title::makeTitle( NS_MAIN, 'A' ) ], 1 );
+		$this->assertFalse( $status->isOK(),
+			'Infrastructure 404 without type field should be treated as a real error' );
 	}
 }

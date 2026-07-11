@@ -327,10 +327,9 @@ class WikimediaPageViewService implements PageViewService, LoggerAwareInterface 
 		}
 		if (
 			$request->getStatus() === 404 &&
-			isset( $apiErrorData['type'] ) &&
-			$apiErrorData['type'] === 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found'
+			isset( $apiErrorData['type'] )
 		) {
-			// the pageview API will return with a 404 when the page has 0 views :/
+			// 0 views: AQS returns 404 with a Problem Details body (RFC 9457).
 			$status = StatusValue::newGood( [ 'items' => [] ] );
 		}
 		if ( !$status->isGood() ) {
