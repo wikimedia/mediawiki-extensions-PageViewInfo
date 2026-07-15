@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"apihelp-pageviewinfo-paramvalue-metric-pageviews": "ساده مخکتنې.",
+	"apihelp-pageviewinfo-paramvalue-metric-uniques": "بې‌ساري ليدونکي.",
+	"apihelp-pageviewinfo-param-days": "ښودلو لپاره د ورځو شمېر.",
+	"apihelp-query+pageviews-example": "د ار مخ لپاره د مخکتنې شمارنې ښودل.",
+	"apihelp-query+siteviews-extended-description": "د پايلې بڼه د نېټې (کال‌مياشت‌ورځ) => شمېرل دي.",
+	"apihelp-query+siteviews-example": "ټول‌وېبځي کې ټولټال مخکتنې ښودل.",
+	"apihelp-query+siteviews-example2": "ټول‌وېبځي کې ټولټال بې‌ساري ليدونکي ښودل.",
+	"apihelp-query+mostviewed-summary": "ترټولو ډېر کتل شوي مخونه لړليکول (د تېرو ورځو مخکتنو شمېر له مخې).",
+	"apihelp-query+mostviewed-param-limit": "د مخونو شمېر چې بايد بېرته راوگرځي.",
+	"apihelp-query+mostviewed-example": "غوره ۱۰ مخونه لړليکول.",
+	"apihelp-query+mostviewed-example2": "د هر ۱۰ غوره مخونو لپاره د مخکتنې اومتوکي ښودل."
+}
