@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Luky001",
-			"Teslaton"
+			"Teslaton",
+			"Wizzard"
 		]
 	},
 	"pvi-desc": "Pridáva informácie o zobrazeniach stránky do Informácií o stránke",
 	"pvi-month-count": "Počet videní stránky za posledných 30 dní",
-	"pvi-invalidresponse": "Neplatná odpoveď"
+	"pvi-invalidresponse": "Neplatná odpoveď",
+	"pvi-cached-error": "Skorší pokus o získanie týchto údajov zlyhal. Aby sa obmedzilo zaťaženie servera, ďalšie pokusy sú zablokované na $1.",
+	"pvi-cached-error-title": "Skorší pokus o získanie stránky „$1“ zlyhal. Aby sa obmedzilo zaťaženie servera, ďalšie pokusy sú zablokované na $2."
 }
