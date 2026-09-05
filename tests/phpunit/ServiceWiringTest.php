@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\PageViewInfo;
 
-use MediaWiki\MediaWikiServices;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @coversNothing Not possible to cover non-classes/functions
  */
-class ServiceWiringTest extends \PHPUnit\Framework\TestCase {
+class ServiceWiringTest extends MediaWikiIntegrationTestCase {
 	public function testService() {
-		$service = MediaWikiServices::getInstance()->getService( 'PageViewService' );
+		$service = $this->getServiceContainer()->getService( 'PageViewService' );
 		$this->assertInstanceOf( PageViewService::class, $service );
 	}
 }
