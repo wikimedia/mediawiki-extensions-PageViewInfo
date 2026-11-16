@@ -393,4 +393,44 @@ class CachedPageViewServiceTest extends TestCase {
 		$this->assertTrue( $status->hasMessage( '500 #2' ) );
 		$this->assertFalse( $status->hasMessage( 'pvi-cached-error' ) );
 	}
+
+	public function testGetTopPages_empty() {
+		$time = 1000000;
+		$cache = new HashBagOStuff();
+		$cache->setMockTime( $time );
+		$service = new CachedPageViewService(
+			$this->mock,
+			$cache,
+			$this->createMock( TitleFormatter::class )
+		);
+		$this->mock->method( 'getCacheExpiry' )
+			->willReturn( 50000 );
+		$this->mock->expects( $this->exactly( 2 ) )
+			->method( 'getTopPages' )
+			->willReturnOnConsecutiveCalls(
+				StatusValue::newGood( [] ),
+				StatusValue::newGood( [ 'A' => 100, 'B' => 10 ] )
+			);
+
+		$status = $service->getTopPages( PageViewService::METRIC_VIEW );
+		$this->assertTrue( $status->isOK() );
+		$this->assertSame( [], $status->getValue() );
+
+		// the empty list is cached, but only for a short time
+		$time += 1700;
+		$status = $service->getTopPages( PageViewService::METRIC_VIEW );
+		$this->assertTrue( $status->isOK() );
+		$this->assertSame( [], $status->getValue() );
+
+		$time += 200;
+		$status = $service->getTopPages( PageViewService::METRIC_VIEW );
+		$this->assertTrue( $status->isOK() );
+		$this->assertSame( [ 'A' => 100, 'B' => 10 ], $status->getValue() );
+
+		// a non-empty list is cached for the normal expiry
+		$time += 40000;
+		$status = $service->getTopPages( PageViewService::METRIC_VIEW );
+		$this->assertTrue( $status->isOK() );
+		$this->assertSame( [ 'A' => 100, 'B' => 10 ], $status->getValue() );
+	}
 }

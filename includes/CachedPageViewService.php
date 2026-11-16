@@ -130,6 +130,11 @@ class CachedPageViewService implements PageViewService, LoggerAwareInterface {
 			if ( $status->isOK() ) {
 				$data = $status->getValue();
 				$expiry = $this->getCacheExpiry( $metric, $scope );
+				if ( $scope === self::SCOPE_TOP && !$data ) {
+					// An empty top list usually means that the data for the last day is not
+					// available yet. Do not keep it for the rest of the day.
+					$expiry = self::ERROR_EXPIRY;
+				}
 			} else {
 				$data = null;
 				$expiry = self::ERROR_EXPIRY;
